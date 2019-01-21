@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'residencehalls.apps.ResidencehallsConfig',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,105 @@
+{% load static %}
+<html lang="">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap_4_1_3_min.css' %}">
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <script src="{% static 'js/cloudflare_ajax_popper_min.js' %}"></script>
+    <script src="{% static 'js/bootstrap_4_1_3_min.js' %}"></script>
+    <meta charset="UTF-8">
+    {% block title %} <title>Home</title> {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="icon" href="{% static 'img/CNUCaptainLogoSmall.png' %}">
+</head>
+{% block embedded_styles_block %}
+    <style>
+        .intro .inner {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            max-width: none;
+            background-attachment: fixed;
+        }
+
+        @media (min-width: 885px) {
+            .inner {
+                background: url('{% static 'img/cnu_great_lawn_small.png' %}') no-repeat 50% 50%;
+            }
+        }
+
+        @media (max-width: 1348px) {
+            .inner {
+                background: url('{% static 'img/cnu_great_lawn_large.png' %}') no-repeat 50% 50%;
+            }
+        }
+    </style>
+{% endblock %}
+<!-- This is the start of the navigation bar at the top of the page-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">RA Toolbox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--URLS added, but not functional yet-->
+            {#            {% if user.is_authenticated %}#}
+            {#                <ul class="navbar-nav mr-auto">#}
+            {#                    <li class="nav-item active">#}
+            {#                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>#}
+            {#                    </li>#}
+            {#                    <li class="nav-item">#}
+            {#                        <a class="nav-link" href="#">Link</a>#}
+            {#                    </li>#}
+            {#                    <li class="nav-item dropdown">#}
+            {#                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
+            {#                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+            {#                            Dropdown#}
+            {#                        </a>#}
+            {#                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+            {#                            <a class="dropdown-item" href="#">Action</a>#}
+            {#                            <a class="dropdown-item" href="#">Another action</a>#}
+            {#                            <div class="dropdown-divider"></div>#}
+            {#                            <a class="dropdown-item" href="#">Something else here</a>#}
+            {#                        </div>#}
+            {#                    </li>#}
+            {#                    <!--Added, but not functional yet.-->#}
+            {#                    {% if user.is_resident_assistant %}#}
+            {#                        <li class="nav-item">#}
+            {#                            <a class="nav-link" href="{% url 'accounts:current-ra-student-list' %}">Roster</a>#}
+            {#                        </li>#}
+            {#                    {% endif %}#}
+            {#                </ul>#}
+            {#                <ul class="navbar-nav ml-auto">#}
+            {#                    <li class="nav-item">#}
+            {#                        <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>#}
+            {#                    </li>#}
+            {#                    <li><a class="nav-link" href="{% url 'about' %}">About</a></li>#}
+            {#                </ul>#}
+            {#            {% else %}#}
+            {#                <ul class="navbar-nav ml-auto">#}
+            {#                    <li class="nav-item">#}
+            {#                        <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a class="nav-link" href="{% url 'accounts:ra-or-student' %}">Signup</a>#}
+            {#                    </li>#}
+            {#                    <li><a class="nav-link" href="{% url 'about' %}">About</a></li>#}
+            {#                </ul>#}
+            {#            {% endif %}#}
+
+        </div>
+    </nav>
+</header>
+<body>
+<section class="intro">
+    <div class="inner">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</section>
+{% block info_content %}{% endblock %}
+</body>
+</html>

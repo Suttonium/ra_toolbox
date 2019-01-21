@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+nav .navbar-nav li a {
+    color: white !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+#info_btn {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 9px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 100%;
+    padding: 5px 15px;
+    border: solid black 3px;
+}
+
+.intro {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+    display: table;
+    top: 0;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #F9F3F4;
+    text-shadow: 0 0 300px #000000;
+    font-size: 500%
+}
+
+.btn {
+    border-radius: 9px;
+    font-family: 'Oswald', sans-serif;
+    color: #5CB3FF;
+    font-size: 135%;
+    padding: 10px 20px;
+    border: solid #5CB3FF 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: #FFF;
+    border: solid #FFF 3px;
+
+}
+
+p {
+    font-size: 160%;
+    line-height: 210%;
+    text-align: justify;
+    margin: 3%;
+    font-family: sans-serif;
+}
+
+#bg-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
