@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'residencehalls.apps.ResidencehallsConfig',
     'bootstrap4',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
