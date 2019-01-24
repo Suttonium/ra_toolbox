@@ -1,0 +1,11 @@
+.option {
+    color: white;
+    border: solid black;
+    width: 300px;
+    margin-bottom: 25px;
+}
+
+#honor_code {
+    color: white;
+    font-size: 25px;
+}

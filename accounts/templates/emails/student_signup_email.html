@@ -1,0 +1,9 @@
+{% load static %}
+{% autoescape off %}
+    Congratulations, {{ email }}!
+
+    You have attempted to register as a Student in {{ floor.residence_hall }}
+
+    http://{{ domain }}{% url 'accounts:activate' uidb64=uidb64 token=token %}
+
+{% endautoescape %}

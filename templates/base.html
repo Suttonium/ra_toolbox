@@ -72,19 +72,19 @@
                     {#                    {% endif %}#}
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    {#                                <li class="nav-item">#}
-                    {#                                    <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>#}
-                    {#                                </li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+                    </li>
                     <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 </ul>
             {% else %}
                 <ul class="navbar-nav ml-auto">
-                    {#                                <li class="nav-item">#}
-                    {#                                    <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>#}
-                    {#                                </li>#}
-                    {#                                <li>#}
-                    {#                                    <a class="nav-link" href="{% url 'accounts:ra-or-student' %}">Signup</a>#}
-                    {#                                </li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'accounts:ra-or-student' %}">Signup</a>
+                    </li>
                     <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 </ul>
             {% endif %}
