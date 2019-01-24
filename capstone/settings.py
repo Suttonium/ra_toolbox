@@ -130,8 +130,6 @@ AUTHENTICATION_BACKENDS = ('accounts.backends.EmailBackend', 'accounts.backends.
 EMAIL_USE_TLS = True
 # EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
-EMAIL_HOST_USER = "residentassistanttoolbox@gmail.com"
-EMAIL_HOST_PASSWORD = "Havoc1996"
 EMAIL_PORT = 587
 
 LOGOUT_REDIRECT_URL = 'home'
