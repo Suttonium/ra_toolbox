@@ -9,14 +9,13 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.translation import ugettext_lazy as _
 
 from accounts.tokens import account_activation_token
-from .models import User, Student, ResidentAssistant
+from .models import User, Student
 from .constants import ACTIVATION_CODE_LIMIT, ATCNUEDU
-# from .functions import send_email
 from residencehalls.models import ResidenceHall, Hallway
-from django.utils.crypto import get_random_string
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
 from capstone import settings
+from .functions import *
 
 
 class StudentRegistrationForm(ModelForm):
@@ -87,7 +86,7 @@ class ResidentAssistantRegistrationForm(ModelForm):
     hallway_selection = forms.ModelChoiceField(required=True, queryset=Hallway.objects.none(),
                                                widget=forms.Select(attrs={'class': 'form-control'}))
     activation_code = forms.CharField(
-        widget=forms.HiddenInput(attrs={'id': 'activation_code', 'value': get_random_string()}))
+        widget=forms.HiddenInput(attrs={'id': 'activation_code', 'value': generate_activation_code()}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
