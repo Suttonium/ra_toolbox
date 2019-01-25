@@ -24,4 +24,5 @@ urlpatterns = [
     path('permission_denied', Forbidden403.as_view(), name='403'),
     path('about/', AboutPageView.as_view(), name='about'),
     path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    path('residence_hall/', include(('residencehalls.urls', 'residencehalls'), namespace='residencehalls')),
 ]

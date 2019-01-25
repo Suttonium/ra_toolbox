@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %} <title>Student Signup</title> {% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'accounts/css/signup_form.css' %}">
+    <form action="" id="resident_assistant_form" method="POST" novalidate>
+        {% csrf_token %}
+        <div class="container">
+            <div id="id_form_jumbotron" class="jumbotron text-white">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="id_email">Email<span class="mandatory" id="validate_email"></span></label>
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="id_student_id">Student ID<span class="mandatory"
+                                                                   id="validate_studentid"></span></label>
+                        {{ form.student_id }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="id_password">Password<span class="mandatory" id="validate_password"></span></label>
+                        {{ form.password }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="id_password_confirmation">Password Confirmation
+                            <span class="mandatory" id="validate_password_confirmation"></span></label>
+                        {{ form.password_confirmation }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="id_code_for_assigning_ra">Activation Code</label>
+                        {{ form.code_for_assigning_ra }}
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <button id="id_form_submit" class="btn btn-success" type="submit">Register</button>
+                </div>
+                <div class="form-row">
+                    <a id="already_registered" href="{% url 'accounts:login' %}" class="button btn btn-primary">Already
+                        Registered? Login
+                        Here!</a>
+                </div>
+                {% if form.errors %}
+                    <div class="alert alert-error">
+                        <p class="mandatory" id="error_message">The operation could not be performed because the
+                            following
+                            error(s) occurred. Please resubmit the form after making the following changes:</p>
+                        <ul>
+                            {% for field,error in form.errors.items %}
+                                {{ error|striptags }}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+    {% block head-javascript %}
+    {% endblock %}
+{% endblock %}

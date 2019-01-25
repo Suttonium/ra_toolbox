@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for hallway in hallways %}
+    <option value="{{ hallway.pk }}">{{ hallway.floor }}</option>
+{% endfor %}
