@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'accounts/css/studentinformationcard_form.css' %}">
+    <form action="" method="POST" id="student_info_card_form">
+        {% csrf_token %}
+        <div class="container">
+            <div id="id_student_info_card_jumbotron" class="jumbotron vertical-center">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="id_first_name">First Name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="id_last_name">Last Name</label>
+                        {{ form.last_name }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="id_date_of_birth">Date of Birth</label>
+                        {{ form.date_of_birth }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="id_cell_phone_number">Phone Number</label>
+                        {{ form.cell_phone_number }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="id_home_street_address">Street</label>
+                        {{ form.home_street_address }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="id_home_city">City</label>
+                        {{ form.home_city }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="id_home_state">State</label>
+                        {{ form.home_state }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="id_zip_code">Zip Code</label>
+                        {{ form.zip_code }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit Information Card</button>
+        {% if form.errors %}
+            <div class="alert alert-error">
+                <p class="mandatory" id="error_message">The operation could not be performed because the
+                    following
+                    error(s) occurred. Please resubmit the form after making the following changes:</p>
+                <ul>
+                    {% for field,error in form.errors.items %}
+                        {{ field }}{{ error|striptags }}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </form>
+{% endblock %}
