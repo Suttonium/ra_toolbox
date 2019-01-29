@@ -8,5 +8,5 @@
 
     {{ activation_code }}
 
-    http://{{ domain }}{% url 'accounts:activate' uidb64=uidb64 token=token %}
+    http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
 {% endautoescape %}

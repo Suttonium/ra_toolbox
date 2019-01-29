@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'accounts.apps.AccountsConfig',
     'residencehalls.apps.ResidencehallsConfig',
+    'informationcards.apps.InformationcardsConfig',
     'bootstrap4',
     'widget_tweaks'
 ]

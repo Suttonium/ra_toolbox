@@ -2,21 +2,11 @@
 {% load bootstrap4 %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'accounts/css/studentinformationcard_form.css' %}">
+    <link rel="stylesheet" href="{% static 'informationcards/css/studentinformationcard_form.css' %}">
     <form action="" method="POST" id="student_info_card_form">
         {% csrf_token %}
         <div class="container">
             <div id="id_student_info_card_jumbotron" class="jumbotron vertical-center">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="id_first_name">First Name</label>
-                        {{ form.first_name }}
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="id_last_name">Last Name</label>
-                        {{ form.last_name }}
-                    </div>
-                </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="id_date_of_birth">Date of Birth</label>
@@ -47,7 +37,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit">Submit Information Card</button>
         {% if form.errors %}
             <div class="alert alert-error">
                 <p class="mandatory" id="error_message">The operation could not be performed because the
@@ -60,5 +49,6 @@
                 </ul>
             </div>
         {% endif %}
+        <button type="submit">Submit Information Card</button>
     </form>
 {% endblock %}

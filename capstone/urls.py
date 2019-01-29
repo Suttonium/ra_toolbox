@@ -25,4 +25,6 @@ urlpatterns = [
     path('about/', AboutPageView.as_view(), name='about'),
     path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     path('residence_hall/', include(('residencehalls.urls', 'residencehalls'), namespace='residencehalls')),
+    path('information_card/', include(('informationcards.urls', 'informationcards'), namespace='informationcards')),
+
 ]
