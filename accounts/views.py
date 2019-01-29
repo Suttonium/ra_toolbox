@@ -1,14 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.utils.encoding import force_text
-from django.utils.http import urlsafe_base64_decode
-from django.views import View
 from django.views.generic import TemplateView, CreateView
 
 # Create your views here.
 from accounts.forms import *
-from informationcards.forms import StudentInformationCardForm
 
 
 class SignupTypeDecisionView(TemplateView):
@@ -31,4 +25,3 @@ class ResidentAssistantSignUpView(CreateView):
 
     def get_success_url(self):
         return reverse('accounts:login')
-
