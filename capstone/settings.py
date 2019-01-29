@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import socket
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import socket
+with open('capstone/credentials.json') as f:
+    data = json.load(f)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jy5_f(2nwxr9&0e-!*)bde-1=ypyql8sufm0#1wb795k)-ihbp'
+SECRET_KEY = data['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,8 +133,8 @@ AUTHENTICATION_BACKENDS = ('accounts.backends.EmailBackend', 'accounts.backends.
 
 EMAIL_USE_TLS = True
 # EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "residentassistanttoolbox@gmail.com"
-EMAIL_HOST_PASSWORD = "Havoc1996"
+EMAIL_HOST_USER = data['email_information']['email_host_user']
+EMAIL_HOST_PASSWORD = data['email_information']['email_host_password']
 EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
 EMAIL_PORT = 587
 
