@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.views.generic import UpdateView
+from django.views.generic.base import View
 
 from accounts.models import User
 from accounts.tokens import account_activation_token
@@ -11,7 +12,7 @@ from informationcards.forms import *
 
 
 # Create your views here.
-class ActivateResidentAssistantAccount(UpdateView):
+class ActivateResidentAssistantAccount(View):
     template_name = 'informationcards/studentinformationcardpartone_form.html'
 
     def get(self, request, uidb64, token):
@@ -46,9 +47,6 @@ class ActivateResidentAssistantAccount(UpdateView):
         context = {'form': form}
         return render(request, self.template_name, context)
 
-    # def get_success_url(self):
-    #     return reverse('informationcards:part-two')
-
 
 class UpdateStudentInformationCardPartTwoView(UpdateView):
     template_name = 'informationcards/studentinformationcardparttwo_form.html'
@@ -57,7 +55,7 @@ class UpdateStudentInformationCardPartTwoView(UpdateView):
 
     def get(self, request, **kwargs):
         obj = self.get_object()
-        form = StudentInformationCardPartTwoForm(instance=obj.user)
+        form = StudentInformationCardPartTwoForm(instance=obj.user.studentinformationcard)
         context = {'form': form}
         return render(request, self.template_name, context)
 
@@ -67,12 +65,20 @@ class UpdateStudentInformationCardPartTwoView(UpdateView):
             form = StudentInformationCardPartTwoForm(request.POST, instance=self.get_object())
             if form.is_valid():
                 form.save()
-                # return redirect(reverse('informationcards:part-one', args=[form.instance.pk]))
-                return redirect(reverse('accounts:login'))
+                return redirect(reverse('informationcards:part-one', args=[form.instance.pk]))
         elif request.POST.get('next_page'):
-            form = StudentInformationCardPartTwoForm(request.POST, self.get_object())
+            form = StudentInformationCardPartTwoForm(request.POST, instance=self.get_object())
             if form.is_valid():
                 form.save()
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)
+
+
+class UpdateStudentInformationCardPartOneView(UpdateView):
+    template_name = 'informationcards/studentinformationcardpartone_form.html'
+    form_class = StudentInformationCardPartOneForm
+    model = StudentInformationCard
+
+    def get_success_url(self):
+        return reverse('informationcards:part-two', args=[self.object.id])
