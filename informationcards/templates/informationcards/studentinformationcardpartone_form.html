@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
+{% block title %}<title>Information Card Part One</title>{% endblock %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'informationcards/css/studentinformationcard_form.css' %}">
+    <link rel="stylesheet" href="{% static 'informationcards/css/studentinformationcardpartone_form.css' %}">
     <form action="" method="POST" id="student_info_card_form">
         {% csrf_token %}
         <div class="container">
@@ -35,20 +36,20 @@
                         {{ form.zip_code }}
                     </div>
                 </div>
+                {% if form.errors %}
+                    <div class="alert alert-error">
+                        <p class="mandatory" id="error_message">The operation could not be performed because the
+                            following
+                            error(s) occurred. Please resubmit the form after making the following changes:</p>
+                        <ul>
+                            {% for field,error in form.errors.items %}
+                                {{ field }}{{ error|striptags }}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <button type="submit" class="btn btn-success">Next</button>
             </div>
         </div>
-        {% if form.errors %}
-            <div class="alert alert-error">
-                <p class="mandatory" id="error_message">The operation could not be performed because the
-                    following
-                    error(s) occurred. Please resubmit the form after making the following changes:</p>
-                <ul>
-                    {% for field,error in form.errors.items %}
-                        {{ field }}{{ error|striptags }}
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-        <button type="submit">Submit Information Card</button>
     </form>
 {% endblock %}

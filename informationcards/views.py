@@ -1,19 +1,18 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from django.urls import reverse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
-from django.views import View
+from django.views.generic import UpdateView
 
 from accounts.models import User
 from accounts.tokens import account_activation_token
-from informationcards.forms import StudentInformationCardPartOneForm
+from informationcards.forms import *
 
 
-class ActivateResidentAssistantAccount(View):
-    template_name = 'informationcards/studentinformationcard_form.html'
+# Create your views here.
+class ActivateResidentAssistantAccount(UpdateView):
+    template_name = 'informationcards/studentinformationcardpartone_form.html'
 
     def get(self, request, uidb64, token):
         try:
@@ -41,6 +40,37 @@ class ActivateResidentAssistantAccount(View):
 
         if user:
             form = StudentInformationCardPartOneForm(request.POST, instance=user.studentinformationcard)
+            if form.is_valid():
+                form.save()
+                return redirect(reverse('informationcards:part-two', args=[user.studentinformationcard.pk]))
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+    # def get_success_url(self):
+    #     return reverse('informationcards:part-two')
+
+
+class UpdateStudentInformationCardPartTwoView(UpdateView):
+    template_name = 'informationcards/studentinformationcardparttwo_form.html'
+    form_class = StudentInformationCardPartTwoForm
+    model = StudentInformationCard
+
+    def get(self, request, **kwargs):
+        obj = self.get_object()
+        form = StudentInformationCardPartTwoForm(instance=obj.user)
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+    def post(self, request, **kwargs):
+        form = StudentInformationCardPartTwoForm(instance=self.get_object())
+        if request.POST.get('previous_page'):
+            form = StudentInformationCardPartTwoForm(request.POST, instance=self.get_object())
+            if form.is_valid():
+                form.save()
+                # return redirect(reverse('informationcards:part-one', args=[form.instance.pk]))
+                return redirect(reverse('accounts:login'))
+        elif request.POST.get('next_page'):
+            form = StudentInformationCardPartTwoForm(request.POST, self.get_object())
             if form.is_valid():
                 form.save()
                 return redirect(reverse('accounts:login'))

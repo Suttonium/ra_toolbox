@@ -1,3 +1,5 @@
+from django.utils.translation import ugettext_lazy as _
+
 PHONE_NUMBER_MAX_LIMIT = 17
 PHONE_NUMBER_MIN_LIMIT = 10
 ADDRESS_MAX_LIMIT = 100
@@ -25,3 +27,5 @@ ZIP_CODE_LENGTH = 5
 EC_NAME_LENGTH = 30
 EC_RELATIONSHIP_TO_STUDENT_LENGTH = 20
 MAX_DATE_LENGTH = 10
+ALLERGIES = _('Please list any allergies.')
+MEDICATIONS = _('Please list any medications you are currently using.')

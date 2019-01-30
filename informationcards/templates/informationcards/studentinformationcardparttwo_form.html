@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}<title>Information Card Part Two</title>{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'informationcards/css/studentinformationcardparttwo_form.css' %}">
+    <form action="" method="POST" id="student_info_card_form">
+        {% csrf_token %}
+        <div class="container">
+            <div id="id_student_info_card_jumbotron" class="jumbotron vertical-center">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="allergies">Allergies</label>
+                        {{ form.allergies }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="medications_or_special_needs">Medications or Special Needs</label>
+                        {{ form.medications_or_special_needs }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="physical_assistance">Physical Assistance</label>
+                        {{ form.physical_assistance }}
+                    </div>
+                </div>
+                {% if form.errors %}
+                    <div class="alert alert-error">
+                        <p class="mandatory" id="error_message">The operation could not be performed because the
+                            following
+                            error(s) occurred. Please resubmit the form after making the following changes:</p>
+                        <ul>
+                            {% for field,error in form.errors.items %}
+                                {{ field }}{{ error|striptags }}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <button value="previous_page" name="previous_page" type="submit" class="btn btn-danger">Previous
+                </button>
+                <button value="next_page" name="next_page" type="submit" class="btn btn-success">Next</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
