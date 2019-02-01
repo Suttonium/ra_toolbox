@@ -1,5 +1,6 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 
 # Create your views here.
 from accounts.forms import *
@@ -25,3 +26,15 @@ class ResidentAssistantSignUpView(CreateView):
 
     def get_success_url(self):
         return reverse('accounts:login')
+
+
+class Roster(LoginRequiredMixin, ListView):
+    template_name = 'accounts/roster.html'
+    model = Student
+
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        user = self.request.user
+        context['current_student_list'] = user.residentassistant.student_set.all()
+        return context

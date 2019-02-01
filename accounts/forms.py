@@ -146,5 +146,3 @@ class ResidentAssistantRegistrationForm(ModelForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _('Password')}),
             'student_id': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Student ID')}),
         }
-
-

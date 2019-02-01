@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>Roster</title> {% endblock %}
+{% block content %}
+    {% if not user.is_resident_assistant %}
+        <h3><strong>403 You do not have proper viewing permissions. </strong></h3>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'accounts/css/roster.css' %}">
+    {% if current_student_list %}
+        <table id="students">
+            <tr>
+                <th>Student Email</th>
+                <th>Student ID</th>
+                <th>Hallway Information</th>
+            </tr>
+            {% for student in current_student_list %}
+                <tr>
+                    <td>{{ student.user.email }}</td>
+                    <td>{{ student.user.student_id }}</td>
+                    <td><a href="{% url 'accounts:student-update-tracker' pk=student.user.tracker.pk %}"
+                           class="hallway_button btn btn-primary">View
+                        Individual Tracker</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h3 id="no_residents">You Currently Have No Residents Connected</h3>
+    {% endif %}
+{% endblock %}
