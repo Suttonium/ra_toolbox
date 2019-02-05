@@ -32,3 +32,12 @@ MEDICATIONS = _('If none type N/A. Information will be used in emergency situati
                 'disclose any information.')
 PHYSICAL_ASSISTANCE = _('If none type N/A. Information will be used in emergency situations only. You are not required '
                         'to disclose any information.')
+EMERGENCY_CONTACT_NAME = _('Emergency Contact Name')
+EMERGENCY_CONTACT_RELATIONSHIP_TO_STUDENT = _('Emergency Contact Relationship to Student')
+EMERGENCY_CONTACT_PRIMARY_PHONE_NUMBER = _('Emergency Contact Primary Phone Number')
+ZIP_CODE = _('Zip Code')
+CITY = _('City')
+STREET = _('Street')
+CELL_PHONE_NUMBER = _('Phone Number. If no phone number, please type N/A.')
+FIRST_NAME = _('First Name')
+LAST_NAME = _('Last Name')

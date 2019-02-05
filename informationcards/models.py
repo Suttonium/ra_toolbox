@@ -40,6 +40,17 @@ class StudentInformationCard(models.Model):
                                                                   validators=[
                                                                       MinLengthValidator(PHONE_NUMBER_MIN_LIMIT)],
                                                                   default='', null=True)
+    emergency_contact_three_name = models.CharField(_('name of emergency contact three'), max_length=EC_NAME_LENGTH,
+                                                    default='', null=True)
+    emergency_contact_three_relationship_to_student = models.CharField(
+        _('relationship of emergency contact three to student'), max_length=EC_RELATIONSHIP_TO_STUDENT_LENGTH,
+        default='', null=True)
+    emergency_contact_three_primary_phone_number = models.CharField(
+        _('primary phone number of emergency contact three'),
+        max_length=PHONE_NUMBER_MAX_LIMIT,
+        validators=[
+            MinLengthValidator(PHONE_NUMBER_MIN_LIMIT)],
+        default='', null=True)
 
     def __str__(self):
         return 'Student Information Card for {0}'.format(self.user.email)
