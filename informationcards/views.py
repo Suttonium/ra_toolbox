@@ -55,22 +55,23 @@ class UpdateStudentInformationCardPartTwoView(UpdateView):
 
     def get(self, request, **kwargs):
         obj = self.get_object()
-        form = StudentInformationCardPartTwoForm(instance=obj.user.studentinformationcard)
+        form = StudentInformationCardPartTwoForm(instance=obj)
         context = {'form': form}
         return render(request, self.template_name, context)
 
     def post(self, request, **kwargs):
-        form = StudentInformationCardPartTwoForm(instance=self.get_object())
+        obj = self.get_object()
+        form = StudentInformationCardPartTwoForm(instance=obj)
         if request.POST.get('previous_page'):
-            form = StudentInformationCardPartTwoForm(request.POST, instance=self.get_object())
+            form = StudentInformationCardPartTwoForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
                 return redirect(reverse('informationcards:part-one', args=[form.instance.pk]))
         elif request.POST.get('next_page'):
-            form = StudentInformationCardPartTwoForm(request.POST, instance=self.get_object())
+            form = StudentInformationCardPartTwoForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
-                return redirect(reverse('accounts:login'))
+                return redirect(reverse('informationcards:part-three', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
 
@@ -82,3 +83,25 @@ class UpdateStudentInformationCardPartOneView(UpdateView):
 
     def get_success_url(self):
         return reverse('informationcards:part-two', args=[self.object.id])
+
+
+class UpdateStudentInformationCardPartThreeView(UpdateView):
+    template_name = 'informationcards/studentinformationcardpartthree_form.html'
+    form_class = StudentInformationCardPartThreeForm
+    model = StudentInformationCard
+
+    def get(self, request, **kwargs):
+        obj = self.get_object()
+        form = StudentInformationCardPartThreeForm(instance=obj.user.studentinformationcard)
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+    def post(self, request, **kwargs):
+        obj = self.get_object()
+        form = StudentInformationCardPartThreeForm(instance=obj)
+        if request.POST.get('previous_page'):
+            pass
+        elif request.POST.get('submit'):
+            pass
+        context = {'form': form}
+        return render(request, self.template_name, context)

@@ -1,7 +1,6 @@
 from django.forms import ModelForm
 from django import forms
 from informationcards.models import StudentInformationCard
-from django.utils.translation import ugettext_lazy as _
 from .constants import *
 
 
