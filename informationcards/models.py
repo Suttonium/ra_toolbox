@@ -17,7 +17,7 @@ class StudentInformationCard(models.Model):
                                   choices=STATE_ABBREVIATIONS)
     zip_code = models.IntegerField(_('zip code'), null=True)
     allergies = models.TextField(_('allergies'), default='', null=True)
-    physical_assistance = models.BooleanField(default=False)
+    physical_assistance = models.TextField(_('physical_assistance'), default='', null=True)
     medications_or_special_needs = models.TextField(_('medications or special needs'), default='', null=True)
 
     emergency_contact_one_name = models.CharField(_('name of emergency contact one'), max_length=EC_NAME_LENGTH,

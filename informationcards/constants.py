@@ -27,5 +27,8 @@ ZIP_CODE_LENGTH = 5
 EC_NAME_LENGTH = 30
 EC_RELATIONSHIP_TO_STUDENT_LENGTH = 20
 MAX_DATE_LENGTH = 10
-ALLERGIES = _('Please list any allergies.')
-MEDICATIONS = _('Please list any medications you are currently using.')
+ALLERGIES = _('Please list any allergies. If none please type N/A.')
+MEDICATIONS = _('If none type N/A. Information will be used in emergency situations only. You are not required to '
+                'disclose any information.')
+PHYSICAL_ASSISTANCE = _('If none type N/A. Information will be used in emergency situations only. You are not required '
+                        'to disclose any information.')
