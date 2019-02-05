@@ -13,14 +13,10 @@
                         <label for="allergies">Allergies</label>
                         {{ form.allergies }}
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="medications_or_special_needs">Medications or Special Needs</label>
                         {{ form.medications_or_special_needs }}
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="physical_assistance">Physical Assistance</label>
                         {{ form.physical_assistance }}
@@ -33,7 +29,7 @@
                             error(s) occurred. Please resubmit the form after making the following changes:</p>
                         <ul>
                             {% for field,error in form.errors.items %}
-                                {{ field }}{{ error|striptags }}
+                                {{ field }} - {{ error|striptags }}
                             {% endfor %}
                         </ul>
                     </div>
