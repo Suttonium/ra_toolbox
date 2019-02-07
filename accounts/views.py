@@ -32,7 +32,6 @@ class Roster(LoginRequiredMixin, ListView):
     template_name = 'accounts/roster.html'
     model = Student
 
-
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         user = self.request.user

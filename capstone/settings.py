@@ -139,7 +139,7 @@ EMAIL_HOST_PASSWORD = data['email_host_password']
 EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
 EMAIL_PORT = 587
 
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
 
 SITE_ID = 1  # references either localhost or the domain name of official site

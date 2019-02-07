@@ -43,7 +43,6 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!--URLS added, but not functional yet-->
             {% if user.is_authenticated %}
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -92,13 +91,13 @@
     </nav>
 </header>
 <body>
-<section class="intro">
+<div class="intro">
     <div class="inner">
         <div class="content">
             {% block content %}{% endblock %}
         </div>
     </div>
-</section>
-{% block info_content %}{% endblock %}
+</div>
+{% block info %}{% endblock %}
 </body>
 </html>
