@@ -2,14 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/raymondsutton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/management/commands/genesis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/ajax/css/knock_and_talk_response.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/ajax/js/general_information_ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/ajax/js/knock_and_talk_ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/ra_or_student.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/roster.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/student_tracker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/jQuery_3_3_1_min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/tracker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/ra_or_student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/roster.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/student_tracker.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/ajax/general_information_response.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/ajax/knock_and_talk_response.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/ajax/submit_knock_and_talk.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/emails/student_signup_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/registration/logged_out.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/informationcards/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/informationcards/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/informationcards/templates/informationcards/studentinformationcard_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/informationcards/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/css/403.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/css/bootstrap_4_1_3_min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/img/CNUCaptainLogoSmall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/img/CNULogo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/img/cnu_great_lawn_large.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/img/cnu_great_lawn_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/js/cloudflare_ajax_popper_min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/static/js/jQuery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/to-do.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardpartthree_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/Raymond_Sutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/Raymond_Sutton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/backends.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/backends.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/management/commands/startup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/managers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/signup_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/signup_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/studentinformationcard_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/studentinformationcard_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/email_validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/email_validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/hallway_dropdown_updater.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/hallway_dropdown_updater.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/password_validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/password_validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/studentid_validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/studentid_validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/activationcode_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/emails/activationcode_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/hallway_dropdown_list_options.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/templates/ajax/hallway_dropdown_list_options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/residentassistantsignup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/residentassistantsignup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/studentinformationcard_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/studentsignup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/studentsignup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/registration/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/tokens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/master/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/capstone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/capstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/capstone/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informationcards/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/informationcards/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartthree_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartthree_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,47 +115,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/capstone/settings.py">
+        <entry file="file://$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartthree_form.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="588">
-              <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+              <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/capstone/views.py">
+        <entry file="file://$PROJECT_DIR$/informationcards/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="296">
+              <caret line="79" column="53" selection-start-line="79" selection-start-column="53" selection-end-line="79" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/info.html">
+        <entry file="file://$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardpartthree_form.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="28" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -72,8 +147,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
         <option value="CSS File" />
       </list>
     </option>
@@ -98,7 +173,12 @@
         <option value="$PROJECT_DIR$/static/css/home.css" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/capstone/middleware.py" />
         <option value="$PROJECT_DIR$/capstone/settings.py" />
+        <option value="$PROJECT_DIR$/informationcards/constants.py" />
+        <option value="$PROJECT_DIR$/informationcards/static/informationcards/studentinformationcardpartthree_form.css" />
+        <option value="$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardpartthree_form.css" />
+        <option value="$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartthree_form.html" />
       </list>
     </option>
   </component>
@@ -124,7 +204,7 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="informationcards" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -141,6 +221,12 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/informationcards/static/informationcards/css" />
+      <recent name="$PROJECT_DIR$/accounts" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -195,7 +281,7 @@
       <workItem from="1548814491053" duration="1535000" />
       <workItem from="1549146844709" duration="122000" />
       <workItem from="1549488925272" duration="76000" />
-      <workItem from="1549493739189" duration="4364000" />
+      <workItem from="1549493739189" duration="5887000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -232,14 +318,22 @@
       <option name="project" value="LOCAL" />
       <updated>1548814751469</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="did some code refactoring and updated the logout redirect url">
+      <created>1549551375691</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549551375691</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10534000" />
+    <option name="totallyTimeSpent" value="12057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26323318" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -276,7 +370,8 @@
     <MESSAGE value="Created database tables and schema for the residencehalls application and&#10;the remainder of the accounts application. This includes Resident Assistants, Students, Hall Directors, Residence Halls, Suites, Hallways, and Rooms. Some of these might not be used in the future, but they are here just in case." />
     <MESSAGE value="Connected the new user model to the settings file for authentication. Added the templates and static folders to each app and the overall project." />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="did some code refactoring and updated the logout redirect url" />
+    <option name="LAST_COMMIT_MESSAGE" value="did some code refactoring and updated the logout redirect url" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/managers.py">
@@ -354,26 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/informationcards/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/informationcards/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/sections.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -413,13 +488,6 @@
     <entry file="file://$PROJECT_DIR$/capstone/urls.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/capstone/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -427,10 +495,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/capstone/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -441,17 +516,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/capstone/settings.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="56" column="62" lean-forward="true" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartone_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="9" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardpartthree_form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardparttwo_form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardparttwo_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="79" column="53" selection-start-line="79" selection-start-column="53" selection-end-line="79" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartthree_form.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
-          <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
         </state>
       </provider>
     </entry>

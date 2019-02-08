@@ -27,8 +27,6 @@ class StudentInformationCard(models.Model):
         default='', null=True)
     emergency_contact_one_primary_phone_number = models.CharField(_('primary phone number of emergency contact one'),
                                                                   max_length=PHONE_NUMBER_MAX_LIMIT,
-                                                                  validators=[
-                                                                      MinLengthValidator(PHONE_NUMBER_MIN_LIMIT)],
                                                                   default='', null=True)
     emergency_contact_two_name = models.CharField(_('name of emergency contact two'), max_length=EC_NAME_LENGTH,
                                                   default='', null=True)
@@ -37,8 +35,6 @@ class StudentInformationCard(models.Model):
         default='', null=True)
     emergency_contact_two_primary_phone_number = models.CharField(_('primary phone number of emergency contact two'),
                                                                   max_length=PHONE_NUMBER_MAX_LIMIT,
-                                                                  validators=[
-                                                                      MinLengthValidator(PHONE_NUMBER_MIN_LIMIT)],
                                                                   default='', null=True)
     emergency_contact_three_name = models.CharField(_('name of emergency contact three'), max_length=EC_NAME_LENGTH,
                                                     default='', null=True)
@@ -46,11 +42,7 @@ class StudentInformationCard(models.Model):
         _('relationship of emergency contact three to student'), max_length=EC_RELATIONSHIP_TO_STUDENT_LENGTH,
         default='', null=True)
     emergency_contact_three_primary_phone_number = models.CharField(
-        _('primary phone number of emergency contact three'),
-        max_length=PHONE_NUMBER_MAX_LIMIT,
-        validators=[
-            MinLengthValidator(PHONE_NUMBER_MIN_LIMIT)],
-        default='', null=True)
+        _('primary phone number of emergency contact three'), max_length=PHONE_NUMBER_MAX_LIMIT, default='', null=True)
 
     def __str__(self):
         return 'Student Information Card for {0}'.format(self.user.email)

@@ -100,8 +100,15 @@ class UpdateStudentInformationCardPartThreeView(UpdateView):
         obj = self.get_object()
         form = StudentInformationCardPartThreeForm(instance=obj)
         if request.POST.get('previous_page'):
-            pass
+            form = StudentInformationCardPartThreeForm(request.POST, instance=obj)
+            if form.is_valid():
+                form.save()
+                return redirect(reverse('informationcards:part-two', args=[form.instance.pk]))
         elif request.POST.get('submit'):
-            pass
+            form = StudentInformationCardPartThreeForm(request.POST, instance=obj)
+            if form.is_valid():
+                form.save()
+                # add message here with successmessage mixin to display on login page
+                return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)

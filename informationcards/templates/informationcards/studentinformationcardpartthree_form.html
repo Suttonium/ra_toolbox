@@ -2,22 +2,82 @@
 {% load static %}
 {% load bootstrap4 %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'informationcards/css/studentinformationcardpartthree_form.css' %}">
     <form action="" method="POST" id="student_info_card_form">
-        {% csrf_token %}
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="emergency_contact_one_name">Emergency Contact #1 Name</label>
-                {{ form.emergency_contact_one_name }}
-            </div>
-            <div class="form-group col-md-4">
-                <label for="emergency_contact_one_relationship_to_student">Emergency Contact #1 Relationship to
-                    Student</label>
-                {{ form.emergency_contact_one_relationship_to_student }}
-            </div>
-            <div class="form-group col-md-4">
-                <label for="emergency_contact_one_primary_phone_number">Emergency Contact #1 Primary Phone
-                    Number</label>
-                {{ form.emergency_cont1act_one_primary_phone_number }}
+        <div class="container">
+            <div id="id_student_info_card_jumbotron" class="jumbotron vertical-center">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_one_name">Contact #1 Name</label>
+                        {{ form.emergency_contact_one_name }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_one_relationship_to_student">Contact #1 Relationship to
+                            Student</label>
+                        {{ form.emergency_contact_one_relationship_to_student }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_one_primary_phone_number">Contact #1 Primary Phone
+                            Number</label>
+                        {{ form.emergency_contact_one_primary_phone_number }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_two_name">Contact #2 Name</label>
+                        {{ form.emergency_contact_two_name }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_two_relationship_to_student">Contact #2 Relationship to
+                            Student</label>
+                        {{ form.emergency_contact_two_relationship_to_student }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_two_primary_phone_number">Contact #2 Primary Phone
+                            Number</label>
+                        {{ form.emergency_contact_two_primary_phone_number }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_three_name">Contact #3 Name</label>
+                        {{ form.emergency_contact_three_name }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_three_relationship_to_student">Contact #3 Relationship to
+                            Student</label>
+                        {{ form.emergency_contact_three_relationship_to_student }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_three_primary_phone_number">Contact #3 Primary Phone
+                            Number</label>
+                        {{ form.emergency_contact_three_primary_phone_number }}
+                    </div>
+                </div>
+                {% if form.errors %}
+                    <div class="alert alert-error">
+                        <p class="mandatory" id="error_message">The operation could not be performed because the
+                            following
+                            error(s) occurred. Please resubmit the form after making the following changes:</p>
+                        <ul>
+                            {% for field,error in form.errors.items %}
+                                {{ field }} - {{ error|striptags }}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button value="previous_page" name="previous_page" type="submit" class="option btn btn-danger">
+                            Previous
+                        </button>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <button value="submit" name="submit" type="submit" class="option btn btn-success">Submit
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
