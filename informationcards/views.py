@@ -92,7 +92,7 @@ class UpdateStudentInformationCardPartThreeView(UpdateView):
 
     def get(self, request, **kwargs):
         obj = self.get_object()
-        form = StudentInformationCardPartThreeForm(instance=obj.user.studentinformationcard)
+        form = StudentInformationCardPartThreeForm(instance=obj)
         context = {'form': form}
         return render(request, self.template_name, context)
 

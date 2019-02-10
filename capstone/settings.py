@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'residencehalls.apps.ResidencehallsConfig',
     'informationcards.apps.InformationcardsConfig',
+    'trackers.apps.TrackersConfig',
     'bootstrap4',
     'widget_tweaks',
 ]
