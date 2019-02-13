@@ -1,8 +1,10 @@
 {% load static %}
 <html lang="">
 <head>
+    {#    <script src="{% static 'js/jQuery.js' %}"></script>#}
+    <script src="{% static 'js/jQuery_3_3_1_min.js' %}"></script>
+    {% include 'session_security/all.html' %}
     <link rel="stylesheet" href="{% static 'css/bootstrap_4_1_3_min.css' %}">
-    <script src="{% static 'js/jQuery.js' %}"></script>
     <script src="{% static 'js/cloudflare_ajax_popper_min.js' %}"></script>
     <script src="{% static 'js/bootstrap_4_1_3_min.js' %}"></script>
     <meta charset="UTF-8">
@@ -22,12 +24,14 @@
 
         @media (min-width: 885px) {
             .inner {
+                z-index: -1;
                 background: url('{% static 'img/cnu_great_lawn_small.png' %}') no-repeat 50% 50%;
             }
         }
 
         @media (max-width: 1348px) {
             .inner {
+                z-index: -1;
                 background: url('{% static 'img/cnu_great_lawn_large.png' %}') no-repeat 50% 50%;
             }
         }

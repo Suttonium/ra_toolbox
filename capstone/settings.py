@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'trackers.apps.TrackersConfig',
     'bootstrap4',
     'widget_tweaks',
+    'session_security',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'session_security.middleware.SessionSecurityMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'accounts.middleware.RequestMiddleware',
@@ -135,7 +137,6 @@ AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('accounts.backends.EmailBackend', 'accounts.backends.StudentIDBackend')
 
 EMAIL_USE_TLS = True
-# EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = data['email_host_user']
 EMAIL_HOST_PASSWORD = data['email_host_password']
 EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
@@ -145,3 +146,7 @@ LOGOUT_REDIRECT_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
 
 SITE_ID = 1  # references either localhost or the domain name of official site
+
+SESSION_SECURITY_WARN_AFTER = 300
+SESSION_SECURITY_EXPIRE_AFTER = 360
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

@@ -20,6 +20,7 @@ from capstone.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('session_security/', include('session_security.urls')),
     path('', HomePageView.as_view(), name='home'),
     path('permission_denied', Forbidden403.as_view(), name='403'),
     path('about/', AboutPageView.as_view(), name='about'),
