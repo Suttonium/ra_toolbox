@@ -1,0 +1,112 @@
+.profile-card {
+    background: #002C76;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 90px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.25s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s .25s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+
+#information_for_tracker {
+    visibility: hidden;
+}
+
+@keyframes init {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 56px;
+        height: 56px;
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        top: 50%;
+    }
+    50% {
+        top: 40%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        background: #002C76;
+        top: 100%;
+    }
+    50% {
+        top: 40%;
+    }
+    100% {
+        top: 50%;
+        background: #84888B;
+    }
+}
+
+@keyframes materia {
+    0% {
+        background: #84888B;
+    }
+    50% {
+        border-radius: 4px;
+    }
+    100% {
+        width: 1400px;
+        height: 650px;
+        background: #FFFFFF;
+        border-radius: 4px;
+    }
+}
+
+.list-group {
+    background-color: #84888B;
+    height: 100%;
+    margin: auto;
+    float: left;
+    padding-top: 0;
+    width: 200px;
+    font-size: 15px;
+}
+
+.lead {
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding-top: 10%;
+}
+
+.data-display {
+    height: 100%;
+}
+
+#roster_button {
+    margin-top: 500px;
+    color: white;
+    border: solid black;
+}
+
+#roster_button:hover {
+    border: solid white;
+}
+

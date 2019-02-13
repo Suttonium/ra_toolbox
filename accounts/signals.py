@@ -1,6 +1,7 @@
 from django.contrib.auth.models import Group
 
 from informationcards.models import StudentInformationCard
+from trackers.models import Tracker
 from .models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -15,6 +16,7 @@ def add_user_to_proper_group(sender, instance, created, **kwargs):
         if instance.is_student:
             Group.objects.get(name='Student Group').user_set.add(instance)
             StudentInformationCard.objects.create(user=instance)
+            Tracker.objects.create(user=instance)
             instance.save()
         if instance.is_hall_director:
             Group.objects.get(name='Hall Director Group').user_set.add(instance)

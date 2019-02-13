@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %} <title>Tracker</title> {% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'trackers/css/student_tracker.css' %}">
+    <script src="{% static 'trackers/js/jQuery_3_3_1_min.js' %}"></script>
+    <aside class="profile-card">
+        <div id="information_for_tracker">
+            <!--Showcase basic info about student (obtained from their info they submit from the student information card)
+            and display it here with fields that are disabled. Add a way to navigate between knock and talks and catch ups.-->
+            <div id="decision_list" data-knock-and-talk-url="{% url 'trackers:ajax-get-knock-and-talks' %}"
+                 data-obj-pk="{{ tracker.pk }}" class="list-group"
+                 data-general-information-url="{% url 'trackers:ajax-get-general-information' %}">
+                <a id="general_information_list_item" class="list-group-item" onclick="gen_info_func()"><i
+                        class="fa fa-key"></i>
+                    <span>General Information</span></a>
+                <a id="knock_and_talk_list_item" class="list-group-item" onclick="kat_func()"><i class="fa fa-key"></i>
+                    <span>Knock and Talks</span></a>
+                <a id="roster_button" href="{% url 'accounts:roster' %}" class="btn btn-success">Back to Roster</a>
+            </div>
+            <div class="jumbotron data-display" id="data_location"></div>
+        </div>
+    </aside>
+    <script src="{% static 'trackers/js/tracker.js' %}"></script>
+{% endblock %}

@@ -57,6 +57,10 @@ class StudentRegistrationForm(ModelForm):
     #             'Please provide the system with a valid email address.'))
     #     return self.cleaned_data.get('email')
 
+    def clean_email(self):
+        if User.objects.get(email=self.cleaned_data['email']):
+            raise ValidationError(_('This email is already in use. Please provide the system with another email.'))
+
     def clean(self):
         try:
             ResidentAssistant.objects.get(activation_code=self.cleaned_data.get('code_for_assigning_ra'))
@@ -104,6 +108,9 @@ class ResidentAssistantRegistrationForm(ModelForm):
     #             'This is not a valid Christopher Newport University email address. '
     #             'Please provide the system with a valid email address.'))
     #     return self.cleaned_data.get('email')
+    def clean_email(self):
+        if User.objects.get(email=self.cleaned_data['email']):
+            raise ValidationError(_('This email is already in use. Please provide the system with another email.'))
 
     def save(self, commit=True, **kwargs):
         user = super().save(commit=False)
