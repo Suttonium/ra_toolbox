@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'trackers/css/knock_and_talk_response.css' %}">
+<link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+<div class="form-row">
+    <div class="form-group col-md-4" id="div_one">
+        <a href="#" class="btn btn-primary kat_button" id="kat_one">Update Knock and Talk</a>
+        <label for="knock_and_talk_one"></label>
+        <textarea data-kat-one="{{ current_tracker.knock_and_talk_one_information }}" rows="20" class="form-control"
+                  id="knock_and_talk_one" disabled></textarea>
+        <a href="#" class="btn btn-success kat_button" id="submit_button_one"
+           data-submit-knock-and-talk="{% url 'trackers:ajax-submit-knock-and-talk' %}">Submit Knock and Talk</a>
+    </div>
+    <div class="form-group col-md-4">
+        <a href="#" class="btn btn-primary kat_button" id="kat_two">Update Knock and Talk</a>
+        <label for="knock_and_talk_two"></label>
+        <textarea data-kat-two="{{ current_tracker.knock_and_talk_two_information }}" rows="20" class="form-control"
+                  id="knock_and_talk_two" disabled></textarea>
+        <a href="#" class="btn btn-success kat_button" id="submit_button_two"
+           data-submit-knock-and-talk="{% url 'trackers:ajax-submit-knock-and-talk' %}">Submit Knock and Talk</a>
+    </div>
+    <div class="form-group col-md-4">
+        <a href="#" class="btn btn-primary kat_button" id="kat_three">Update Knock
+            and Talk</a>
+        <label for="knock_and_talk_three"></label>
+        <textarea data-kat-three="{{ current_tracker.knock_and_talk_three_information }}" rows="20" class="form-control"
+                  id="knock_and_talk_three" disabled></textarea>
+        <a href="#" class="btn btn-success kat_button" id="submit_button_three"
+           data-submit-knock-and-talk="{% url 'trackers:ajax-submit-knock-and-talk' %}">Submit Knock and Talk</a>
+    </div>
+</div>
+<script async src="{% static 'trackers/js/knock_and_talk_ajax.js' %}"></script>

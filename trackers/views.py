@@ -14,7 +14,7 @@ class StudentTrackerMainView(LoginRequiredMixin, DetailView):
 
 
 class AJAXKnockAndTalks(View):
-    template_name = 'ajax/knock_and_talk_response.html'
+    template_name = 'trackers/knock_and_talk_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('pk_being_sent')
@@ -23,9 +23,32 @@ class AJAXKnockAndTalks(View):
 
 
 class AJAXGeneralInformation(View):
-    template_name = 'ajax/general_information_response.html'
+    template_name = 'trackers/general_information_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('pk_being_sent')
         current_tracker_being_viewed = Tracker.objects.get(pk=pk_being_received)
         return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
+
+
+class AJAXSubmitKnockAndTalk(View):
+    template_name = 'trackers/submit_knock_and_talk.html'
+
+    def get(self, request):
+        pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
+        if '/' in pk_being_received:
+            pk_being_received = pk_being_received[-1]
+        current_tracker = Tracker.objects.get(pk=pk_being_received)
+        which_knock_and_talk = request.GET.get('which_kat')
+        if which_knock_and_talk == str(1):
+            current_tracker.knock_and_talk_one_information = request.GET.get("current_textarea_data")
+            current_tracker.save()
+            return render(request, self.template_name, {'kat_one': current_tracker.knock_and_talk_one_information})
+        if which_knock_and_talk == str(2):
+            current_tracker.knock_and_talk_two_information = request.GET.get("current_textarea_data")
+            current_tracker.save()
+            return render(request, self.template_name, {'kat_two': current_tracker.knock_and_talk_two_information})
+        if which_knock_and_talk == str(3):
+            current_tracker.knock_and_talk_three_information = request.GET.get("current_textarea_data")
+            current_tracker.save()
+            return render(request, self.template_name, {'kat_three': current_tracker.knock_and_talk_three_information})

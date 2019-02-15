@@ -1,0 +1,10 @@
+.kat_button {
+    color: white;
+    border: solid black;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.kat_button:hover {
+    border: solid white;
+}

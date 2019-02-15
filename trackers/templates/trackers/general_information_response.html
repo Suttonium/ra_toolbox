@@ -1,0 +1,20 @@
+{% load static %}
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="user_email"></label>
+        <input class="form-control" id="user_email" value="{{ current_tracker.user.email }}" disabled>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="user_student_id"></label>
+        <input class="form-control" id="user_student_id" value="{{ current_tracker.user.student_id }}" disabled>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-12">
+        <label for="current_general_info"></label>
+        <textarea data-current-general-information="{{ current_tracker.general_information }}" class="form-control"
+                  id="current_general_info" rows="10"
+                  disabled></textarea>
+    </div>
+</div>
+<script src="{% static 'trackers/js/general_information_ajax.js' %}"></script>
