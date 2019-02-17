@@ -32,7 +32,7 @@ class AJAXGeneralInformation(View):
 
 
 class AJAXSubmitKnockAndTalk(View):
-    template_name = 'trackers/submit_knock_and_talk.html'
+    template_name = 'trackers/knock_and_talk_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -43,12 +43,11 @@ class AJAXSubmitKnockAndTalk(View):
         if which_knock_and_talk == str(1):
             current_tracker.knock_and_talk_one_information = request.GET.get("current_textarea_data")
             current_tracker.save()
-            return render(request, self.template_name, {'kat_one': current_tracker.knock_and_talk_one_information})
         if which_knock_and_talk == str(2):
             current_tracker.knock_and_talk_two_information = request.GET.get("current_textarea_data")
             current_tracker.save()
-            return render(request, self.template_name, {'kat_two': current_tracker.knock_and_talk_two_information})
         if which_knock_and_talk == str(3):
+            print('HEREEEEEEEEEEEEEEEEEE')
             current_tracker.knock_and_talk_three_information = request.GET.get("current_textarea_data")
             current_tracker.save()
-            return render(request, self.template_name, {'kat_three': current_tracker.knock_and_talk_three_information})
+        return render(request, self.template_name, {'current_tracker': current_tracker})
