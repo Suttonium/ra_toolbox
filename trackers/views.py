@@ -47,7 +47,6 @@ class AJAXSubmitKnockAndTalk(View):
             current_tracker.knock_and_talk_two_information = request.GET.get("current_textarea_data")
             current_tracker.save()
         if which_knock_and_talk == str(3):
-            print('HEREEEEEEEEEEEEEEEEEE')
             current_tracker.knock_and_talk_three_information = request.GET.get("current_textarea_data")
             current_tracker.save()
         return render(request, self.template_name, {'current_tracker': current_tracker})

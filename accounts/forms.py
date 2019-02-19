@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 
 from django.forms import ModelForm
 from django.template.loader import render_to_string
@@ -10,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from accounts.tokens import account_activation_token
 from .models import User, Student
-from .constants import ACTIVATION_CODE_LIMIT, ATCNUEDU
+from .constants import ACTIVATION_CODE_LIMIT
 from residencehalls.models import ResidenceHall, Hallway
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
@@ -50,16 +51,27 @@ class StudentRegistrationForm(ModelForm):
         Student.objects.create(user=user, resident_assistant=resident_assistant, hallway=hallway,
                                residence_hall=residence_hall)
 
-    # def clean_email(self):
-    #     if ATCNUEDU not in self.cleaned_data.get('email'):
-    #         raise ValidationError(_(
-    #             'This is not a valid Christopher Newport University email address. '
-    #             'Please provide the system with a valid email address.'))
-    #     return self.cleaned_data.get('email')
-
     def clean_email(self):
-        if User.objects.get(email=self.cleaned_data['email']):
+        email = self.cleaned_data['email']
+        try:
+            User.objects.get(email=email)
+        except IntegrityError:
             raise ValidationError(_('This email is already in use. Please provide the system with another email.'))
+        except User.DoesNotExist:
+            return email
+        raise ValidationError(_('This email is already in use. Please provide the system with another email.'))
+
+    def clean_student_id(self):
+        student_id = self.cleaned_data['student_id']
+        try:
+            User.objects.get(student_id=student_id)
+        except IntegrityError:
+            raise ValidationError(
+                _('This student ID is already in use. Please provide the system with another student ID.'))
+        except User.DoesNotExist:
+            return student_id
+        raise ValidationError(
+            _('This student ID is already in use. Please provide the system with another student ID.'))
 
     def clean(self):
         try:
@@ -102,15 +114,27 @@ class ResidentAssistantRegistrationForm(ModelForm):
             except (ValueError, TypeError):
                 pass
 
-    # def clean_email(self):
-    #     if ATCNUEDU not in self.cleaned_data.get('email'):
-    #         raise ValidationError(_(
-    #             'This is not a valid Christopher Newport University email address. '
-    #             'Please provide the system with a valid email address.'))
-    #     return self.cleaned_data.get('email')
     def clean_email(self):
-        if User.objects.get(email=self.cleaned_data['email']):
+        email = self.cleaned_data['email']
+        try:
+            User.objects.get(email=email)
+        except IntegrityError:
             raise ValidationError(_('This email is already in use. Please provide the system with another email.'))
+        except User.DoesNotExist:
+            return email
+        raise ValidationError(_('This email is already in use. Please provide the system with another email.'))
+
+    def clean_student_id(self):
+        student_id = self.cleaned_data['student_id']
+        try:
+            User.objects.get(student_id=student_id)
+        except IntegrityError:
+            raise ValidationError(
+                _('This student ID is already in use. Please provide the system with another student ID.'))
+        except User.DoesNotExist:
+            return student_id
+        raise ValidationError(
+            _('This student ID is already in use. Please provide the system with another student ID.'))
 
     def save(self, commit=True, **kwargs):
         user = super().save(commit=False)

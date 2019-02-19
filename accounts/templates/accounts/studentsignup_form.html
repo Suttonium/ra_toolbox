@@ -52,7 +52,8 @@
                             error(s) occurred. Please resubmit the form after making the following changes:</p>
                         <ul>
                             {% for field,error in form.errors.items %}
-                                {{ error|striptags }}
+                                {{ field }} - {{ error|striptags }}
+                                <br>
                             {% endfor %}
                         </ul>
                     </div>
