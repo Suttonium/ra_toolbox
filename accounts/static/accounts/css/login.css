@@ -4,6 +4,10 @@
     border: solid black;
 }
 
+#id_form_submit:hover {
+    border: solid white;
+}
+
 label {
     color: white;
 }

@@ -50,12 +50,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    roommates = models.ManyToManyField('self')
-    suitemates = models.ManyToManyField('self')
+    roommates = models.ManyToManyField('self', blank=True)
+    suitemates = models.ManyToManyField('self', blank=True)
     resident_assistant = models.ForeignKey('ResidentAssistant', on_delete=models.CASCADE)
     residence_hall = models.ForeignKey('residencehalls.ResidenceHall', on_delete=models.CASCADE)
     suite = models.ForeignKey('residencehalls.Suite', on_delete=models.CASCADE, null=True)
     hallway = models.ForeignKey('residencehalls.Hallway', on_delete=models.CASCADE, null=True)
+    room = models.ForeignKey('residencehalls.Room', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return '{0}'.format(self.user.email)
@@ -70,6 +71,7 @@ class ResidentAssistant(models.Model):
     activation_code = models.CharField(max_length=ACTIVATION_CODE_LIMIT, default='')
     residence_hall = models.ForeignKey('residencehalls.ResidenceHall', on_delete=models.CASCADE)
     suite = models.ForeignKey('residencehalls.Suite', on_delete=models.CASCADE, null=True)
+    room = models.ForeignKey('residencehalls.Room', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return '{0}'.format(self.user.email)

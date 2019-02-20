@@ -1,20 +1,44 @@
 {% load static %}
-<div class="form-row">
-    <div class="form-group col-md-6">
-        <label for="user_email"></label>
-        <input class="form-control" id="user_email" value="{{ current_tracker.user.email }}" disabled>
+<link rel="stylesheet" href="{% static  'trackers/css/general_information_response.css' %}">
+<div id="everything">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="user_email">Student Email</label>
+            <input class="form-control" id="user_email" value="{{ current_tracker.user.email }}" disabled>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="user_student_id">Student ID</label>
+            <input class="form-control" id="user_student_id" value="{{ current_tracker.user.student_id }}" disabled>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-        <label for="user_student_id"></label>
-        <input class="form-control" id="user_student_id" value="{{ current_tracker.user.student_id }}" disabled>
+    <div class="form-row">
+        <div class="form-group col-md-10">
+            <label for="suite_and_room">Room Assignment</label>
+            <input class="form-control" value="{% if room_assignment %}{{ room_assignment }}{% endif %}" type="text"
+                   id="suite_and_room" disabled>
+        </div>
+        <div class="form-group col-md-2">
+            <a href="#" class="btn btn-primary kat_button" id="unlock_button">Unlock</a>
+            <a href="#" class="btn btn-success kat_button" id="lock_button" hidden
+               data-submit-room-assignment="{% url 'trackers:ajax-submit-room-assignment' %}">Lock</a>
+        </div>
     </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-12">
-        <label for="current_general_info"></label>
-        <textarea data-current-general-information="{{ current_tracker.general_information }}" class="form-control"
-                  id="current_general_info" rows="10"
-                  disabled></textarea>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="current_general_info">General Information</label>
+            <textarea data-current-general-information="{{ current_tracker.general_information }}" class="form-control"
+                      id="current_general_info" rows="10"
+                      disabled></textarea>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <a href="#" class="btn btn-primary kat_button" id="update_gen_info">Update General Information</a>
+            <a href="#" class="btn btn-success kat_button" id="submit_gen_info" hidden
+               data-submit-general-information="{% url 'trackers:ajax-submit-general-information' %}">Submit General
+                Information</a>
+        </div>
     </div>
 </div>
 <script src="{% static 'trackers/js/general_information_ajax.js' %}"></script>
+<script src="{% static 'trackers/js/suite_and_room_ajax_submission.js' %}"></script>

@@ -4,7 +4,7 @@ from django.core.management import BaseCommand
 from django.utils.crypto import get_random_string
 
 from accounts.models import User, ResidentAssistant, Student
-from residencehalls.models import ResidenceHall
+from residencehalls.models import ResidenceHall, Hallway
 
 
 class Command(BaseCommand):
@@ -23,17 +23,17 @@ class Command(BaseCommand):
                                                 password='TEST', is_active=True, is_resident_assistant=True)
 
         james_river, created = ResidenceHall.objects.get_or_create(name='James River')
+        fourth_theme_unit = Hallway.objects.get(floor='4th Floor Theme Unit')
 
         ra = ResidentAssistant.objects.create(user=ra_user, activation_code='TESTCODE',
                                               residence_hall=james_river)
 
-        # student_user_one = User.objects.create_user(email='austinsutton03@gmail.com', student_id='00915098',
-        #                                             is_active=True,
-        #                                             is_student=True, is_staff=True, password='TEST')
-        #
-        # Student.objects.create(user=student_user_one, resident_assistant=ra, residence_hall=james_river)
+        fourth_theme_unit.resident_assistant = ra
+        fourth_theme_unit.save()
+
         for i in range(1, 9):
             temp_user = User.objects.create_user(email=get_random_string(), student_id='0000000' + str(i),
                                                  is_active=True,
                                                  is_student=True, is_staff=True, password='TEST')
-            Student.objects.create(user=temp_user, resident_assistant=ra, residence_hall=james_river)
+            Student.objects.create(user=temp_user, resident_assistant=ra, residence_hall=james_river,
+                                   hallway=fourth_theme_unit)

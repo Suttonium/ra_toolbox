@@ -21,18 +21,20 @@ class ResidenceHall(models.Model):
 class Suite(models.Model):
     number = models.IntegerField()
     hallway = models.ForeignKey('Hallway', on_delete=models.CASCADE)
+    residence_hall = models.ForeignKey(ResidenceHall, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = _('Suite')
         verbose_name_plural = _('Suites')
 
     def __str__(self):
-        return "{0} Room #{1}".format(self.hallway.residence_hall.name, self.number)
+        return "{0} Suite #{1}".format(self.hallway.residence_hall.name, self.number)
 
 
 class Room(models.Model):
-    suite = models.ForeignKey(Suite, on_delete=models.CASCADE)
+    suite = models.ForeignKey(Suite, on_delete=models.CASCADE, null=True)
     letter = models.CharField(max_length=1)
+    residence_hall = models.ForeignKey(ResidenceHall, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = _('Room')

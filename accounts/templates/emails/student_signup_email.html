@@ -4,6 +4,6 @@
 
     You have attempted to register as a Student in {{ floor.residence_hall }}
 
-    http://{{ domain }}{% url 'accounts:activate' uidb64=uidb64 token=token %}
+    http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
 
 {% endautoescape %}
