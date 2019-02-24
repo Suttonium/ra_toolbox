@@ -8,3 +8,38 @@
 .kat_button:hover {
     border: solid white;
 }
+
+.room_button {
+    color: white;
+    border: solid black;
+    margin-bottom: 10px;
+    margin-top: 27px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: auto;
+}
+
+.room_button:hover {
+    border: solid white;
+}
+
+#soc_label {
+    margin-bottom: 3px;
+}
+
+#student_of_concern {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#remove_soc_button {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.mandatory {
+    color: red;
+}

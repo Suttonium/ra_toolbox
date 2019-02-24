@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'widget_tweaks',
     'session_security',
+    'easyaudit'
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'accounts.middleware.RequestMiddleware',
+    'easyaudit.middleware.easyaudit.EasyAuditMiddleware',
 ]
 
 ROOT_URLCONF = 'capstone.urls'

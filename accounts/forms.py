@@ -166,7 +166,6 @@ class ResidentAssistantRegistrationForm(ModelForm):
     def clean(self):
         if self.cleaned_data.get('password') != self.cleaned_data.get('password_confirmation'):
             raise ValidationError(_('Passwords do not match. Please re-enter your password information.'))
-
         return self.cleaned_data
 
     class Meta:

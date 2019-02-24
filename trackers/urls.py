@@ -10,4 +10,5 @@ urlpatterns = [
     path('ajax/submit_general_information/', AJAXSubmitGeneralInformation.as_view(),
          name='ajax-submit-general-information'),
     path('ajax/submit_room_assignment/', AJAXSubmitRoomAssignment.as_view(), name='ajax-submit-room-assignment'),
+    path('ajax/student_of_concern_decision/', AJAXStudentOfConcernDecision.as_view(), name='ajax-soc-decision')
 ]
