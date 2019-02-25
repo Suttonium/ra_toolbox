@@ -12,24 +12,25 @@
         }, 50, function () {
             lock_button.removeAttr('hidden');
             unlock_button.prop('hidden', true);
-            if (room_assignment.val() === "") {
+            // if final char is a letter, needed for room assignment
+            if (!(room_assignment.val() === "")) {
+                if (!(room_assignment.val().length < 4 || room_assignment.val().length > 5)) {
+                    if (room_assignment.val().slice(-1).toLowerCase() !== room_assignment.val().slice(-1).toUpperCase()) {
+                        unlock_submission(lock_button, room_assignment_validation, room_assignment);
+                    } else {
+                        lock_submission(lock_button, room_assignment_validation, room_assignment,
+                            " Final character must be a letter to fulfill room assignment.")
+                    }
+                } else {
+                    lock_submission(lock_button, room_assignment_validation, room_assignment,
+                        " Room assignment must be 4 or 5 characters long.");
+                }
+            } else {
                 room_assignment_validation.html("");
                 lock_button.css('pointer-events', 'none');
                 lock_button.removeClass('btn-success');
                 lock_button.addClass('btn-secondary');
                 room_assignment.css('border-color', '');
-            } else if (room_assignment.val().length < 4 || room_assignment.val().length > 5) {
-                room_assignment_validation.html(" Room assignment must be 4 or 5 characters long.");
-                lock_button.css('pointer-events', 'none');
-                lock_button.removeClass('btn-success');
-                lock_button.addClass('btn-secondary');
-                room_assignment.css('border-color', 'red');
-            } else {
-                room_assignment_validation.html("");
-                lock_button.css('pointer-events', 'auto');
-                lock_button.removeClass('btn-secondary');
-                lock_button.addClass('btn-success');
-                room_assignment.css('border-color', 'green');
             }
         });
     });
@@ -60,24 +61,47 @@
     });
 
     room_assignment.change(function () {
-        if (room_assignment.val() === "") {
+        // if final char is a letter, needed for room assignment
+        if (!(room_assignment.val() === "")) {
+            if (!(room_assignment.val().length < 4 || room_assignment.val().length > 5)) {
+                if (room_assignment.val().slice(-1).toLowerCase() !== room_assignment.val().slice(-1).toUpperCase()) {
+                    unlock_submission(lock_button, room_assignment_validation, room_assignment);
+                } else {
+                    lock_submission(lock_button, room_assignment_validation, room_assignment,
+                        " Final character must be a letter to fulfill room assignment.")
+                }
+            } else {
+                lock_submission(lock_button, room_assignment_validation, room_assignment,
+                    " Room assignment must be 4 or 5 characters long.");
+            }
+        } else {
             room_assignment_validation.html("");
             lock_button.css('pointer-events', 'none');
             lock_button.removeClass('btn-success');
             lock_button.addClass('btn-secondary');
             room_assignment.css('border-color', '');
-        } else if (room_assignment.val().length < 4 || room_assignment.val().length > 5) {
-            room_assignment_validation.html(" Room assignment must be 4 or 5 characters long.");
-            lock_button.css('pointer-events', 'none');
-            lock_button.removeClass('btn-success');
-            lock_button.addClass('btn-secondary');
-            room_assignment.css('border-color', 'red');
-        } else {
-            room_assignment_validation.html("");
-            lock_button.css('pointer-events', 'auto');
-            lock_button.removeClass('btn-secondary');
-            lock_button.addClass('btn-success');
-            room_assignment.css('border-color', 'green');
         }
     });
+
+    function lock_submission(button_locked, assignment_span, assignment, message) {
+        assignment_span.html(message);
+        button_locked.css('pointer-events', 'none');
+        button_locked.removeClass('btn-success');
+        button_locked.addClass('btn-secondary');
+        assignment.css('border-color', 'red');
+    }
+
+    function unlock_submission(button_unlocked, assignment_span, assignment, message = "") {
+        assignment_span.html(message);
+        button_unlocked.css('pointer-events', 'auto');
+        button_unlocked.removeClass('btn-secondary');
+        button_unlocked.addClass('btn-success');
+        assignment.css('border-color', 'green');
+    }
+
+    // room_assignment_validation.html(" Final character must be a letter to fulfill room assignment.");
+    // lock_button.css('pointer-events', 'none');
+    // lock_button.removeClass('btn-success');
+    // lock_button.addClass('btn-secondary');
+    // room_assignment.css('border-color', 'red');
 }

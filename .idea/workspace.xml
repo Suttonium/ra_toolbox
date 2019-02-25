@@ -49,7 +49,6 @@
       <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/models.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/tests.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trackers/static/trackers/js/student_of_concern_activation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/Raymond_Sutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/Raymond_Sutton.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
@@ -96,14 +95,6 @@
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/capstone/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/css/general_information_response.css" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/css/general_information_response.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,17 +106,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -201,32 +182,6 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -314,7 +269,7 @@
       <workItem from="1550703530523" duration="1000000" />
       <workItem from="1550704796501" duration="23000" />
       <workItem from="1550704852958" duration="2901000" />
-      <workItem from="1550852557787" duration="4470000" />
+      <workItem from="1550852557787" duration="5884000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -372,11 +327,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550696389778</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="did some submission security js to the tracker room assignment field">
+      <created>1550979887920</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1550979887921</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38733000" />
+    <option name="totallyTimeSpent" value="40147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -395,7 +357,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50143063" side_tool="true" weight="0.27831325" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4985694" visible="true" weight="0.27831325" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4985694" weight="0.27831325" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -419,16 +381,10 @@
     <MESSAGE value="did some code refactoring and updated the logout redirect url" />
     <MESSAGE value="fixed some authentication bugs with the forms cleaned_data. Added a custom template filter to better display the forms errors." />
     <MESSAGE value="added the functionality to allow reslife to submit the room assignment of residents." />
-    <option name="LAST_COMMIT_MESSAGE" value="added the functionality to allow reslife to submit the room assignment of residents." />
+    <MESSAGE value="did some submission security js to the tracker room assignment field" />
+    <option name="LAST_COMMIT_MESSAGE" value="did some submission security js to the tracker room assignment field" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/info.html" />
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -744,10 +700,13 @@
     <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/password_validator.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/tracker.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        <state relative-caret-position="675">
+          <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
         </state>
       </provider>
     </entry>
