@@ -94,13 +94,10 @@
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/capstone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/raymondsutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/raymondsutton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +109,29 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trackers/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="225">
+                <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,6 +144,8 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -169,6 +190,7 @@
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" />
         <option value="$PROJECT_DIR$/trackers/views.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -192,6 +214,11 @@
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="trackers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -205,7 +232,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -280,7 +307,7 @@
       <workItem from="1550852557787" duration="5980000" />
       <workItem from="1551135223732" duration="3529000" />
       <workItem from="1551148733744" duration="464000" />
-      <workItem from="1551191007804" duration="2450000" />
+      <workItem from="1551191007804" duration="3342000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -345,11 +372,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550979887921</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updated tracker elements to simply get dumped json data back from the django views. Rather than updating the entire DOM, I am now just updating the current value, but still saving the data correctly.">
+      <created>1551193769297</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551193769297</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46686000" />
+    <option name="totallyTimeSpent" value="47578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -365,7 +399,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.27831325" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.27831325" />
@@ -383,6 +417,7 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/../RCF_CAPSTONE/master" />
     </ignored-roots>
     <MESSAGE value="hello, world" />
     <MESSAGE value="adding a custom user manager to handle the creation of the custom user model that will be added later." />
@@ -397,15 +432,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="updated tracker elements to simply get dumped json data back from the django views. Rather than updating the entire DOM, I am now just updating the current value, but still saving the data correctly." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/informationcards/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/informationcards/constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -686,13 +712,6 @@
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
@@ -704,6 +723,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

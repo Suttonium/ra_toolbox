@@ -6,6 +6,16 @@ The data for residence life is currently stored in numerous google sheets, forms
 The system grants resident assistants and students the ability to sign up, designating which type of user they are (RA or student). If an RA attempts to sign up, the hall director for the building is emailed a verification email to assure non-resident assistant students cannot signup as RAs. After signing up, RAs are  sent an email to showcase their registration occurred correctly. This email houses a link for the RA to fill out their student security questions and student information cards. RAs will also be sent an access code in this email that they may send out to their residents. Once the residents receive this code, they then sign up and submit the activation code to get their RA and hallway assignment. They also receive an email with a security questions link. This builds a residence hall in the system and also builds the roster for the specified RA. RAs can then view their roster and view the individual trackers for each student. 
 
 ## Deployment
+In order to run this system, a few steps must be taken.
+1) Pull the existing repository code to the IDE of your choice.
+2) Once the code has been pulled, you must remove all of the current migrations folders.
+     - Please refer to the following [link](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)  about resetting migrations.
+3) If you followed any steps showcased throughout the above link, you should have already ran the below terminal commands while within your project directory to initialize your database and migrate your models.
+     - ```python/python3 manage.py makemigrations```
+     - ```python/python3 manage.py migrate```
+     - If a models.py file is ever modified, be sure to run the above commands once again. 
+
+
 
 ## Built With
 - [Django](https://www.djangoproject.com/)
@@ -13,7 +23,7 @@ The system grants resident assistants and students the ability to sign up, desig
 - [Bootstrap](https://getbootstrap.com/)
 
 
-## Versioning
+## Version Control
 ```
 Python                    3.7
 Django                    2.1.7
