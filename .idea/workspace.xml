@@ -49,10 +49,6 @@
       <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/models.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/tests.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/trackers/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trackers/static/trackers/js/disable_enter_button_submission.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trackers/templates/trackers/student_of_concern_ajax_response.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/Raymond_Sutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/dictionaries/Raymond_Sutton.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
@@ -98,13 +94,12 @@
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/capstone.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/css/general_information_response.css" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/css/general_information_response.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/student_of_concern_activation.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/student_of_concern_activation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/knock_and_talk_response.html" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/templates/trackers/knock_and_talk_response.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trackers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,35 +112,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="14" selection-start-line="14" selection-end-line="26" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -185,7 +152,6 @@
         <option value="$PROJECT_DIR$/accounts/templatetags/aufwiedersehen.py" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html" />
         <option value="$PROJECT_DIR$/accounts/static/accounts/css/login.css" />
-        <option value="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/generate_suite_and_room_information.js" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/residencehalls/models.py" />
@@ -199,9 +165,10 @@
         <option value="$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/css/general_information_response.css" />
         <option value="$PROJECT_DIR$/trackers/templates/trackers/knock_and_talk_response.html" />
-        <option value="$PROJECT_DIR$/trackers/views.py" />
-        <option value="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" />
         <option value="$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" />
+        <option value="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" />
+        <option value="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" />
+        <option value="$PROJECT_DIR$/trackers/views.py" />
       </list>
     </option>
   </component>
@@ -224,32 +191,6 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,7 +278,9 @@
       <workItem from="1550704796501" duration="23000" />
       <workItem from="1550704852958" duration="2901000" />
       <workItem from="1550852557787" duration="5980000" />
-      <workItem from="1551135223732" duration="3476000" />
+      <workItem from="1551135223732" duration="3529000" />
+      <workItem from="1551148733744" duration="464000" />
+      <workItem from="1551191007804" duration="2450000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -406,12 +349,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43719000" />
+    <option name="totallyTimeSpent" value="46686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29256082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30114448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -424,8 +367,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50143063" side_tool="true" weight="0.27831325" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4985694" weight="0.27831325" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.27831325" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.27831325" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -450,7 +393,8 @@
     <MESSAGE value="fixed some authentication bugs with the forms cleaned_data. Added a custom template filter to better display the forms errors." />
     <MESSAGE value="added the functionality to allow reslife to submit the room assignment of residents." />
     <MESSAGE value="did some submission security js to the tracker room assignment field" />
-    <option name="LAST_COMMIT_MESSAGE" value="did some submission security js to the tracker room assignment field" />
+    <MESSAGE value="updated tracker elements to simply get dumped json data back from the django views. Rather than updating the entire DOM, I am now just updating the current value, but still saving the data correctly." />
+    <option name="LAST_COMMIT_MESSAGE" value="updated tracker elements to simply get dumped json data back from the django views. Rather than updating the entire DOM, I am now just updating the current value, but still saving the data correctly." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/informationcards/forms.py">
@@ -644,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/knock_and_talk_ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -732,37 +669,41 @@
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/student_of_concern_ajax_response.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="14" selection-start-line="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+        <state relative-caret-position="675">
+          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="107" />
         </state>
       </provider>
     </entry>

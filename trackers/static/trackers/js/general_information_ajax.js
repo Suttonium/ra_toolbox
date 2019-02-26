@@ -44,7 +44,7 @@
                 'current_site_url_with_pk': site_url,
                 'current_textarea_data': current_general_info.val()
             }, success(data) {
-                $("#general_info_div").html(data)
+                $("#current_general_info").val(data.general_information)
             }
         });
     });

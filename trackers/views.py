@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import DetailView
@@ -6,6 +7,7 @@ from django.views.generic import DetailView
 from residencehalls.models import Suite, Room
 from trackers.forms import TrackerForm
 from trackers.models import Tracker
+import json
 
 
 class StudentTrackerMainView(LoginRequiredMixin, DetailView):
@@ -58,7 +60,7 @@ class AJAXSubmitKnockAndTalk(View):
 
 
 class AJAXSubmitGeneralInformation(View):
-    template_name = 'trackers/general_information_ajax_response.html'
+    content_type = 'application/json'
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -67,12 +69,12 @@ class AJAXSubmitGeneralInformation(View):
         current_tracker = Tracker.objects.get(pk=pk_being_received)
         current_tracker.general_information = request.GET.get("current_textarea_data")
         current_tracker.save()
-        context = {'current_tracker': current_tracker}
-        return render(request, self.template_name, context)
+        data = json.dumps({'current_tracker': current_tracker})
+        return HttpResponse(data, content_type=self.content_type)
 
 
 class AJAXSubmitRoomAssignment(View):
-    template_name = 'trackers/room_assignment_ajax_response.html'
+    context_type = 'application/json'
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -104,8 +106,8 @@ class AJAXSubmitRoomAssignment(View):
         room_assignment = str(number) + letter if suite and potential_room else None
         current_tracker.user.student.save()
 
-        context = {'room_assignment': room_assignment}
-        return render(request, self.template_name, context)
+        data = json.dumps({'room_assignment': room_assignment})
+        return HttpResponse(data, content_type=self.context_type)
 
 
 class AJAXStudentOfConcernDecision(View):
