@@ -5,6 +5,12 @@ The data for residence life is currently stored in numerous google sheets, forms
 ## General Workflow
 The system grants resident assistants and students the ability to sign up, designating which type of user they are (RA or student). If an RA attempts to sign up, the hall director for the building is emailed a verification email to assure non-resident assistant students cannot signup as RAs. After signing up, RAs are  sent an email to showcase their registration occurred correctly. This email houses a link for the RA to fill out their student security questions and student information cards. RAs will also be sent an access code in this email that they may send out to their residents. Once the residents receive this code, they then sign up and submit the activation code to get their RA and hallway assignment. They also receive an email with a security questions link. This builds a residence hall in the system and also builds the roster for the specified RA. RAs can then view their roster and view the individual trackers for each student. 
 
+## Built With
+- [Django](https://www.djangoproject.com/)
+- [jQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+
 ## Versioning
 ```
 Python                    3.7
@@ -14,6 +20,8 @@ django-easy-audit         1.0.0
 django-formtools          2.1
 django-session-security   2.6.5
 django-widget-tweaks      1.4.3
+jQuery                    3.3.1
+Bootstrap                 4.3.1
 ```
 
 
