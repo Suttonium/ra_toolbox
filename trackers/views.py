@@ -58,26 +58,21 @@ class AJAXSubmitKnockAndTalk(View):
 
 
 class AJAXSubmitGeneralInformation(View):
-    template_name = 'trackers/general_information_response.html'
+    template_name = 'trackers/general_information_ajax_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
         if '/' in pk_being_received:
             pk_being_received = pk_being_received[-1]
         current_tracker = Tracker.objects.get(pk=pk_being_received)
-        suite = current_tracker.user.student.suite
-        room = current_tracker.user.student.room
         current_tracker.general_information = request.GET.get("current_textarea_data")
         current_tracker.save()
-
-        room_assignment = str(suite.number) + room.letter if suite and room else None
-
-        context = {'current_tracker': current_tracker, 'room_assignment': room_assignment}
+        context = {'current_tracker': current_tracker}
         return render(request, self.template_name, context)
 
 
 class AJAXSubmitRoomAssignment(View):
-    template_name = 'trackers/general_information_response.html'
+    template_name = 'trackers/room_assignment_ajax_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -109,21 +104,18 @@ class AJAXSubmitRoomAssignment(View):
         room_assignment = str(number) + letter if suite and potential_room else None
         current_tracker.user.student.save()
 
-        context = {'current_tracker': current_tracker, 'room_assignment': room_assignment}
+        context = {'room_assignment': room_assignment}
         return render(request, self.template_name, context)
 
 
 class AJAXStudentOfConcernDecision(View):
-    template_name = 'trackers/general_information_response.html'
+    template_name = 'trackers/student_of_concern_ajax_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
         if '/' in pk_being_received:
             pk_being_received = pk_being_received[-1]
         current_tracker = Tracker.objects.get(pk=pk_being_received)
-        suite = current_tracker.user.student.suite
-        room = current_tracker.user.student.room
-        room_assignment = str(suite.number) + room.letter if suite and room else None
 
         if request.GET.get('activate'):
             current_tracker.student_of_concern = True
@@ -132,5 +124,5 @@ class AJAXStudentOfConcernDecision(View):
             current_tracker.student_of_concern = False
             current_tracker.save()
 
-        context = {'current_tracker': current_tracker, 'room_assignment': room_assignment}
+        context = {'current_tracker': current_tracker}
         return render(request, self.template_name, context)

@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'trackers/css/general_information_response.css' %}">
+<div class="form-group col-md-10" id="room_assignment_span_div">
+    <label for="suite_and_room">Room Assignment
+        <span class="mandatory" id="room_assignment_validation"></span></label>
+    <input class="form-control" value="{% if room_assignment %}{{ room_assignment }}{% endif %}" type="text"
+           id="suite_and_room" disabled>
+</div>
+<div class="form-group col-md-2" id="room_assignment_submission_div">
+    <a href="#" class="btn btn-primary room_button" id="unlock_button">Unlock</a>
+    <a href="#" class="btn btn-success room_button" id="lock_button" hidden
+       data-submit-room-assignment="{% url 'trackers:ajax-submit-room-assignment' %}">Lock</a>
+</div>
+<script src="{% static 'trackers/js/suite_and_room_ajax_submission.js' %}"></script>

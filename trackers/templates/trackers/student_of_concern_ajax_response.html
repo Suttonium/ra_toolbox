@@ -1,0 +1,9 @@
+{% load static %}
+<label for="student_of_concern" id="soc_label">Student of Concern</label>
+<a href="#" class="btn btn-danger kat_button" id="student_of_concern"
+   data-soc-decision="{% url 'trackers:ajax-soc-decision' %}"
+   {% if current_tracker.student_of_concern %}hidden{% endif %}>Activate S.O.C.</a>
+<a href="#" class="btn btn-success kat_button" id="remove_soc_button"
+   data-soc-decision="{% url 'trackers:ajax-soc-decision' %}"
+   {% if not current_tracker.student_of_concern %}hidden{% endif %}>Deactivate S.O.C.</a>
+<script src="{% static 'trackers/js/student_of_concern_activation.js' %}"></script>

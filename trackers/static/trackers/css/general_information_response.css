@@ -43,3 +43,16 @@
 .mandatory {
     color: red;
 }
+
+#room_assignment_span_div {
+    display: inline-block;
+    margin-left: -25px;
+}
+
+#room_assignment_submission_div {
+    display: inline-block
+}
+
+#unlock_button, #lock_button {
+    margin-top: 5px;
+}

@@ -3,18 +3,19 @@
     let room_assignment = $("#suite_and_room");
     let lock_button = $("#lock_button");
     let room_assignment_validation = $("#room_assignment_validation");
+    let everything = $("#everything");
 
-    unlock_button.click(function () {
-        room_assignment.removeAttr('disabled');
-        room_assignment.css('background-color', 'white');
+    everything.on('click', '#unlock_button', function () {
         unlock_button.animate({
-            display: ""
-        }, 50, function () {
+            opacity: 0
+        }, 500, function () {
+            unlock_button.remove();
             lock_button.removeAttr('hidden');
-            unlock_button.prop('hidden', true);
-            // if final char is a letter, needed for room assignment
+            room_assignment.removeAttr('disabled');
+            room_assignment.css('background-color', 'white');
             if (!(room_assignment.val() === "")) {
                 if (!(room_assignment.val().length < 4 || room_assignment.val().length > 5)) {
+                    // if final char is a letter, needed for room assignment
                     if (room_assignment.val().slice(-1).toLowerCase() !== room_assignment.val().slice(-1).toUpperCase()) {
                         unlock_submission(lock_button, room_assignment_validation, room_assignment);
                     } else {
@@ -35,18 +36,14 @@
         });
     });
 
-    lock_button.click(function () {
+    everything.on('click', '#lock_button', function () {
         room_assignment.prop('disabled', true);
         room_assignment.css('background-color', '#e9ecef');
         lock_button.animate({
-            display: ""
-        }, 50, function () {
-            unlock_button.removeAttr('hidden');
-            lock_button.prop('hidden', true);
-        });
+            opacity: 0
+        }, 500);
         room_assignment.css('border-color', '');
         room_assignment_validation.html('');
-
         let url = lock_button.attr('data-submit-room-assignment');
         let site_url = $(location).attr("href");
         $.ajax({
@@ -55,7 +52,8 @@
                 'current_site_url_with_pk': site_url,
                 'current_room_assignment': room_assignment.val()
             }, success(data) {
-                $("#everything").html(data)
+                lock_button.remove();
+                $("#room_assignment_div").html(data)
             }
         });
     });
@@ -99,9 +97,4 @@
         assignment.css('border-color', 'green');
     }
 
-    // room_assignment_validation.html(" Final character must be a letter to fulfill room assignment.");
-    // lock_button.css('pointer-events', 'none');
-    // lock_button.removeClass('btn-success');
-    // lock_button.addClass('btn-secondary');
-    // room_assignment.css('border-color', 'red');
 }

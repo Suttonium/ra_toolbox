@@ -19,7 +19,7 @@
                 'current_site_url_with_pk': site_url,
                 'activate': true
             }, success(data) {
-                $("#everything").html(data)
+                $("#student_of_concern_div").html(data)
             }
         })
     });
@@ -42,7 +42,7 @@
                 'current_site_url_with_pk': site_url,
                 'deactivate': true
             }, success(data) {
-                $("#everything").html(data)
+                $("#student_of_concern_div").html(data)
             }
         })
     });
