@@ -13,3 +13,6 @@
 #student_info_card_form {
     color: white;
 }
+.mandatory {
+    color: red;
+}

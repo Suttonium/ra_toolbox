@@ -11,3 +11,7 @@
     border: solid black;
     width: 100%;
 }
+
+.mandatory {
+    color: red;
+}
