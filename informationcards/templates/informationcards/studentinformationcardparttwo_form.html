@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
+{% load aufwiedersehen %}
 {% block title %}<title>Information Card Part Two</title>{% endblock %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'informationcards/css/studentinformationcardparttwo_form.css' %}">
@@ -29,7 +30,12 @@
                             error(s) occurred. Please resubmit the form after making the following changes:</p>
                         <ul>
                             {% for field,error in form.errors.items %}
-                                {{ field }} - {{ error|striptags }}
+                                {% if field != '__all__' %}
+                                    {{ field|title|cut:"_" }} - {{ error|striptags }}
+                                {% else %}
+                                    {{ error|striptags }}
+                                {% endif %}
+                                <br>
                             {% endfor %}
                         </ul>
                     </div>

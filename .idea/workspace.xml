@@ -94,10 +94,10 @@
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/residencehalls/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/raymondsutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/raymondsutton.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informationcards/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/informationcards/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informationcards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/informationcards/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,22 +111,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trackers/views.py">
+        <entry file="file://$PROJECT_DIR$/informationcards/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="210">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/informationcards/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/informationcards/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-163">
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -153,7 +176,6 @@
       <list>
         <option value="$PROJECT_DIR$/accounts/managers.py" />
         <option value="$PROJECT_DIR$/accounts/constants.py" />
-        <option value="$PROJECT_DIR$/informationcards/views.py" />
         <option value="$PROJECT_DIR$/templates/sections.html" />
         <option value="$PROJECT_DIR$/static/css/sections.css" />
         <option value="$PROJECT_DIR$/accounts/management/commands/genesis.py" />
@@ -169,7 +191,6 @@
         <option value="$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardpartthree_form.css" />
         <option value="$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardpartthree_form.html" />
         <option value="$PROJECT_DIR$/trackers/models.py" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" />
         <option value="$PROJECT_DIR$/accounts/templatetags/aufwiedersehen.py" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html" />
         <option value="$PROJECT_DIR$/accounts/static/accounts/css/login.css" />
@@ -191,6 +212,9 @@
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" />
         <option value="$PROJECT_DIR$/trackers/views.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/informationcards/views.py" />
+        <option value="$PROJECT_DIR$/informationcards/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" />
       </list>
     </option>
   </component>
@@ -217,7 +241,20 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="trackers" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -307,7 +344,8 @@
       <workItem from="1550852557787" duration="5980000" />
       <workItem from="1551135223732" duration="3529000" />
       <workItem from="1551148733744" duration="464000" />
-      <workItem from="1551191007804" duration="3342000" />
+      <workItem from="1551191007804" duration="3979000" />
+      <workItem from="1551323495606" duration="1112000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -379,16 +417,23 @@
       <option name="project" value="LOCAL" />
       <updated>1551193769297</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="readme updates">
+      <created>1551195564472</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1551195564472</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47578000" />
+    <option name="totallyTimeSpent" value="49327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30114448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30543634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -429,30 +474,10 @@
     <MESSAGE value="added the functionality to allow reslife to submit the room assignment of residents." />
     <MESSAGE value="did some submission security js to the tracker room assignment field" />
     <MESSAGE value="updated tracker elements to simply get dumped json data back from the django views. Rather than updating the entire DOM, I am now just updating the current value, but still saving the data correctly." />
-    <option name="LAST_COMMIT_MESSAGE" value="updated tracker elements to simply get dumped json data back from the django views. Rather than updating the entire DOM, I am now just updating the current value, but still saving the data correctly." />
+    <MESSAGE value="readme updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme updates" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/informationcards/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/informationcards/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/informationcards/static/informationcards/css/studentinformationcardparttwo_form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/informationcards/templates/informationcards/studentinformationcardparttwo_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -464,13 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="77" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/informationcards/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -503,22 +521,8 @@
     <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/ra_or_student.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/templatetags/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="62" column="63" lean-forward="true" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/templatetags/aufwiedersehen.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -648,16 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="37" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/signup_form.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -695,23 +689,8 @@
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/student_of_concern_ajax_response.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" />
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html" />
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
@@ -726,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -740,6 +712,82 @@
             <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/tokens.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="61" lean-forward="true" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informationcards/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
         </state>
       </provider>
     </entry>

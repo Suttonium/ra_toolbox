@@ -12,7 +12,7 @@ from informationcards.forms import *
 
 
 # Create your views here.
-class ActivateResidentAssistantAccount(View):
+class ActivateAccount(View):
     template_name = 'informationcards/studentinformationcardpartone_form.html'
 
     def get(self, request, uidb64, token):
