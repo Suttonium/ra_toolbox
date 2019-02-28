@@ -10,4 +10,6 @@ urlpatterns = [
     path('register/student', StudentSignUpView.as_view(), name='student-signup'),
     path('register/resident_assistant', ResidentAssistantSignUpView.as_view(), name='ra-signup'),
     path('roster/', Roster.as_view(), name='roster'),
+    path('ajax/validate_email/', ValidateEmailView.as_view(), name='ajax-validate-email'),
+    path('ajax/validate_student_id/', ValidateStudentID.as_view(), name='ajax-validate-student-id'),
 ]

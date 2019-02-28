@@ -1,5 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
 from django.urls import reverse
+from django.views import View
 from django.views.generic import TemplateView, CreateView, ListView
 
 # Create your views here.
@@ -37,3 +39,27 @@ class Roster(LoginRequiredMixin, ListView):
         user = self.request.user
         context['current_student_list'] = user.residentassistant.student_set.all()
         return context
+
+
+class ValidateEmailView(View):
+    email_input = 'email_input'
+
+    def get(self, request):
+        email = request.GET.get(self.email_input)
+        try:
+            user = User.objects.get(email__iexact=email)
+        except User.DoesNotExist:
+            user = None
+        return HttpResponse(True) if user is not None else HttpResponse(False)
+
+
+class ValidateStudentID(View):
+    student_id_input = 'student_id_val'
+
+    def get(self, request):
+        student_id = request.GET.get(self.student_id_input)
+        try:
+            user = User.objects.get(student_id=student_id)
+        except User.DoesNotExist:
+            user = None
+        return HttpResponse(True) if user is not None else HttpResponse(False)

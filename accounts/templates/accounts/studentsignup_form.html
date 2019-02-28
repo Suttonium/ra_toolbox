@@ -5,7 +5,8 @@
 {% block title %} <title>Student Signup</title> {% endblock %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'accounts/css/signup_form.css' %}">
-    <form action="" id="resident_assistant_form" method="POST" novalidate>
+    <form action="" id="resident_assistant_form" method="POST" data-email-url="{% url 'accounts:ajax-validate-email' %}"
+          data-studentid-url="{% url 'accounts:ajax-validate-student-id' %}" novalidate>
         {% csrf_token %}
         <div class="container">
             <div id="id_form_jumbotron" class="jumbotron text-white">
@@ -67,5 +68,8 @@
         </div>
     </form>
     {% block head-javascript %}
+        <script src="{% static 'accounts/js/email_validator.js' %}"></script>
+        <script src="{% static 'accounts/js/studentid_validator.js' %}"></script>
+        <script src="{% static 'accounts/js/password_validator.js' %}"></script>
     {% endblock %}
 {% endblock %}
