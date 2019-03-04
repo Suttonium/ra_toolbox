@@ -16,8 +16,6 @@ class Command(BaseCommand):
         warwick = ResidenceHall.objects.get(name='Warwick')
         santoro = ResidenceHall.objects.get(name='Santoro')
         rappahannock = None
-        cnu_crossing = None
-        cnu_landing = None
         tyler = None
         washington = None
         monroe = None
@@ -26,7 +24,6 @@ class Command(BaseCommand):
         harrison = None
         jefferson = None
         taylor = None
-        # how to add greek village?
 
         [york_east.hallway_set.get_or_create(floor=floor) for floor in ye_floor_list]
         [york_west.hallway_set.get_or_create(floor=floor) for floor in yw_floor_list]

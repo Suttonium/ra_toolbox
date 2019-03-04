@@ -58,6 +58,10 @@ coverage.xml
 local_settings.py
 db.sqlite3
 capstone/credentials.py
+accounts/migrations
+informationcards/migrations
+residencehalls/migrations
+trackers/migrations
 
 # Flask stuff:
 instance/
