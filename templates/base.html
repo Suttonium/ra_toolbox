@@ -10,6 +10,7 @@
     {% block title %} <title>Home</title> {% endblock %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="icon" href="{% static 'img/CNUCaptainLogoSmall.png' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 {% block embedded_styles_block %}
     <style>
@@ -76,7 +77,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
                     </li>
-                    <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 </ul>
             {% else %}
                 <ul class="navbar-nav ml-auto">
@@ -86,7 +86,6 @@
                     <li>
                         <a class="nav-link" href="{% url 'accounts:ra-or-student' %}">Signup</a>
                     </li>
-                    <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 </ul>
             {% endif %}
 
@@ -102,5 +101,53 @@
     </div>
 </div>
 {% block info %}{% endblock %}
+<footer id="myFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 myCols">
+                <h5>Get started</h5>
+                <ul>
+                    <li><a target="_blank" href="#">Home</a></li>
+                    <li><a target="_blank" href="{% url 'accounts:ra-or-student' %}">Sign up</a></li>
+                    <li><a target="_blank" href="http://cnu.edu/">Visit us</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>About us</h5>
+                <ul>
+                    <li><a target="_blank" href="http://cnu.edu/life/housing/">Company Information</a></li>
+                    <li><a target="_blank" href="http://cnu.edu/life/housing/people/">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>Support</h5>
+                <ul>
+                    <li><a target="_blank" href="http://cnu.edu/life/housing/faq/">FAQ</a></li>
+                    <li><a target="_blank" href="http://cnu.edu/captainscard/">Help desk</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a target="_blank" href="http://cnu.edu/public/studenthandbook/_pdf/studenthandbook.pdf">Student
+                        Handbook</a></li>
+                    <li>
+                        <a target="_blank" href="http://cnu.edu/public/policies/policy/its-information-technology-policies/
+                        cnu-policy-6010_acceptable_use_of_computing_resources_policy.pdf">Terms of Use</a></li>
+                    <li><a target="_blank" href="http://cnu.edu/public/privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>RA Toolbox was Developed by
+            <a class="footer_a" target="_blank" href="https://github.com/Suttonium">Raymond
+                Sutton</a>&nbsp;<span class="vl">|</span>&nbsp;Background Photograph Taken by
+            <a class="footer_a" target="_blank" href="https://www.instagram.com/simply._.eddie/">Eddie
+                Sonnie</a>&nbsp;<span class="vl">|</span>&nbsp;Created for the
+            <a class="footer_a" target="_blank" href="http://cnu.edu/life/housing/">CNU Residence Life Department</a>
+        </p>
+    </div>
+</footer>
 </body>
 </html>

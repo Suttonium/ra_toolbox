@@ -5,9 +5,5 @@ class HomePageView(TemplateView):
     template_name = 'home.html'
 
 
-class AboutPageView(TemplateView):
-    template_name = 'about.html'
-
-
 class Forbidden403(TemplateView):
     template_name = '403.html'
