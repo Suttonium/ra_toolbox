@@ -14,7 +14,7 @@ class Command(BaseCommand):
         potomac_south = ResidenceHall.objects.get(name='Potomac South')
         james_river = ResidenceHall.objects.get(name='James River')
         warwick = ResidenceHall.objects.get(name='Warwick')
-        santoro = None
+        santoro = ResidenceHall.objects.get(name='Santoro')
         rappahannock = None
         cnu_crossing = None
         cnu_landing = None
@@ -34,3 +34,4 @@ class Command(BaseCommand):
         [potomac_south.hallway_set.get_or_create(floor=floor) for floor in ps_floor_list]
         [james_river.hallway_set.get_or_create(floor=floor) for floor in jr_floor_list]
         [warwick.hallway_set.get_or_create(floor=floor) for floor in ww_floor_list]
+        [santoro.hallway_set.get_or_create(floor=floor) for floor in toro_floor_list]
