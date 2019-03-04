@@ -3,8 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
 from django.forms import ModelForm
-from django.template import Context
-from django.template.loader import render_to_string, get_template
+from django.template.loader import get_template
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 
@@ -15,7 +14,7 @@ from .models import User, Student
 from .constants import ACTIVATION_CODE_LIMIT
 from residencehalls.models import ResidenceHall, Hallway
 from django.contrib.sites.models import Site
-from django.core.mail import send_mail, EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives
 from capstone import settings
 from .functions import *
 

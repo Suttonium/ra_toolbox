@@ -26,7 +26,7 @@ class AJAXKnockAndTalks(View):
 
 
 class AJAXCatchUps(View):
-    template_name = 'trackers/catch_ups_response.html'
+    template_name = 'trackers/catch_up_response.html'
 
     def get(self, request):
         pk_being_received = request.GET.get('pk_being_sent')
@@ -69,10 +69,17 @@ class AJAXSubmitKnockAndTalk(View):
 
 
 class AJAXSubmitCatchUp(View):
-    template_name = 'trackers/catch_ups_response.html'
+    content_type = 'application/json'
 
     def get(self, request):
-        pass
+        pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
+        if '/' in pk_being_received:
+            pk_being_received = pk_being_received[-1]
+        current_tracker = Tracker.objects.get(pk=pk_being_received)
+        current_tracker.catch_up_one_information = request.GET.get("current_textarea_data")
+        current_tracker.save()
+        data = json.dumps({'catch_up_one': current_tracker.catch_up_one_information})
+        return HttpResponse(data, content_type=self.content_type)
 
 
 class AJAXSubmitGeneralInformation(View):

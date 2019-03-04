@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'trackers/css/catch_up_response.css' %}">
+<div id="everything">
+    <div class="form-row">
+        <div class="form-group col-md-12" id="div_one">
+            <label for="cu_one"></label>
+            <textarea data-cu-one="{{ current_tracker.catch_up_one_information }}" name="" rows="23"
+                      class="form-control" id="cu_one" disabled></textarea>
+            <a href="#" class="btn btn-primary cu_button" id="update_button_one">Update Catch Up</a>
+            <a href="#" class="btn btn-success cu_button" id="submit_button_one" hidden
+               data-submit-catch-up="{% url 'trackers:ajax-submit-catch-up' %}">Submit Catch Up</a>
+        </div>
+    </div>
+</div>
+<script src="{% static  'trackers/js/catch_ups_ajax.js' %}"></script>
