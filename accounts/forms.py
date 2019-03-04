@@ -3,7 +3,8 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
 from django.forms import ModelForm
-from django.template.loader import render_to_string
+from django.template import Context
+from django.template.loader import render_to_string, get_template
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 
@@ -14,7 +15,7 @@ from .models import User, Student
 from .constants import ACTIVATION_CODE_LIMIT
 from residencehalls.models import ResidenceHall, Hallway
 from django.contrib.sites.models import Site
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from capstone import settings
 from .functions import *
 
@@ -34,16 +35,19 @@ class StudentRegistrationForm(ModelForm):
             user.save()
             mail_subject = 'Attempted Student Registration'
             current_email = self.cleaned_data.get('email')
-            plain_text_message = render_to_string('emails/student_signup_email.html', {
+            plain_text = get_template('emails/txt/student_signup_email.txt')
+            htmly = get_template('emails/html/student_signup_email.html')
+            context = {
                 'domain': Site.objects.get_current(),
                 'email': current_email,
                 'uidb64': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
                 'token': account_activation_token.make_token(user),
-            })
-            send_mail(subject=mail_subject,
-                      message=plain_text_message,
-                      from_email=settings.EMAIL_HOST_USER,
-                      recipient_list=[current_email])
+            }
+            text_content = plain_text.render(context)
+            html_content = htmly.render(context)
+            message = EmailMultiAlternatives(mail_subject, text_content, settings.EMAIL_HOST_USER, [current_email])
+            message.attach_alternative(html_content, 'text/html')
+            message.send()
         resident_assistant = ResidentAssistant.objects.get(
             activation_code=self.cleaned_data.get('code_for_assigning_ra'))
         hallway = resident_assistant.hallway
@@ -145,18 +149,22 @@ class ResidentAssistantRegistrationForm(ModelForm):
             user.save()
             mail_subject = 'Attempted Resident Assistant Registration'
             current_email = self.cleaned_data.get('email')
-            plain_text_message = render_to_string('emails/activationcode_email.html', {
+            plain_text = get_template('emails/txt/activationcode_email.txt')
+            htmly = get_template('emails/html/activationcode_email.html')
+            context = {
                 'domain': Site.objects.get_current(),
                 'email': current_email,
                 'activation_code': self.cleaned_data.get('activation_code'),
                 'floor': self.cleaned_data.get('hallway_selection'),
                 'uidb64': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
                 'token': account_activation_token.make_token(user),
-            })
-            send_mail(subject=mail_subject,
-                      message=plain_text_message,
-                      from_email=settings.EMAIL_HOST_USER,
-                      recipient_list=[current_email])
+            }
+            text_content = plain_text.render(context)
+            html_content = htmly.render(context)
+            message = EmailMultiAlternatives(mail_subject, text_content, settings.EMAIL_HOST_USER, [current_email])
+            message.attach_alternative(html_content, 'text/html')
+            message.send()
+
         ra = ResidentAssistant.objects.create(user=user, residence_hall=self.cleaned_data.get('residence_halls'),
                                               activation_code=self.cleaned_data.get('activation_code'))
         hallway = self.cleaned_data.get('hallway_selection')

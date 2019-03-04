@@ -54,4 +54,21 @@ function kat_func() {
     });
 }
 
+function cu_func() {
+    let decision_list = $("#decision_list");
+    let url = decision_list.attr('data-catch-up-url');
+    let pk = decision_list.attr("data-obj-pk");
+    let data_container = $("#data_location");
+    data_container.empty();
+    $.ajax({
+        url: url,
+        data: {
+            'pk_being_sent': pk
+        },
+        success(data) {
+            data_container.html(data)
+        }
+    });
+}
+
 

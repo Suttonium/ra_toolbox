@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/email_validator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/password_validator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/studentid_validator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/emails/html/activationcode_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/emails/txt/student_signup_email.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trackers/static/trackers/css/catch_up_response.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trackers/templates/trackers/catch_ups_response.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/raymondsutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/raymondsutton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/emails/activationcode_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/emails/txt/activationcode_email.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/emails/student_signup_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/emails/html/student_signup_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/css/student_tracker.css" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/css/student_tracker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/static/trackers/js/tracker.js" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/static/trackers/js/tracker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/templates/trackers/student_tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/templates/trackers/student_tracker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trackers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trackers/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,27 +29,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html">
+        <entry file="file://$PROJECT_DIR$/accounts/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="77" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+            <state relative-caret-position="480">
+              <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/static/accounts/js/email_validator.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/accounts/templates/emails/html/student_signup_email.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -51,10 +52,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -66,12 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/accounts/managers.py" />
-        <option value="$PROJECT_DIR$/accounts/constants.py" />
-        <option value="$PROJECT_DIR$/templates/sections.html" />
-        <option value="$PROJECT_DIR$/static/css/sections.css" />
-        <option value="$PROJECT_DIR$/accounts/management/commands/genesis.py" />
-        <option value="$PROJECT_DIR$/capstone/views.py" />
         <option value="$PROJECT_DIR$/templates/info.html" />
         <option value="$PROJECT_DIR$/static/css/home.css" />
         <option value="$PROJECT_DIR$/templates/home.html" />
@@ -87,9 +82,7 @@
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/residencehalls/models.py" />
         <option value="$PROJECT_DIR$/trackers/admin.py" />
-        <option value="$PROJECT_DIR$/trackers/urls.py" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/student_of_concern_activation.js" />
-        <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/validate_room_assignment_format.js" />
         <option value="$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/css/general_information_response.css" />
@@ -97,7 +90,6 @@
         <option value="$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/suite_and_room_ajax_submission.js" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js" />
-        <option value="$PROJECT_DIR$/trackers/views.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/informationcards/views.py" />
         <option value="$PROJECT_DIR$/informationcards/urls.py" />
@@ -111,6 +103,21 @@
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html" />
+        <option value="$PROJECT_DIR$/trackers/urls.py" />
+        <option value="$PROJECT_DIR$/trackers/views.py" />
+        <option value="$PROJECT_DIR$/trackers/static/trackers/js/tracker.js" />
+        <option value="$PROJECT_DIR$/trackers/templates/trackers/student_tracker.html" />
+        <option value="$PROJECT_DIR$/trackers/static/trackers/css/student_tracker.css" />
+        <option value="$PROJECT_DIR$/trackers/static/trackers/css/catch_up_response.css" />
+        <option value="$PROJECT_DIR$/trackers/templates/trackers/catch_ups_response.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/emails/activationcode_email.txt" />
+        <option value="$PROJECT_DIR$/accounts/templates/emails/activationcode_email.html" />
+        <option value="$PROJECT_DIR$/accounts/static/emails/css/activationcode_email.css" />
+        <option value="$PROJECT_DIR$/accounts/templates/emails/txt/student_signup_email.txt" />
+        <option value="$PROJECT_DIR$/accounts/static/emails/css/student_signup_email.css" />
+        <option value="$PROJECT_DIR$/accounts/templates/emails/html/activationcode_email.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/emails/html/student_signup_email.html" />
+        <option value="$PROJECT_DIR$/accounts/forms.py" />
       </list>
     </option>
   </component>
@@ -126,8 +133,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="emails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="emails" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,14 +183,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/informationcards/static/informationcards/css" />
-      <recent name="$PROJECT_DIR$/accounts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/accounts/static/accounts/js" />
       <recent name="$PROJECT_DIR$/accounts/templates/emails" />
       <recent name="$PROJECT_DIR$/accounts/templatetags" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/accounts/templates/emails/txt" />
+      <recent name="$PROJECT_DIR$/accounts/templates/emails/html" />
+      <recent name="$PROJECT_DIR$/informationcards/static/informationcards/css" />
+      <recent name="$PROJECT_DIR$/accounts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -214,7 +259,8 @@
       <workItem from="1551135223732" duration="3529000" />
       <workItem from="1551148733744" duration="464000" />
       <workItem from="1551191007804" duration="3979000" />
-      <workItem from="1551323495606" duration="2356000" />
+      <workItem from="1551323495606" duration="3352000" />
+      <workItem from="1551466115505" duration="4760000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -307,16 +353,23 @@
       <option name="project" value="LOCAL" />
       <updated>1551387708454</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="finally added some registration form frontend validation">
+      <created>1551388351339</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551388351339</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50571000" />
+    <option name="totallyTimeSpent" value="56327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30543634" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30972818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -330,7 +383,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.27831325" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.27831325" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.27831325" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -360,118 +413,12 @@
     <MESSAGE value="readme updates" />
     <MESSAGE value="did some template updates within the student information card application" />
     <MESSAGE value="did some more form validation error messaging tweaking" />
-    <option name="LAST_COMMIT_MESSAGE" value="did some more form validation error messaging tweaking" />
+    <MESSAGE value="finally added some registration form frontend validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally added some registration form frontend validation" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/emails/activationcode_email.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/generate_suite_and_room_information.js" />
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/residencehalls/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/residencehalls/management/commands/create_residence_halls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="74" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/knock_and_talk_ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/student_of_concern_activation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/student_tracker.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="124" column="40" selection-end-line="178" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/css/signup_form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/studentid_validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/validate_room_assignment_format.js" />
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/password_validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/tracker.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/static/accounts/js/password_validator.js" />
     <entry file="file://$PROJECT_DIR$/trackers/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -482,32 +429,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/knock_and_talk_response.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/student_of_concern_ajax_response.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/room_assignment_ajax_response.html" />
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_ajax_response.html" />
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -534,20 +460,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/informationcards/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -619,29 +535,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="86" selection-start-line="86" selection-end-line="107" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/views.py" />
     <entry file="file://$PROJECT_DIR$/accounts/static/accounts/js/password_validator.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="12" selection-end-column="100" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/urls.py" />
     <entry file="file://$PROJECT_DIR$/accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -649,16 +547,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/js/email_validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/residentassistantsignup_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/residentassistantsignup_form.html" />
     <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -666,20 +555,169 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/studentsignup_form.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/studentsignup_form.html" />
     <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/studentsignup_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="77" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/js/email_validator.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/tracker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/css/knock_and_talk_response.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/student_tracker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/knock_and_talk_response.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/css/student_tracker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/catch_ups_response.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/css/catch_up_response.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/emails/txt/activationcode_email.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/ra_or_student.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/static/emails/css/activationcode_email.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/emails/txt/student_signup_email.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/static/emails/css/student_signup_email.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/emails/html/activationcode_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="37" />
+          <folding>
+            <element signature="e#57#77#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/emails/html/student_signup_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
         </state>
       </provider>
     </entry>

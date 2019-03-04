@@ -1,0 +1,12 @@
+{% load static %}
+{% autoescape off %}
+    <strong><span style="color: red;">Congratulations, {{ email }}!</span></strong>
+    <br>
+    You have attempted to register as a Resident Assistant in {{ floor }}.
+    <br>
+    Here is the activation code you may distribute to your residents: <strong>{{ activation_code }}</strong>
+    <br>
+    Your account will not be active until you fill out your security questions. Please do so by visiting the link below.
+    <br>
+    http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+{% endautoescape %}

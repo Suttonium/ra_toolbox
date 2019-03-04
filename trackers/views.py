@@ -25,6 +25,15 @@ class AJAXKnockAndTalks(View):
         return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
 
 
+class AJAXCatchUps(View):
+    template_name = 'trackers/catch_ups_response.html'
+
+    def get(self, request):
+        pk_being_received = request.GET.get('pk_being_sent')
+        current_tracker_being_viewed = Tracker.objects.get(pk=pk_being_received)
+        return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
+
+
 class AJAXGeneralInformation(View):
     template_name = 'trackers/general_information_response.html'
 
@@ -59,6 +68,13 @@ class AJAXSubmitKnockAndTalk(View):
         return render(request, self.template_name, {'current_tracker': current_tracker})
 
 
+class AJAXSubmitCatchUp(View):
+    template_name = 'trackers/catch_ups_response.html'
+
+    def get(self, request):
+        pass
+
+
 class AJAXSubmitGeneralInformation(View):
     content_type = 'application/json'
 
@@ -69,7 +85,7 @@ class AJAXSubmitGeneralInformation(View):
         current_tracker = Tracker.objects.get(pk=pk_being_received)
         current_tracker.general_information = request.GET.get("current_textarea_data")
         current_tracker.save()
-        data = json.dumps({'current_tracker': current_tracker})
+        data = json.dumps({'general_information': current_tracker.general_information})
         return HttpResponse(data, content_type=self.content_type)
 
 
