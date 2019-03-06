@@ -16,7 +16,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_('last name'), max_length=NAME_LIMIT, blank=True)
     date_joined = models.DateTimeField(_('date joined'), auto_now_add=True)
     student_id = models.CharField(_('student id'), unique=True, max_length=STUDENT_ID_MAX_LIMIT,
-                                  validators=[MinLengthValidator(STUDENT_ID_MIN_LIMIT)])
+                                  validators=[MinLengthValidator(STUDENT_ID_MIN_LIMIT)], null=True)
     is_resident_assistant = models.BooleanField(default=False)
     is_student = models.BooleanField(default=False)
     is_hall_director = models.BooleanField(default=False)
@@ -72,6 +72,7 @@ class ResidentAssistant(models.Model):
     residence_hall = models.ForeignKey('residencehalls.ResidenceHall', on_delete=models.CASCADE)
     suite = models.ForeignKey('residencehalls.Suite', on_delete=models.CASCADE, null=True)
     room = models.ForeignKey('residencehalls.Room', on_delete=models.CASCADE, null=True, blank=True)
+    hall_director = models.ForeignKey('HallDirector', on_delete=models.CASCADE)
 
     def __str__(self):
         return '{0}'.format(self.user.email)
