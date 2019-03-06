@@ -17,7 +17,8 @@
                     <span>Knock and Talks</span></a>
                 <a id="catch_up_list_item" class="list-group-item" onclick="cu_func()"><i class="fa fa-key"></i>
                     <span>Catch Up</span></a>
-                <a id="roster_button" href="{% url 'accounts:roster' %}" class="btn btn-success">Back to Roster</a>
+                <a id="roster_button" href="{% url 'accounts:student-roster' pk=user.pk %}" class="btn btn-success">Back
+                    to Roster</a>
             </div>
             <div class="jumbotron data-display" id="data_location"></div>
         </div>

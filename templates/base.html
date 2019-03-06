@@ -69,7 +69,14 @@
                     </li>
                     {% if user.is_resident_assistant %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'accounts:roster' %}">Roster</a>
+                            <a class="nav-link"
+                               href="{% url 'accounts:student-roster' pk=user.pk %}">Student
+                                Roster</a>
+                        </li>
+                    {% elif user.is_hall_director %}
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'accounts:ra-roster' %}">RA Roster</a>
                         </li>
                     {% endif %}
                 </ul>

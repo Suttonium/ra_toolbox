@@ -37,7 +37,21 @@ class Roster(LoginRequiredMixin, ListView):
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         user = self.request.user
-        context['current_student_list'] = user.residentassistant.student_set.all()
+        if user.is_hall_director:
+            context['current_student_list'] = User.objects.get(pk=self.kwargs['pk']).residentassistant.student_set.all()
+        if user.is_resident_assistant:
+            context['current_student_list'] = user.residentassistant.student_set.all()
+        return context
+
+
+class HallDirectorRARoster(LoginRequiredMixin, ListView):
+    template_name = 'accounts/hall_director_ra_roster.html'
+    model = ResidentAssistant
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        user = self.request.user
+        context['current_ra_list'] = user.halldirector.residentassistant_set.all()
         return context
 
 

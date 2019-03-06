@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %} <title>Roster</title> {% endblock %}
 {% block content %}
-    {% if not user.is_resident_assistant %}
+    {% if not user.is_resident_assistant and not user.is_hall_director %}
         <h3><strong>403 You do not have proper viewing permissions. </strong></h3>
     {% endif %}
     <link rel="stylesheet" href="{% static 'accounts/css/roster.css' %}">

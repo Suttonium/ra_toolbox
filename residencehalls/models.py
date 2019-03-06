@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class ResidenceHall(models.Model):
     name = models.CharField(max_length=256, unique=True)
-    hall_director = models.OneToOneField(HallDirector, on_delete=models.CASCADE, null=True)
+    hall_director = models.ForeignKey(HallDirector, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = _('Residence Hall')

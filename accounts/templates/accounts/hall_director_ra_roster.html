@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>Roster</title> {% endblock %}
+{% block content %}
+    {% if not user.is_hall_director %}
+        <h3><strong>403 You do not have proper viewing permissions.</strong></h3>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'accounts/css/hall_director_ra_roster.css' %}">
+    {% if current_ra_list %}
+        <table id="students">
+            <tr>
+                <th>RA Email</th>
+                <th>RA ID</th>
+                <th>RA Roster</th>
+            </tr>
+            {% for ra in current_ra_list %}
+                <tr>
+                    <td>{{ ra.user.email }}</td>
+                    <td>{{ ra.user.student_id }}</td>
+                    <td><a href="{% url 'accounts:student-roster' pk=ra.user.pk %}"
+                           class="hallway_button btn btn-primary">View Hallway</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h3 id="no_residents">You Currently Have No Resident Assistants Connected</h3>
+    {% endif %}
+{% endblock %}

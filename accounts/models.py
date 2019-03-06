@@ -72,7 +72,7 @@ class ResidentAssistant(models.Model):
     residence_hall = models.ForeignKey('residencehalls.ResidenceHall', on_delete=models.CASCADE)
     suite = models.ForeignKey('residencehalls.Suite', on_delete=models.CASCADE, null=True)
     room = models.ForeignKey('residencehalls.Room', on_delete=models.CASCADE, null=True, blank=True)
-    hall_director = models.ForeignKey('HallDirector', on_delete=models.CASCADE)
+    hall_director = models.ForeignKey('HallDirector', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return '{0}'.format(self.user.email)
