@@ -62,7 +62,6 @@ accounts/migrations
 informationcards/migrations
 residencehalls/migrations
 trackers/migrations
-.idea/
 # Flask stuff:
 instance/
 .webassets-cache
@@ -110,10 +109,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-.idea/dataSources.local.xml
+.idea/
 Procfile
-accounts/static/accounts/img/
-accounts/static/emails/
-residencehalls/static/
-residencehalls/templates/residencehalls/
-staticfiles/
+
