@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accounts/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="44" column="37" lean-forward="true" selection-end-line="185" />
+            <state relative-caret-position="437">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -271,7 +268,7 @@
       <workItem from="1551323495606" duration="3352000" />
       <workItem from="1551466115505" duration="16498000" />
       <workItem from="1551885386151" duration="78000" />
-      <workItem from="1551885525043" duration="1977000" />
+      <workItem from="1551885525043" duration="1994000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -441,14 +438,22 @@
       <option name="project" value="LOCAL" />
       <updated>1551888694344</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ok">
+      <created>1551890230293</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1551890230293</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70120000" />
+    <option name="totallyTimeSpent" value="70137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31831187" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -502,7 +507,8 @@
     <MESSAGE value="updated runtime" />
     <MESSAGE value="updated requirements" />
     <MESSAGE value="why" />
-    <option name="LAST_COMMIT_MESSAGE" value="why" />
+    <MESSAGE value="ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../RCF_CAPSTONE/master/accounts/templates/accounts/residentassistantsignup_form.html" />
@@ -821,8 +827,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="44" column="37" lean-forward="true" selection-end-line="185" />
+        <state relative-caret-position="437">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
