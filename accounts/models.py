@@ -91,3 +91,14 @@ class HallDirector(models.Model):
     class Meta:
         verbose_name_plural = _('Hall Directors')
         verbose_name = _('Hall Director')
+
+
+class DeskAccount(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '{0}'.format(self.user.email)
+
+    class Meta:
+        verbose_name_plural = _('Desk Accounts')
+        verbose_name = _('Desk Account')

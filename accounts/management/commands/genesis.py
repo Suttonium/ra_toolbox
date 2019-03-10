@@ -3,7 +3,7 @@ from django.contrib.sites.models import Site
 from django.core.management import BaseCommand
 from django.utils.crypto import get_random_string
 
-from accounts.models import User, ResidentAssistant, Student, HallDirector
+from accounts.models import User, ResidentAssistant, Student, HallDirector, DeskAccount
 from residencehalls.models import ResidenceHall, Hallway
 from accounts.constants import *
 
@@ -25,9 +25,7 @@ class Command(BaseCommand):
         # #####CREATE HALL DIRECTORS####
         hall_directors = []
         for hd_email in hall_director_list:
-            hd_user = User.objects.create(email=hd_email, is_active=True, is_hall_director=True)
-            hd_user.set_password('TEST')
-            hd_user.save()
+            hd_user = User.objects.create_user(email=hd_email, is_active=True, is_hall_director=True, password='TEST')
             hall_directors.append(HallDirector.objects.create(user=hd_user))
         ################################
 
@@ -60,6 +58,14 @@ class Command(BaseCommand):
         santoro.hall_director = hall_directors[5]
         santoro.save()
         ################################
+
+        # ######Create Desk Accounts####
+        for email in desk_account_email_list:
+            user = User.objects.create_user(email=email, password='TEST', is_active=True, is_desk_account=True)
+            DeskAccount.objects.create(user=user)
+        ################################
+
+        # ######TEST RA AND STUDENTS####
         ra_user = User.objects.create_superuser(email='raymond.sutton.15@cnu.edu', student_id='00123456',
                                                 password='TEST', is_active=True, is_resident_assistant=True)
 
@@ -77,3 +83,4 @@ class Command(BaseCommand):
                                                  is_student=True, is_staff=True, password='TEST')
             Student.objects.create(user=temp_user, resident_assistant=ra, residence_hall=james_river,
                                    hallway=fourth_theme_unit)
+        ################################

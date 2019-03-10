@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'residencehalls.apps.ResidencehallsConfig',
     'informationcards.apps.InformationcardsConfig',
     'trackers.apps.TrackersConfig',
+    'desklogs.apps.DesklogsConfig',
     'bootstrap4',
     'widget_tweaks',
     'session_security',

@@ -9,3 +9,8 @@ hall_director_list = [
     'mary.taylor1@cnu.edu', 'melissa.lourie@cnu.edu', 'elizabeth.beavers@cnu.edu', 'rachel.conners@cnu.edu',
     'danny.lee@cnu.edu', 'beth.tucker@cnu.edu', 'rachael.beattie@cnu.edu '
 ]
+
+desk_account_email_list = [
+    'jamesriverhall@cnu.edu', 'eastcampus@cnu.edu', 'yorkriverhall@cnu.edu', 'potomacriverhall@cnu.edu',
+    'rappahannockriverhall@cnu.edu', 'santorohall@cnu.edu', 'warwickriverhall@cnu.edu'
+]
