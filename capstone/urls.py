@@ -24,7 +24,8 @@ urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
     path('permission_denied', Forbidden403.as_view(), name='403'),
     path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
-    path('residence_hall/', include(('residencehalls.urls', 'residencehalls'), namespace='residencehalls')),
-    path('information_card/', include(('informationcards.urls', 'informationcards'), namespace='informationcards')),
+    path('residence_halls/', include(('residencehalls.urls', 'residencehalls'), namespace='residencehalls')),
+    path('information_cards/', include(('informationcards.urls', 'informationcards'), namespace='informationcards')),
     path('trackers/', include(('trackers.urls', 'trackers'), namespace='trackers')),
+    path('desklogs/', include(('desklogs.urls', 'desklogs'), namespace='desklogs')),
 ]
