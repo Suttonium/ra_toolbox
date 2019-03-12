@@ -1,7 +1,16 @@
 #entries {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+#entry_div {
+    border: 5px solid blue;
     width: 100%;
+    margin: 0 auto;
+    top: 0;
+    height: 700px;
 }
 
 #entries td, #entries th {
@@ -35,4 +44,17 @@
 
 #no_entries {
     color: white;
+}
+
+#create_entry_button_div {
+    border: 5px solid yellow;
+    position: absolute;
+    bottom: 0;
+    margin-left: 100px;
+}
+
+#create_entry_button {
+    width: 1300px;
+    color: white;
+    border: solid black;
 }

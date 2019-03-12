@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>Guest Log</title> {% endblock %}
+{% block content %}
+    {% if not user.is_desk_account %}
+        <h3><strong>403 You do not have proper viewing permissions. </strong></h3>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'desklogs/css/guestlog.css' %}">
+    <div id="entry_div">
+        {% if guestlog_entries %}
+            <table id="entries" data-guestlog-pk="{{ guestlog.pk }}">
+                <tr>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Host Name</th>
+                    <th>Guest Name</th>
+                </tr>
+                {% for entry in guestlog_entries %}
+                    <tr>
+                        <td><input type="text" class="form-control"
+                                   value="{% if entry.time_in %}{{ entry.time_in }}{% endif %}"></td>
+                        <td><input type="text" class="form-control"
+                                   value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}"></td>
+                        <td><input type="text" class="form-control"
+                                   value="{% if entry.host_name %}{{ entry.host_name }}{% endif %}"></td>
+                        <td><input type="text" class="form-control"
+                                   value="{% if entry.guest_name %}{{ entry.guest_name }}{% endif %}"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h3 id="no_entries">You Currently Have No Residents Connected</h3>
+        {% endif %}
+    </div>
+    <div id="create_entry_button_div">
+        <a href="#" class="btn btn-success" id="create_entry_button">Create New Guestlog Entry</a>
+    </div>
+{% endblock %}

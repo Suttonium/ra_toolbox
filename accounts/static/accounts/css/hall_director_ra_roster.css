@@ -2,7 +2,7 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 1000px;
-    margin: 0 auto;
+    margin: 200px auto 0;
 }
 
 #students td, #students th {

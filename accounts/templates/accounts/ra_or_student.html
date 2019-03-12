@@ -3,11 +3,14 @@
 {% block title %}<title>User Type</title>{% endblock %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'accounts/css/ra_or_student.css' %}">
-    <a href="{% url 'accounts:ra-signup' %}" class="option btn btn-primary">Resident Assistant</a>
-    <a href="{% url 'accounts:student-signup' %}" class="option btn btn-success">Student</a>
-    <div id="honor_code">
-        On my honor, I will maintain the highest standards of honesty, integrity and personal responsibility. This means
-        I will not lie, cheat or steal, and as a member of this academic community, I am committed to creating an
-        environment of respect and mutual trust.
+    <div id="ra_or_student_div">
+        <a href="{% url 'accounts:ra-signup' %}" class="option btn btn-primary">Resident Assistant</a>
+        <a href="{% url 'accounts:student-signup' %}" class="option btn btn-success">Student</a>
+        <div id="honor_code">
+            On my honor, I will maintain the highest standards of honesty, integrity and personal responsibility. This
+            means
+            I will not lie, cheat or steal, and as a member of this academic community, I am committed to creating an
+            environment of respect and mutual trust.
+        </div>
     </div>
 {% endblock %}

@@ -44,8 +44,10 @@ html, body {
 
 .content {
     max-width: 1500px;
-    margin: 0 auto;
+    height: 850px;
     text-align: center;
+    position: relative;
+    margin: 0 auto 30px;
 }
 
 .content h1 {
