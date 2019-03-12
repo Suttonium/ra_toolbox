@@ -8,4 +8,6 @@
 #honor_code {
     color: white;
     font-size: 25px;
+    width: 1000px;
+    margin: 0 auto;
 }

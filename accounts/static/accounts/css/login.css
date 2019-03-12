@@ -1,5 +1,5 @@
 #id_form_submit {
-    width: 100%;
+    width: 1000px;
     color: white;
     border: solid black;
 }
@@ -10,4 +10,14 @@
 
 label {
     color: white;
+}
+
+#login_username {
+    width: 485px;
+    margin: 0 auto 0 255px;
+}
+
+#login_password {
+    width: 485px;
+    margin: 0 auto 0 5px;
 }

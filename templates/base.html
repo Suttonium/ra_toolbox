@@ -78,6 +78,10 @@
                             <a class="nav-link"
                                href="{% url 'accounts:ra-roster' %}">RA Roster</a>
                         </li>
+                    {% elif user.is_desk_account %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'desklogs:guest-log' %}">Guestlog</a>
+                        </li>
                     {% endif %}
                 </ul>
                 <ul class="navbar-nav ml-auto">

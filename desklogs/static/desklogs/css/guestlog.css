@@ -1,32 +1,31 @@
-#students {
+#entries {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 1000px;
-    margin: 0 auto;
+    width: 100%;
 }
 
-#students td, #students th {
+#entries td, #entries th {
     border: 1px solid #DDD;
     padding: 8px;
 }
 
-#students tr:nth-child(even) {
+#entries tr:nth-child(even) {
     background-color: #F2F2F2;
 }
 
-#students tr:nth-child(even):hover {
+#entries tr:nth-child(even):hover {
     background-color: #DDD;
 }
 
-#students tr:nth-child(odd) {
+#entries tr:nth-child(odd) {
     background-color: #F2F2F2
 }
 
-#students tr:nth-child(odd):hover {
+#entries tr:nth-child(odd):hover {
     background-color: #DDD;
 }
 
-#students th {
+#entries th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -34,13 +33,6 @@
     color: white;
 }
 
-.hallway_button {
-    color: white;
-    font-size: 15px;
-    width: 100%;
-    border-color: black;
-}
-
-#no_residents {
+#no_entries {
     color: white;
 }

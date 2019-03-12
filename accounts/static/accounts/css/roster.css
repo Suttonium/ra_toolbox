@@ -1,7 +1,8 @@
 #students {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 #students td, #students th {
