@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/desklogs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/capstone/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/capstone/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,47 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/desklogs/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/capstone/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/desklogs/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -146,7 +107,6 @@
         <option value="$PROJECT_DIR$/accounts/management/commands/genesis.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
         <option value="$PROJECT_DIR$/capstone/settings.py" />
-        <option value="$PROJECT_DIR$/desklogs/models.py" />
         <option value="$PROJECT_DIR$/desklogs/admin.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/desklogs/management/commands/create_guestlogs.py" />
@@ -154,12 +114,13 @@
         <option value="$PROJECT_DIR$/desklogs/views.py" />
         <option value="$PROJECT_DIR$/desklogs/urls.py" />
         <option value="$PROJECT_DIR$/capstone/urls.py" />
+        <option value="$PROJECT_DIR$/desklogs/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="width" value="2560" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -175,6 +136,11 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone" type="462c0819:PsiDirectoryNode" />
+              <item name="desklogs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,18 +160,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/css/fontawesome" />
-      <recent name="$PROJECT_DIR$/accounts/static/accounts/js" />
-      <recent name="$PROJECT_DIR$/accounts/templates/emails" />
-      <recent name="$PROJECT_DIR$/accounts/templatetags" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/trackers/static/trackers/js" />
       <recent name="$PROJECT_DIR$/accounts/templates/emails/txt" />
       <recent name="$PROJECT_DIR$/accounts/templates/emails/html" />
       <recent name="$PROJECT_DIR$/informationcards/static/informationcards/css" />
       <recent name="$PROJECT_DIR$/accounts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/css/fontawesome" />
+      <recent name="$PROJECT_DIR$/accounts/static/accounts/js" />
+      <recent name="$PROJECT_DIR$/accounts/templates/emails" />
+      <recent name="$PROJECT_DIR$/accounts/templatetags" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -277,7 +243,8 @@
       <workItem from="1551885386151" duration="78000" />
       <workItem from="1551885525043" duration="1994000" />
       <workItem from="1551890264176" duration="7537000" />
-      <workItem from="1552260070301" duration="4658000" />
+      <workItem from="1552260070301" duration="5347000" />
+      <workItem from="1552399172649" duration="576000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -489,17 +456,23 @@
       <option name="project" value="LOCAL" />
       <updated>1552261654887</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Designed database schema for GuestLog and GuestLogEntry. Added a portion to the signals file to create a guestLog object when a desk account is created.">
+      <created>1552265189252</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1552265189252</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82332000" />
+    <option name="totallyTimeSpent" value="83597000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32511923" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3319027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -530,7 +503,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../RCF_CAPSTONE/master" />
     </ignored-roots>
-    <MESSAGE value="hello, world" />
     <MESSAGE value="adding a custom user manager to handle the creation of the custom user model that will be added later." />
     <MESSAGE value="Created database tables and schema for the residencehalls application and&#10;the remainder of the accounts application. This includes Resident Assistants, Students, Hall Directors, Residence Halls, Suites, Hallways, and Rooms. Some of these might not be used in the future, but they are here just in case." />
     <MESSAGE value="Connected the new user model to the settings file for authentication. Added the templates and static folders to each app and the overall project." />
@@ -555,7 +527,8 @@
     <MESSAGE value="reconfiguring settings.py" />
     <MESSAGE value="hall directors can now see a list of their RA staff and view the trackers for their students." />
     <MESSAGE value="created db model for deskaccounts and added desk account creation to the genesis startup script. Created the initial app to handle desklogs." />
-    <option name="LAST_COMMIT_MESSAGE" value="created db model for deskaccounts and added desk account creation to the genesis startup script. Created the initial app to handle desklogs." />
+    <MESSAGE value="Designed database schema for GuestLog and GuestLogEntry. Added a portion to the signals file to create a guestLog object when a desk account is created." />
+    <option name="LAST_COMMIT_MESSAGE" value="Designed database schema for GuestLog and GuestLogEntry. Added a portion to the signals file to create a guestLog object when a desk account is created." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/tracker.js">
@@ -641,7 +614,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/Procfile" />
     <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css" />
     <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/roster.css">
@@ -717,9 +689,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trackers/migrations/0001_initial (1).py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/migrations/0001_initial (1).py" />
     <entry file="file://$PROJECT_DIR$/accounts/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -778,36 +748,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/management/commands/create_guestlogs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/management/commands/create_guestlogs.py" />
+    <entry file="file://$PROJECT_DIR$/desklogs/admin.py" />
     <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -819,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/signals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -836,43 +768,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
+    <entry file="file://$PROJECT_DIR$/desklogs/views.py" />
+    <entry file="file://$PROJECT_DIR$/capstone/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="476">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/urls.py" />
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/signals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/capstone/urls.py">
+    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        <state relative-caret-position="315">
+          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
         </state>
       </provider>
     </entry>

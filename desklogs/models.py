@@ -17,6 +17,13 @@ class GuestLog(models.Model):
 
 class GuestLogEntry(models.Model):
     guest_log = models.ForeignKey(GuestLog, on_delete=models.CASCADE)
+    time_in = models.CharField(max_length=100, null=True)
+    time_out = models.CharField(max_length=100, null=True)
+    date_in = models.DateField(null=True)
+    date_out = models.DateField(null=True)
+    host_name = models.CharField(max_length=100, null=True)
+    guest_name = models.CharField(max_length=100, null=True)
+    physical_assistance_required = models.BooleanField(default=False)
 
     def __str__(self):
         return 'Guest Log Entry for the Guest Log at {0}'.format(self.guest_log.user.email)
