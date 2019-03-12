@@ -1,0 +1,27 @@
+<div id="entry_div" data-guestlog-pk="{{ guestlog.pk }}"
+     data-create-entry-url="{% url 'desklogs:ajax-create-blank-entry' %}">
+    {% if guestlog_entries %}
+        <table id="entries">
+            <tr>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th>Host Name</th>
+                <th>Guest Name</th>
+            </tr>
+            {% for entry in guestlog_entries %}
+                <tr>
+                    <td><input type="text" class="form-control"
+                               value="{% if entry.time_in %}{{ entry.time_in }}{% endif %}"></td>
+                    <td><input type="text" class="form-control"
+                               value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}"></td>
+                    <td><input type="text" class="form-control"
+                               value="{% if entry.host_name %}{{ entry.host_name }}{% endif %}"></td>
+                    <td><input type="text" class="form-control"
+                               value="{% if entry.guest_name %}{{ entry.guest_name }}{% endif %}"></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h3 id="no_entries">There are currently do guestlog entries in the system.</h3>
+    {% endif %}
+</div>

@@ -77,7 +77,7 @@ class Command(BaseCommand):
         fourth_theme_unit.resident_assistant = ra
         fourth_theme_unit.save()
 
-        for i in range(1, 9):
+        for i in range(1, 20):
             temp_user = User.objects.create_user(email=get_random_string(), student_id='0000000' + str(i),
                                                  is_active=True,
                                                  is_student=True, is_staff=True, password='TEST')

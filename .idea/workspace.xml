@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/accounts/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/accounts/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/accounts/css/ra_or_student.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/accounts/css/ra_or_student.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/accounts/css/signup_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/accounts/css/signup_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/ra_or_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/ra_or_student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/roster.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/roster.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/management/commands/genesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/management/commands/genesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/static/accounts/css/roster.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/accounts/css/roster.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/templates/desklogs/desklog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desklogs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,29 +37,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/roster.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css">
+        <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            <state relative-caret-position="680">
+              <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/roster.html">
+        <entry file="file://$PROJECT_DIR$/desklogs/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="79" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="102" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/desklogs/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+              <caret line="29" column="56" lean-forward="true" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -73,10 +105,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -93,9 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/trackers/static/trackers/catch_ups_ajax.js" />
-        <option value="$PROJECT_DIR$/trackers/templates/trackers/catch_ups_response.html" />
-        <option value="$PROJECT_DIR$/trackers/static/trackers/js/knock_and_talk_ajax.js" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/css/catch_up_response.css" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/catch_ups_ajax.js" />
         <option value="$PROJECT_DIR$/trackers/views.py" />
@@ -118,24 +147,19 @@
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/accounts/constants.py" />
-        <option value="$PROJECT_DIR$/accounts/management/commands/genesis.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
         <option value="$PROJECT_DIR$/desklogs/admin.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/desklogs/management/commands/create_guestlogs.py" />
         <option value="$PROJECT_DIR$/accounts/signals.py" />
         <option value="$PROJECT_DIR$/capstone/urls.py" />
-        <option value="$PROJECT_DIR$/desklogs/urls.py" />
         <option value="$PROJECT_DIR$/desklogs/models.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/desklogs/views.py" />
         <option value="$PROJECT_DIR$/capstone/settings.py" />
-        <option value="$PROJECT_DIR$/accounts/static/accounts/css/roster.css" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/desklogs/templates/desklogs/desklog.html" />
-        <option value="$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
         <option value="$PROJECT_DIR$/accounts/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/accounts/static/accounts/css/login.css" />
@@ -144,6 +168,14 @@
         <option value="$PROJECT_DIR$/accounts/static/accounts/css/signup_form.css" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/roster.html" />
         <option value="$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css" />
+        <option value="$PROJECT_DIR$/accounts/management/commands/genesis.py" />
+        <option value="$PROJECT_DIR$/accounts/static/accounts/css/roster.css" />
+        <option value="$PROJECT_DIR$/desklogs/urls.py" />
+        <option value="$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css" />
+        <option value="$PROJECT_DIR$/desklogs/views.py" />
+        <option value="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" />
+        <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js" />
+        <option value="$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html" />
       </list>
     </option>
   </component>
@@ -169,20 +201,20 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="desklogs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="desklogs" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="desklogs" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="desklogs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,7 +318,7 @@
       <workItem from="1551885525043" duration="1994000" />
       <workItem from="1551890264176" duration="7537000" />
       <workItem from="1552260070301" duration="5946000" />
-      <workItem from="1552417024968" duration="8187000" />
+      <workItem from="1552417024968" duration="10921000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -512,17 +544,24 @@
       <option name="project" value="LOCAL" />
       <updated>1552420792678</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="i hate frontend">
+      <created>1552425411273</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1552425411273</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91807000" />
+    <option name="totallyTimeSpent" value="94541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32790142" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32790142" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -536,7 +575,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5028612" side_tool="true" weight="0.27831325" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49713877" weight="0.28494042" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49713877" visible="true" weight="0.28494042" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -553,7 +592,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../RCF_CAPSTONE/master" />
     </ignored-roots>
-    <MESSAGE value="Created database tables and schema for the residencehalls application and&#10;the remainder of the accounts application. This includes Resident Assistants, Students, Hall Directors, Residence Halls, Suites, Hallways, and Rooms. Some of these might not be used in the future, but they are here just in case." />
     <MESSAGE value="Connected the new user model to the settings file for authentication. Added the templates and static folders to each app and the overall project." />
     <MESSAGE value="test" />
     <MESSAGE value="did some code refactoring and updated the logout redirect url" />
@@ -578,26 +616,10 @@
     <MESSAGE value="created db model for deskaccounts and added desk account creation to the genesis startup script. Created the initial app to handle desklogs." />
     <MESSAGE value="Designed database schema for GuestLog and GuestLogEntry. Added a portion to the signals file to create a guestLog object when a desk account is created." />
     <MESSAGE value="edited the css files on most templates to account for greater inherited size." />
-    <option name="LAST_COMMIT_MESSAGE" value="edited the css files on most templates to account for greater inherited size." />
+    <MESSAGE value="i hate frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="i hate frontend" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/css/student_tracker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="62" column="27" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/font_awesome.css" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="127" column="18" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/fontawesome/all.css" />
-    <entry file="file://$PROJECT_DIR$/static/css/footer.css" />
     <entry file="file://$PROJECT_DIR$/capstone/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -778,26 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/capstone/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -808,44 +810,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
           <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="79" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -896,10 +864,16 @@
         <state relative-caret-position="-51" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/roster.css">
+    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="654">
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -910,10 +884,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/hall_director_ra_roster.css">
+    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/roster.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="493">
+          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/general_information_ajax.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trackers/static/trackers/js/knock_and_talk_ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="79" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="56" lean-forward="true" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="70" />
         </state>
       </provider>
     </entry>
