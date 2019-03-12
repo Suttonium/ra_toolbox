@@ -24,6 +24,8 @@ class GuestLogEntry(models.Model):
     host_name = models.CharField(max_length=100, null=True)
     guest_name = models.CharField(max_length=100, null=True)
     physical_assistance_required = models.BooleanField(default=False)
+    guest_checked_in = models.BooleanField(default=True)
+    overnight = models.BooleanField(default=False)
 
     def __str__(self):
         return 'Guest Log Entry for the Guest Log at {0}'.format(self.guest_log.user.email)
