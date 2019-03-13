@@ -7,9 +7,9 @@
 
 #entry_div {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 150px;
     top: 0;
-    height: 700px;
+    height: 650px;
     overflow-y: auto;
 }
 
@@ -47,9 +47,11 @@
 }
 
 #create_entry_button_div {
-    position: absolute;
+    /*position: absolute;*/
+    position: sticky;
+    position: -webkit-sticky;
     bottom: 0;
-    margin-left: 100px;
+    margin-left: auto;
 }
 
 #create_entry_button {
