@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 
@@ -27,8 +29,12 @@ class CreateBlankGuestLogEntry(View):
     def get(self, request):
         guestlog_pk = request.GET.get('guestlog_pk')
         guestlog = GuestLog.objects.get(pk=guestlog_pk)
-        GuestLogEntry.objects.create(guest_log=guestlog)
-        context = {'user': self.request.user, 'guestlog': guestlog,
-                   'guestlog_entries': guestlog.guestlogentry_set.all()
-                   }
+        now = datetime.datetime.now()
+        time = '{0}:{1}:{2}'.format(str(now.hour), str(now.minute), str(now.second))
+        date = '{0}-{1}-{2}'.format(str(now.month), str(now.day), str(now.year))
+        GuestLogEntry.objects.create(guest_log=guestlog, time_in=time, date_in=date)
+        context = {
+            'user': self.request.user, 'guestlog': guestlog,
+            'guestlog_entries': guestlog.guestlogentry_set.all()
+        }
         return render(request, self.template_name, context)

@@ -12,21 +12,29 @@
             {% if guestlog_entries %}
                 <table id="entries">
                     <tr>
+                        <th>Status</th>
                         <th>Time In</th>
-                        <th>Time Out</th>
+                        <th>Date In</th>
                         <th>Host Name</th>
                         <th>Guest Name</th>
+                        <th>Time Out</th>
+                        <th>Date Out</th>
                     </tr>
                     {% for entry in guestlog_entries %}
                         <tr>
+                            <td bgcolor="{% if entry.guest_checked_in %}green{% else %}red{% endif %}"></td>
                             <td><input type="text" class="form-control"
-                                       value="{% if entry.time_in %}{{ entry.time_in }}{% endif %}"></td>
+                                       value="{% if entry.time_in %}{{ entry.time_in }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control"
-                                       value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}"></td>
+                                       value="{% if entry.date_in %}{{ entry.date_in }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control"
                                        value="{% if entry.host_name %}{{ entry.host_name }}{% endif %}"></td>
                             <td><input type="text" class="form-control"
                                        value="{% if entry.guest_name %}{{ entry.guest_name }}{% endif %}"></td>
+                            <td><input type="text" class="form-control"
+                                       value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}" disabled></td>
+                            <td><input type="text" class="form-control"
+                                       value="{% if entry.date_out %}{{ entry.date_out }}{% endif %}" disabled></td>
                         </tr>
                     {% endfor %}
                 </table>

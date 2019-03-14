@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import socket
 import json
-
-import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -47,7 +45,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'widget_tweaks',
     'session_security',
-    'easyaudit'
+    'easyaudit',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

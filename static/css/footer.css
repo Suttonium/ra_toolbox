@@ -3,15 +3,24 @@
     color: white;
 }
 
-#myFooter .footer-copyright {
+
+#myFooter #footer-copyright {
     background-color: #383737;
     padding-top: 3px;
     padding-bottom: 3px;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
-#myFooter .footer-copyright p {
-    margin: 10px 10px 10px 120px;
+#info {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#myFooter #footer-copyright p {
+    margin: 10px 10px 10px 10px;
     color: #ccc;
     font-size: 18px;
 }
@@ -35,7 +44,7 @@
     text-decoration: none;
 }
 
-#myFooter .footer-copyright .footer_a {
+#myFooter #footer-copyright .footer_a {
     text-decoration: none;
     color: white;
 }

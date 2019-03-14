@@ -1,5 +1,8 @@
 #login_div {
     margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 #id_form_submit {
@@ -18,10 +21,10 @@ label {
 
 #login_username {
     width: 485px;
-    margin: 0 auto 0 225px;
+    margin-left: 23px;
 }
 
 #login_password {
     width: 485px;
-    margin: 0 auto 0 5px;
+    margin-left: 5px;
 }
