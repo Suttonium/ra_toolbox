@@ -17,10 +17,10 @@ class GuestLog(models.Model):
 
 class GuestLogEntry(models.Model):
     guest_log = models.ForeignKey(GuestLog, on_delete=models.CASCADE)
-    time_in = models.CharField(max_length=100, null=True)
-    time_out = models.CharField(max_length=100, null=True)
-    date_in = models.CharField(max_length=100, null=True)
-    date_out = models.CharField(max_length=100, null=True)
+    time_in = models.CharField(max_length=100, null=True, blank=True)
+    time_out = models.CharField(max_length=100, null=True, blank=True)
+    date_in = models.CharField(max_length=100, null=True, blank=True)
+    date_out = models.CharField(max_length=100, null=True, blank=True)
     host_name = models.CharField(max_length=100, null=True)
     guest_name = models.CharField(max_length=100, null=True)
     physical_assistance_required = models.BooleanField(default=False)

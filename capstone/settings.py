@@ -13,15 +13,18 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import socket
 import json
-from decouple import config
+# from decouple import config
+from .credentials import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# with open('capstone/credentials.py') as f:
+#     data = json.load(f)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = data['secret_key']
 # DEBUG = config('DEBUG', default=False, cast=bool)
 DEBUG = True
 
@@ -138,11 +141,16 @@ STATICFILES_DIRS = [
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('accounts.backends.EmailBackend', 'accounts.backends.StudentIDBackend')
 
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
+# EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_USER = data['email_host_user']
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = data['email_host_password']
+# EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_PORT = 587
 
 LOGOUT_REDIRECT_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
