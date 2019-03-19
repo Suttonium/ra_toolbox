@@ -84,3 +84,27 @@
     pointer-events: none;
 }
 
+#filter {
+    width: 90%;
+    position: absolute;
+    bottom: 50px;
+    margin: auto;
+}
+
+#filter_search {
+    margin-left: 70px;
+}
+
+#search_button {
+    padding-top: 2px;
+    padding-bottom: 1px;
+    border-color: black;
+    color: white;
+    margin-left: 75px;
+    width: 100%;
+}
+
+#search_button_div {
+    margin-left: 0;
+}
+

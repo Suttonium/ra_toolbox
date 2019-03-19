@@ -8,6 +8,7 @@ from django.views import View
 from django.views.generic import ListView
 
 from desklogs.models import GuestLogEntry, GuestLog
+from django.db.models import Q
 
 
 class GuestLogEntryListView(LoginRequiredMixin, ListView):
@@ -19,7 +20,9 @@ class GuestLogEntryListView(LoginRequiredMixin, ListView):
         user = self.request.user
         context['user'] = user
         context['guestlog'] = user.guestlog
-        context['guestlog_entries'] = user.guestlog.guestlogentry_set.all()
+        checked_in_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=True)
+        checked_out_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=False)
+        context['guestlog_entries'] = checked_in_list | checked_out_list
         for entry in user.guestlog.guestlogentry_set.all():
             if not entry.host_name or not entry.guest_name:
                 context['disable_creation'] = True
@@ -45,9 +48,12 @@ class CreateBlankGuestLogEntry(View):
             if entry.host_name is None or entry.guest_name is None:
                 disable = True
 
+        checked_in_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=True)
+        checked_out_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=False)
+
         context = {
             'user': self.request.user, 'guestlog': guestlog,
-            'guestlog_entries': guestlog.guestlogentry_set.all(),
+            'guestlog_entries': checked_in_list | checked_out_list,
             'disable_creation': True if disable else False
         }
         return render(request, self.template_name, context)
@@ -74,9 +80,12 @@ class UpdateGuestlogEntry(View):
             if entry.host_name is None or entry.guest_name is None:
                 disable = True
 
+        checked_in_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=True)
+        checked_out_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=False)
+
         context = {
             'user': self.request.user, 'guestlog': guestlog,
-            'guestlog_entries': guestlog.guestlogentry_set.all(),
+            'guestlog_entries': checked_in_list | checked_out_list,
             'disable_creation': True if disable else False
         }
 
@@ -107,9 +116,36 @@ class CheckoutGuestlogEntry(View):
             if entry.host_name is None or entry.guest_name is None:
                 disable = True
 
+        checked_in_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=True)
+        checked_out_list = user.guestlog.guestlogentry_set.filter(guest_checked_in=False)
+
         context = {
             'user': self.request.user, 'guestlog': guestlog,
-            'guestlog_entries': guestlog.guestlogentry_set.all(),
+            'guestlog_entries': checked_in_list | checked_out_list,
+            'disable_creation': True if disable else False
+        }
+
+        return render(request, self.template_name, context)
+
+
+class FilterGuestlogEntries(View):
+    template_name = 'desklogs/create_guestlog_entry_response.html'
+
+    def get(self, request):
+        query = request.GET.get('query')
+        guestlog_pk = request.GET.get('guestlog_pk')
+        guestlog = GuestLog.objects.get(pk=guestlog_pk)
+        entries = guestlog.guestlogentry_set.filter(Q(host_name__contains=query) | Q(guest_name__contains=query))
+
+        user = self.request.user
+        disable = False
+        for entry in user.guestlog.guestlogentry_set.all():
+            if entry.host_name is None or entry.guest_name is None:
+                disable = True
+
+        context = {
+            'user': self.request.user, 'guestlog': guestlog,
+            'guestlog_entries': entries,
             'disable_creation': True if disable else False
         }
 

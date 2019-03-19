@@ -18,7 +18,6 @@ def add_user_to_proper_group(sender, instance, created, **kwargs):
             Group.objects.get(name='Student Group').user_set.add(instance)
             StudentInformationCard.objects.create(user=instance)
             Tracker.objects.create(user=instance)
-            instance.save()
         if instance.is_hall_director:
             Group.objects.get(name='Hall Director Group').user_set.add(instance)
         if instance.is_desk_account:
