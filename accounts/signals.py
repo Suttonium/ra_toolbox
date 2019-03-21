@@ -1,6 +1,6 @@
 from django.contrib.auth.models import Group
 
-from desklogs.models import GuestLog
+from desklogs.models import *
 from informationcards.models import StudentInformationCard
 from trackers.models import Tracker
 from .models import User
@@ -23,3 +23,4 @@ def add_user_to_proper_group(sender, instance, created, **kwargs):
         if instance.is_desk_account:
             Group.objects.get(name='Desk Account Group').user_set.add(instance)
             GuestLog.objects.create(user=instance)
+            EquipmentLog.objects.create(user=instance)

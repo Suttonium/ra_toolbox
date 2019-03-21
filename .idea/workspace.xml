@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/desklogs/static/desklogs/js/filter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desklogs/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/static/desklogs/css/guestlog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/static/desklogs/js/check_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/static/desklogs/js/check_in.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,42 +34,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+        <entry file="file://$PROJECT_DIR$/desklogs/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="132" column="51" lean-forward="true" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
+            <state relative-caret-position="-247">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html">
+        <entry file="file://$PROJECT_DIR$/desklogs/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/capstone/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="50" column="14" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="14" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
-                <element signature="e#309#318#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
+        <entry file="file://$PROJECT_DIR$/accounts/signals.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-714">
+            <state relative-caret-position="323">
+              <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -82,54 +70,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/capstone/credentials.py">
+        <entry file="file://$PROJECT_DIR$/desklogs/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="3" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/templatetags/aufwiedersehen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/informationcards/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1422">
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/functions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -141,8 +85,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -159,7 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/trackers/static/trackers/js/catch_ups_ajax.js" />
         <option value="$PROJECT_DIR$/trackers/views.py" />
         <option value="$PROJECT_DIR$/capstone/views.py" />
         <option value="$PROJECT_DIR$/static/css/about.css" />
@@ -181,7 +124,6 @@
         <option value="$PROJECT_DIR$/accounts/constants.py" />
         <option value="$PROJECT_DIR$/accounts/management/commands/genesis.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
-        <option value="$PROJECT_DIR$/desklogs/admin.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/desklogs/management/commands/create_guestlogs.py" />
         <option value="$PROJECT_DIR$/capstone/urls.py" />
@@ -193,7 +135,6 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/css/footer.css" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/desklogs/models.py" />
         <option value="$PROJECT_DIR$/trackers/static/trackers/js/disable_enter_button_submission.js" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/disable_enter_button_submission.js" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js" />
@@ -204,12 +145,15 @@
         <option value="$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html" />
         <option value="$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/filter.js" />
+        <option value="$PROJECT_DIR$/capstone/settings.py" />
+        <option value="$PROJECT_DIR$/desklogs/views.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
-        <option value="$PROJECT_DIR$/desklogs/views.py" />
+        <option value="$PROJECT_DIR$/desklogs/constants.py" />
+        <option value="$PROJECT_DIR$/desklogs/models.py" />
+        <option value="$PROJECT_DIR$/desklogs/admin.py" />
         <option value="$PROJECT_DIR$/accounts/signals.py" />
-        <option value="$PROJECT_DIR$/capstone/settings.py" />
       </list>
     </option>
   </component>
@@ -236,19 +180,6 @@
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
               <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="management" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -365,7 +296,9 @@
       <workItem from="1552946190355" duration="4329000" />
       <workItem from="1552962699966" duration="176000" />
       <workItem from="1552962940739" duration="132000" />
-      <workItem from="1552963083222" duration="7428000" />
+      <workItem from="1552963083222" duration="8559000" />
+      <workItem from="1553003180953" duration="1802000" />
+      <workItem from="1553127170805" duration="3325000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -605,16 +538,23 @@
       <option name="project" value="LOCAL" />
       <updated>1552524746702</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="filtering for guestlog comppleted">
+      <created>1552970852713</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1552970852713</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120946000" />
+    <option name="totallyTimeSpent" value="127206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1991256" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1991256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -628,7 +568,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5028612" side_tool="true" weight="0.27831325" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49713877" visible="true" weight="0.27843988" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49713877" visible="true" weight="0.28494042" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -668,7 +608,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../RCF_CAPSTONE/master" />
     </ignored-roots>
-    <MESSAGE value="did some code refactoring and updated the logout redirect url" />
     <MESSAGE value="fixed some authentication bugs with the forms cleaned_data. Added a custom template filter to better display the forms errors." />
     <MESSAGE value="added the functionality to allow reslife to submit the room assignment of residents." />
     <MESSAGE value="did some submission security js to the tracker room assignment field" />
@@ -693,19 +632,10 @@
     <MESSAGE value="added a few more fields to guestlogentry" />
     <MESSAGE value="did some more frontend updates. I need to stop editing frontend on a wide screen monitor :(" />
     <MESSAGE value="guestlogs now automatically generate the checkin date and time before being displayed" />
-    <option name="LAST_COMMIT_MESSAGE" value="guestlogs now automatically generate the checkin date and time before being displayed" />
+    <MESSAGE value="filtering for guestlog comppleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="filtering for guestlog comppleted" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/css/signup_form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/static/accounts/js/studentid_validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/static/accounts/js/email_validator.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -824,13 +754,6 @@
     <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/disable_enter_button_submission.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trackers/templates/trackers/general_information_response.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-73" />
@@ -849,13 +772,6 @@
     <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/check_out.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/check_in.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -870,30 +786,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/managers.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/managers.py" />
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -901,40 +794,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/signals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="127" column="31" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,33 +810,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="132" column="51" lean-forward="true" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templatetags/aufwiedersehen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/functions.py" />
+    <entry file="file://$PROJECT_DIR$/accounts/templatetags/aufwiedersehen.py" />
     <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/residentassistantsignup_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -1014,7 +852,103 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714">
+        <state relative-caret-position="238">
+          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/create_guestlog_entry_response.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/static/desklogs/js/check_in.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="46" column="80" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="36" column="37" selection-end-line="79" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="165" lean-forward="true" selection-end-line="185" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/signals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
