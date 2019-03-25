@@ -7,4 +7,8 @@ urlpatterns = [
     path('ajax/update_guestlog_entry/', UpdateGuestlogEntry.as_view(), name='ajax-update-entry'),
     path('ajax/checkout_guestlog_entry/', CheckoutGuestlogEntry.as_view(), name='ajax-checkout-entry'),
     path('ajax/filter_entries/', FilterGuestlogEntries.as_view(), name='ajax-filter-entries'),
+    path('equipment_log/', EquipmentLogEntryListView.as_view(), name='equipment-log'),
+    path('ajax/create_blank_equipmentlog_entry/', CreateBlankEquipmentLogEntry.as_view(),
+         name='ajax-create-blank-equipmentlog-entry'),
+    path('ajax/update_equipmentlog_entry/', UpdateEquipmentlogEntry.as_view(), name='ajax-update-equipmentlog-entry'),
 ]

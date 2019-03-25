@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
 
-from desklogs.models import GuestLogEntry, GuestLog
+from desklogs.models import *
 from django.db.models import Q
 
 
@@ -149,4 +149,86 @@ class FilterGuestlogEntries(View):
             'disable_creation': True if disable else False
         }
 
+        return render(request, self.template_name, context)
+
+
+class EquipmentLogEntryListView(LoginRequiredMixin, ListView):
+    model = EquipmentLogEntry
+    template_name = 'desklogs/equipmentlog.html'
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        user = self.request.user
+        context['user'] = user
+        context['equipmentlog'] = user.equipmentlog
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=False)
+        context['equipmentlog_entries'] = checked_in_list | checked_out_list
+        for entry in user.equipmentlog.equipmentlogentry_set.all():
+            if not entry.item_host:
+                context['disable_creation'] = True
+        return context
+
+
+class CreateBlankEquipmentLogEntry(View):
+    template_name = 'desklogs/create_equipmentlog_entry_response.html'
+
+    def get(self, request):
+        equipmentlog_pk = request.GET.get('equipmentlog_pk')
+        equipmentlog = EquipmentLog.objects.get(pk=equipmentlog_pk)
+        now = datetime.datetime.now()
+        time = '{0}:{1}:{2}'.format(str(now.hour),
+                                    '0' + str(now.minute) if len(str(now.minute)) == 1 else str(now.minute),
+                                    '0' + str(now.second) if len(str(now.second)) == 1 else str(now.second))
+        date = '{0}-{1}-{2}'.format(str(now.month), str(now.day), str(now.year))
+        EquipmentLogEntry.objects.create(equipment_log=equipmentlog, time_out=time, date_out=date)
+
+        user = self.request.user
+        disable = False
+        for entry in user.equipmentlog.equipmentlogentry_set.all():
+            if entry.item_host is None:
+                disable = True
+
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=False)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=True)
+
+        context = {
+            'user': self.request.user, 'equipmentlog': equipmentlog,
+            'equipmentlog_entries': checked_out_list | checked_in_list,
+            'disable_creation': True if disable else False
+        }
+        return render(request, self.template_name, context)
+
+
+class UpdateEquipmentlogEntry(View):
+    template_name = 'desklogs/create_equipmentlog_entry_response.html'
+
+    def get(self, request):
+        equipmentlog_pk = request.GET.get('equipmentlog_pk')
+        equipmentlog = EquipmentLog.objects.get(pk=equipmentlog_pk)
+
+        entry_pk = request.GET.get('current_entry_being_updated_pk')
+        item_host = request.GET.get('item_host')
+        initial_condition = request.GET.get('initial_condition')
+        item = request.GET.get('item')
+        entry = EquipmentLogEntry.objects.get(pk=entry_pk)
+        entry.item_host = item_host
+        entry.initial_condition = initial_condition
+        entry.item = item
+        entry.save()
+
+        user = self.request.user
+        disable = False
+        for entry in user.equipmentlog.equipmentlogentry_set.all():
+            if entry.item_host is None:
+                disable = True
+
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=False)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=True)
+
+        context = {
+            'user': self.request.user, 'equipmentlog': equipmentlog,
+            'equipmentlog_entries': checked_out_list | checked_in_list,
+            'disable_creation': True if disable else False
+        }
         return render(request, self.template_name, context)

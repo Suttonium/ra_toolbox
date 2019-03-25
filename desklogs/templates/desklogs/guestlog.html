@@ -26,7 +26,7 @@
                     {% for entry in guestlog_entries %}
                         <tr>
                             <td class="status"
-                                bgcolor="{% if entry.guest_checked_in %}green{% else %}red{% endif %}"></td>
+                                bgcolor="{% if entry.guest_checked_in %}red{% else %}green{% endif %}"></td>
                             <td><input type="text" class="form-control time_in"
                                        value="{% if entry.time_in %}{{ entry.time_in }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control date_in"
@@ -45,7 +45,7 @@
                                 {% if entry.host_name and entry.guest_name and entry.guest_checked_in %}
                                     <a href="#" class="btn btn-danger checkout"
                                        data-obj-pk="{{ entry.pk }}">Checkout</a>
-                                {% elif entry.guest_checked_in and not host_name and not entry.guest_name %}
+                                {% elif entry.guest_checked_in and not entry.host_name and not entry.guest_name %}
                                     <a href="#" class="btn btn-success checkin" data-obj-pk="{{ entry.pk }}">Checkin</a>
                                 {% else %}
                                     <a href="#" class="btn btn-secondary completed">Completed</a>

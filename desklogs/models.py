@@ -55,7 +55,10 @@ class EquipmentLogEntry(models.Model):
     time_in = models.CharField(max_length=100, null=True, blank=True)
     date_in = models.CharField(max_length=100, null=True, blank=True)
     item_host = models.CharField(max_length=100, null=True)
-    condition = models.IntegerField(choices=DAMAGE_CHOICES, null=True)
+    item = models.CharField(max_length=100, null=True)
+    initial_condition = models.IntegerField(choices=DAMAGE_CHOICES, null=True)
+    final_condition = models.IntegerField(choices=DAMAGE_CHOICES, null=True)
+    item_checked_in = models.BooleanField(default=False)
 
     def __str__(self):
         return 'Equipment Log Entry for Equipment Log at {0}'.format(self.equipment_log.user.email)
