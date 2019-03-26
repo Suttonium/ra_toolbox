@@ -4,7 +4,7 @@
     let url = entry_div.attr('data-checkout-entry-url');
 
     checkout.click(function () {
-        let pk = checkout.attr('data-obj-pk');
+        let pk = $(this).attr('data-obj-pk');
         let guestlog_pk = entry_div.attr('data-guestlog-pk');
 
         $.ajax({

@@ -161,8 +161,8 @@ class EquipmentLogEntryListView(LoginRequiredMixin, ListView):
         user = self.request.user
         context['user'] = user
         context['equipmentlog'] = user.equipmentlog
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(completed=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(completed=False)
         context['equipmentlog_entries'] = checked_out_list | checked_in_list
         for entry in user.equipmentlog.equipmentlogentry_set.all():
             if not entry.item_host:
@@ -189,8 +189,8 @@ class CreateBlankEquipmentLogEntry(View):
             if entry.item_host is None:
                 disable = True
 
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(completed=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(completed=False)
 
         context = {
             'user': self.request.user, 'equipmentlog': equipmentlog,
@@ -224,8 +224,8 @@ class UpdateEquipmentlogEntry(View):
             if entry.item_host is None:
                 disable = True
 
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(completed=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(completed=False)
 
         context = {
             'user': self.request.user, 'equipmentlog': equipmentlog,
@@ -260,8 +260,8 @@ class CheckinEquipmentlogEntry(View):
             if entry.item_host is None:
                 disable = True
 
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(completed=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(completed=False)
 
         context = {
             'user': self.request.user, 'equipmentlog': equipmentlog,
