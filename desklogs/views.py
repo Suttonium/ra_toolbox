@@ -161,9 +161,9 @@ class EquipmentLogEntryListView(LoginRequiredMixin, ListView):
         user = self.request.user
         context['user'] = user
         context['equipmentlog'] = user.equipmentlog
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=True)
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=False)
-        context['equipmentlog_entries'] = checked_in_list | checked_out_list
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
+        context['equipmentlog_entries'] = checked_out_list | checked_in_list
         for entry in user.equipmentlog.equipmentlogentry_set.all():
             if not entry.item_host:
                 context['disable_creation'] = True
@@ -189,8 +189,8 @@ class CreateBlankEquipmentLogEntry(View):
             if entry.item_host is None:
                 disable = True
 
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=False)
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
 
         context = {
             'user': self.request.user, 'equipmentlog': equipmentlog,
@@ -213,6 +213,7 @@ class UpdateEquipmentlogEntry(View):
         item = request.GET.get('item')
         entry = EquipmentLogEntry.objects.get(pk=entry_pk)
         entry.item_host = item_host
+        entry.item_checked_out = True
         entry.initial_condition = initial_condition
         entry.item = item
         entry.save()
@@ -223,8 +224,44 @@ class UpdateEquipmentlogEntry(View):
             if entry.item_host is None:
                 disable = True
 
-        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=False)
-        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_in=True)
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
+
+        context = {
+            'user': self.request.user, 'equipmentlog': equipmentlog,
+            'equipmentlog_entries': checked_out_list | checked_in_list,
+            'disable_creation': True if disable else False
+        }
+        return render(request, self.template_name, context)
+
+
+class CheckinEquipmentlogEntry(View):
+    template_name = 'desklogs/create_equipmentlog_entry_response.html'
+
+    def get(self, request):
+        equipmentlog_pk = request.GET.get('equipmentlog_pk')
+        equipmentlog = EquipmentLog.objects.get(pk=equipmentlog_pk)
+        entry_pk = request.GET.get('current_entry_being_updated_pk')
+        entry = EquipmentLogEntry.objects.get(pk=entry_pk)
+        entry.completed = True
+        entry.item_checked_out = False
+        entry.final_condition = request.GET.get('final_condition')
+        now = datetime.datetime.now()
+        time = '{0}:{1}:{2}'.format(str(now.hour),
+                                    '0' + str(now.minute) if len(str(now.minute)) == 1 else str(now.minute),
+                                    '0' + str(now.second) if len(str(now.second)) == 1 else str(now.second))
+        date = '{0}-{1}-{2}'.format(str(now.month), str(now.day), str(now.year))
+        entry.time_in = time
+        entry.date_in = date
+        entry.save()
+        user = self.request.user
+        disable = False
+        for entry in user.equipmentlog.equipmentlogentry_set.all():
+            if entry.item_host is None:
+                disable = True
+
+        checked_out_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=True)
+        checked_in_list = user.equipmentlog.equipmentlogentry_set.filter(item_checked_out=False)
 
         context = {
             'user': self.request.user, 'equipmentlog': equipmentlog,

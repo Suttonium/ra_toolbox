@@ -11,4 +11,5 @@ urlpatterns = [
     path('ajax/create_blank_equipmentlog_entry/', CreateBlankEquipmentLogEntry.as_view(),
          name='ajax-create-blank-equipmentlog-entry'),
     path('ajax/update_equipmentlog_entry/', UpdateEquipmentlogEntry.as_view(), name='ajax-update-equipmentlog-entry'),
+    path('ajax/checkin_equipmentlog_entry/', CheckinEquipmentlogEntry.as_view(), name='ajax-checkin-equipmentlog-entry')
 ]

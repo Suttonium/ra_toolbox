@@ -10,7 +10,7 @@
         <div id="entry_div" data-equipmentlog-pk="{{ equipmentlog.pk }}"
              data-create-entry-url="{% url 'desklogs:ajax-create-blank-equipmentlog-entry' %}"
              data-update-entry-url="{% url 'desklogs:ajax-update-equipmentlog-entry' %}"
-                {#             data-checkout-entry-url="{% url 'desklogs:ajax-checkout-equipmentlog-entry' %}">#}>
+             data-checkin-entry-url="{% url 'desklogs:ajax-checkin-equipmentlog-entry' %}">
             {% if equipmentlog_entries %}
                 <table id="entries">
                     <tr>
@@ -28,17 +28,18 @@
                     {% for entry in equipmentlog_entries %}
                         <tr>
                             <td class="status"
-                                bgcolor="{% if entry.item_checked_in %}green{% else %}red{% endif %}"></td>
+                                bgcolor="{% if not entry.completed %}red{% else %}green{% endif %}"></td>
                             <td><input type="text" class="form-control time_out"
                                        value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control date_out"
                                        value="{% if entry.date_out %}{{ entry.date_out }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control item_host"
                                        value="{% if entry.item_host %}{{ entry.item_host }}{% endif %}"
-                                       {% if entry.item_checked_in %}disabled{% endif %}></td>
+                                       {% if entry.item_checked_out or entry.completed %}disabled{% endif %}>
+                            </td>
                             <td>
                                 <select class="form-control initial_item_condition" name="initial_condition" id=""
-                                        {% if entry.item_checked_in %}disabled{% endif %}>
+                                        {% if entry.item_checked_out or entry.completed %}disabled{% endif %}>
                                     <option value="1" {% if entry.initial_condition == 1 %}selected{% endif %}>Good
                                     </option>
                                     <option value="2" {% if entry.initial_condition == 2 %}selected{% endif %}>Fair
@@ -49,9 +50,11 @@
                             </td>
                             <td><input type="text" class="form-control item"
                                        value="{% if entry.item %}{{ entry.item }}{% endif %}"
-                                       {% if entry.item_checked_in %}disabled{% endif %}></td>
+                                       {% if entry.item_checked_out or entry.completed %}disabled{% endif %}></td>
                             <td>
-                                <select class="form-control" name="final_condition" id="">
+                                <select class="form-control final_condition" name="final_condition" id=""
+                                        {% if not entry.item_checked_out or entry.completed %}
+                                        disabled{% endif %}>
                                     <option value="1" {% if entry.final_condition == 1 %}selected{% endif %}>Good
                                     </option>
                                     <option value="2" {% if entry.final_condition == 2 %}selected{% endif %}>Fair
@@ -65,13 +68,13 @@
                             <td><input class="form-control date_in" type="text"
                                        value="{% if entry.date_in %}{{ entry.date_in }}{% endif %}" disabled></td>
                             <td>
-                                {% if entry.item_host %}
+                                {% if entry.item_host and not entry.completed %}
                                     <a href="#" class="btn btn-danger checkin"
                                        data-obj-pk="{{ entry.pk }}">Checkin</a>
-                                {% elif not entry.item_checked_in and not entry.item_host %}
+                                {% elif not entry.item_checked_out and not entry.item_host %}
                                     <a href="#" class="btn btn-success checkout"
                                        data-obj-pk="{{ entry.pk }}">Checkout</a>
-                                {% else %}
+                                {% elif entry.completed and not entry.item_checked_out %}
                                     <a href="#" class="btn btn-secondary completed">Completed</a>
                                 {% endif %}
                             </td>
@@ -101,7 +104,7 @@
     </div>
     <script src="{% static 'desklogs/js/create_equipmentlog_entry.js' %}"></script>
     <script src="{% static 'desklogs/js/disable_enter_button_submission.js' %}"></script>
-    {#    <script src="{% static 'desklogs/js/check_in_item.js' %}"></script>#}
+    <script src="{% static 'desklogs/js/check_in_equipmentlog_item.js' %}"></script>
     <script src="{% static 'desklogs/js/check_out_item.js' %}"></script>
     {#    <script src="{% static 'desklogs/js/filter_equipmentlog.js' %}"></script>#}
 {% endblock %}
