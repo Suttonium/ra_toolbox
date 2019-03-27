@@ -11,6 +11,32 @@ from desklogs.models import *
 from django.db.models import Q
 
 
+class UniversityRoster(ListView):
+    model = User
+    template_name = 'desklogs/university_roster.html'
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['university_roster'] = User.objects.all().exclude(is_hall_director=True).exclude(
+            is_desk_account=True).order_by('student_id')
+        return context
+
+
+class FilterUniversityRoster(View):
+    template_name = 'desklogs/university_roster_response.html'
+
+    def get(self, request):
+        query = request.GET.get('query')
+        queryset = User.objects.all().exclude(is_hall_director=True).exclude(is_desk_account=True).filter(
+            Q(email__contains=query) | Q(student_id__contains=query) | Q(
+                student__residence_hall__name__contains=query)).order_by('student_id')
+
+        context = {
+            'university_roster': queryset
+        }
+        return render(request, self.template_name, context)
+
+
 class GuestLogEntryListView(LoginRequiredMixin, ListView):
     model = GuestLogEntry
     template_name = 'desklogs/guestlog.html'
@@ -136,6 +162,8 @@ class FilterGuestlogEntries(View):
         guestlog_pk = request.GET.get('guestlog_pk')
         guestlog = GuestLog.objects.get(pk=guestlog_pk)
         entries = guestlog.guestlogentry_set.filter(Q(host_name__contains=query) | Q(guest_name__contains=query))
+        checked_in_entries = entries.filter(guest_checked_in=True)
+        checked_out_entries = entries.filter(guest_checked_in=False)
 
         user = self.request.user
         disable = False
@@ -145,7 +173,7 @@ class FilterGuestlogEntries(View):
 
         context = {
             'user': self.request.user, 'guestlog': guestlog,
-            'guestlog_entries': entries,
+            'guestlog_entries': checked_in_entries | checked_out_entries,
             'disable_creation': True if disable else False
         }
 
@@ -266,6 +294,32 @@ class CheckinEquipmentlogEntry(View):
         context = {
             'user': self.request.user, 'equipmentlog': equipmentlog,
             'equipmentlog_entries': checked_out_list | checked_in_list,
+            'disable_creation': True if disable else False
+        }
+        return render(request, self.template_name, context)
+
+
+class FilterEquipmentLogEntries(View):
+    template_name = 'desklogs/create_equipmentlog_entry_response.html'
+
+    def get(self, request):
+        equipmentlog_pk = request.GET.get('equipmentlog_pk')
+        equipmentlog = EquipmentLog.objects.get(pk=equipmentlog_pk)
+        query = request.GET.get('query')
+
+        entries = equipmentlog.equipmentlogentry_set.filter(Q(item_host__contains=query) | Q(item__contains=query))
+        completed_entries = entries.filter(completed=True)
+        not_completed_entries = entries.filter(completed=False)
+
+        user = self.request.user
+        disable = False
+        for entry in user.equipmentlog.equipmentlogentry_set.all():
+            if entry.item_host is None:
+                disable = True
+
+        context = {
+            'user': self.request.user, 'equipmentlog': equipmentlog,
+            'equipmentlog_entries': not_completed_entries | completed_entries,
             'disable_creation': True if disable else False
         }
         return render(request, self.template_name, context)

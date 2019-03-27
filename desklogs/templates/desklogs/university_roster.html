@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>University Roster</title> {% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'desklogs/css/university_roster.css' %}">
+    <div id="everything">
+        <div id="entry_div">
+            {% if university_roster %}
+                <table id="entries">
+                    <tr>
+                        <th>Student Email</th>
+                        <th>Student ID</th>
+                        <th>Residence Hall</th>
+                        <th>Room Assignment</th>
+                        <th>Security Questions</th>
+                    </tr>
+                    {% for student in university_roster %}
+                        <tr>
+                            <td><input class="form-control" type="text" value="{{ student.email }}" disabled></td>
+                            <td><input class="form-control" type="text" value="{{ student.student_id }}" disabled></td>
+                            <td><input class="form-control" type="text"
+                                       value="{% if student.is_student %}{{ student.student.residence_hall.name }}{% elif student.is_resident_assistant %}{{ student.residentassistant.residence_hall.name }}{% endif %}" disabled></td>
+                            <td><input class="form-control" type="text" value="{% if student.is_student %}{{ student.student.room }}{% elif student.is_resident_assistant %}{{ student.residentassistant.room }}{% endif %}" disabled></td>
+                            <td><a href="#" class="btn btn-primary security_questions">Student Security Questions</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <h3 id="no_entries">There are currently no students in the system.</h3>
+            {% endif %}
+        </div>
+        <div class="form-row" id="filter">
+            <div class="form-group col-md-10">
+                <input id="filter_search" type="text" class="form-control" placeholder="Search">
+            </div>
+            <div class="form-group col-md-2" id="search_button_div">
+                <a href="#" id="search_button" class="btn btn-warning"
+                   data-filter-roster="{% url 'desklogs:ajax-filter-uni-roster' %}">Filter</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'desklogs/js/filter_university_roster.js' %}"></script>
+{% endblock %}
