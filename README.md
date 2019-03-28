@@ -14,8 +14,9 @@ In order to run this system, a few steps must be taken.
      - ```python/python3 manage.py makemigrations```
      - ```python/python3 manage.py migrate```
      - If a models.py file is ever modified, be sure to run the above commands once again. 
-
-
+4) Run the following commands to initialize the database with the proper data needed for site functionality including residence halls, desk accounts, and other needed models that need to be created upon residence hall generation. 
+     - ```python/python3 manage.py create_residence_halls```
+     - ```python/python3 manage.py genesis```
 
 ## Built With
 - [Django](https://www.djangoproject.com/)
