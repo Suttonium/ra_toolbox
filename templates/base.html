@@ -60,6 +60,9 @@
                             <a class="nav-link"
                                href="{% url 'accounts:ra-roster' %}">RA Roster</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'desklogs:university-roster' %}">Student Roster</a>
+                        </li>
                     {% elif user.is_desk_account %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'desklogs:guest-log' %}">Guestlog</a>
@@ -67,12 +70,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'desklogs:equipment-log' %}">Equipmentlog</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'desklogs:university-roster' %}">Student Roster</a>
+                        </li>
                     {% endif %}
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'desklogs:university-roster' %}">Student Roster</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
                     </li>
@@ -87,7 +90,6 @@
                     </li>
                 </ul>
             {% endif %}
-
         </div>
     </nav>
 </header>

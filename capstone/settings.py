@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'informationcards.apps.InformationcardsConfig',
     'trackers.apps.TrackersConfig',
     'desklogs.apps.DesklogsConfig',
+    'securityquestions.apps.SecurityquestionsConfig',
     'bootstrap4',
     'widget_tweaks',
     'session_security',

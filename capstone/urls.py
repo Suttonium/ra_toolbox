@@ -28,4 +28,6 @@ urlpatterns = [
     path('information_cards/', include(('informationcards.urls', 'informationcards'), namespace='informationcards')),
     path('trackers/', include(('trackers.urls', 'trackers'), namespace='trackers')),
     path('desklogs/', include(('desklogs.urls', 'desklogs'), namespace='desklogs')),
+    path('security_questions/',
+         include(('securityquestions.urls', 'securityquestions'), namespace='securityquestions')),
 ]
