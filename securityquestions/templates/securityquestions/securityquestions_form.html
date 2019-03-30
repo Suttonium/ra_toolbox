@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% load aufwiedersehen %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'securityquestions/css/securityquestions.css' %}">
+    <form action="" method="POST" id="security_questions_form">
+        {% csrf_token %}
+        <div class="container">
+            <div id="id_security_questions_jumbotron" class="jumbotron vertical-center">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="favorite_color">Favorite Color</label>
+                        {{ form.favorite_color }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="high_school">High School</label>
+                        {{ form.high_school }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="birth_city">Birth City</label>
+                        {{ form.birth_city }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="favorite_social_media_platform">Favorite Social Media Platform</label>
+                        {{ form.favorite_social_media_platform }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="road">Road You Grew Up On</label>
+                        {{ form.road }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="favorite_food">Favorite Food</label>
+                        {{ form.favorite_food }}
+                    </div>
+                </div>
+                {% if form.errors %}
+                    <div class="alert alert-error">
+                        <p class="mandatory" id="error_message">The operation could not be performed because the
+                            following
+                            error(s) occurred. Please resubmit the form after making the following changes:</p>
+                        <ul>
+                            {% for field,error in form.errors.items %}
+                                {% if field != '__all__' %}
+                                    {{ field|title|cut:"_" }} - {{ error|striptags }}
+                                {% else %}
+                                    {{ error|striptags }}
+                                {% endif %}
+                                <br>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <button type="submit" class="option btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

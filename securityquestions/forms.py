@@ -6,6 +6,8 @@ from .models import *
 class SecurityQuestionsForm(ModelForm):
     class Meta:
         model = SecurityQuestions
+        fields = ['favorite_color', 'high_school', 'birth_city', 'favorite_social_media_platform', 'road',
+                  'favorite_food']
         widgets = {
             'favorite_color': forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': 'Favorite Color', 'id': 'favorite_color'}),

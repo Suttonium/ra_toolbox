@@ -9,4 +9,5 @@
     Your account will not be active until you fill out your security questions. Please do so by visiting the link below.
     <br>
     http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+    http://{{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
 {% endautoescape %}
