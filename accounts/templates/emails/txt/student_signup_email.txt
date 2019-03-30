@@ -2,8 +2,12 @@
 {% autoescape off %}
     Congratulations, {{ email }}!
 
-    You have attempted to register as a Student in {{ floor.residence_hall }}
+    You have attempted to register as a Student!
+
+    Please head to the following links to fill out your student information card and security questions.
 
     http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+
+    http://{{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
 
 {% endautoescape %}

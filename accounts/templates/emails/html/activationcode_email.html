@@ -6,8 +6,9 @@
     <br>
     Here is the activation code you may distribute to your residents: <strong>{{ activation_code }}</strong>
     <br>
-    Your account will not be active until you fill out your security questions. Please do so by visiting the link below.
+    Please head to the following links to fill out your student information card and security questions.
     <br>
     http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+    <br>
     http://{{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
 {% endautoescape %}

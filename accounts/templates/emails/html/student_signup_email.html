@@ -4,7 +4,9 @@
     <br>
     You have attempted to register as a Student!
     <br>
-    Your account will not be active until you fill out your security questions. Please do so by visiting the link below.
+    Please head to the following links to fill out your student information card and security questions.
     <br>
     http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+    <br>
+    http://{{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
 {% endautoescape %}
