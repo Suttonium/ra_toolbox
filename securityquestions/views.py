@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
+from django.views.generic import UpdateView
 from django.views.generic.base import View
 
 # Create your views here.
@@ -43,5 +44,30 @@ class CreateSecurityQuestions(View):
             if form.is_valid():
                 form.save()
                 return redirect(reverse('accounts:login'))
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+
+class SecurityQuestionResponses(UpdateView):
+    template_name = 'securityquestions/detail_or_update_responses.html'
+    form_class = SecurityQuestionsForm
+    model = SecurityQuestions
+
+    def get(self, request, **kwargs):
+        obj = self.get_object()
+        form = SecurityQuestionsForm(instance=obj)
+        disable = True
+        if obj.favorite_color is None or obj.high_school is None or obj.birth_city is None or \
+                obj.favorite_social_media_platform is None or obj.road is None or obj.favorite_food is None:
+            disable = False
+        context = {'form': form, 'disable_update': True if disable else False, 'user_': obj.user}
+        return render(request, self.template_name, context)
+
+    def post(self, request, **kwargs):
+        obj = self.get_object()
+        form = SecurityQuestionsForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('securityquestions:question-responses', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)

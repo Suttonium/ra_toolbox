@@ -62,6 +62,7 @@ informationcards/migrations
 residencehalls/migrations
 trackers/migrations
 desklogs/migrations
+securityquestions/migrations
 # Flask stuff:
 instance/
 .webassets-cache

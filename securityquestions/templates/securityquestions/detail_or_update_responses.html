@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'securityquestions/css/securityquestions_responses.css' %}">
+    <form action="" method="POST" id="security_questions_form">
+        {% csrf_token %}
+        <div class="container">
+            <div id="id_security_questions_jumbotron" class="jumbotron vertical-center">
+                <h3>Security Questions for: {{ user_ }}</h3>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="favorite_color">Favorite Color</label>
+                        {% if disable_update %}
+                            {% render_field form.favorite_color|attr:"disabled" %}
+                        {% else %}
+                            {{ form.favorite_color }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="high_school">High School</label>
+                        {% if disable_update %}
+                            {% render_field form.high_school|attr:"disabled" %}
+                        {% else %}
+                            {{ form.high_school }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="birth_city">Birth City</label>
+                        {% if disable_update %}
+                            {% render_field form.birth_city|attr:"disabled" %}
+                        {% else %}
+                            {{ form.birth_city }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="favorite_social_media_platform">Favorite Social Media Platform</label>
+                        {% if disable_update %}
+                            {% render_field form.favorite_social_media_platform|attr:"disabled" %}
+                        {% else %}
+                            {{ form.favorite_social_media_platform }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="road">Road You Grew Up On</label>
+                        {% if disable_update %}
+                            {% render_field form.road|attr:"disabled" %}
+                        {% else %}
+                            {{ form.road }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="favorite_food">Favorite Food</label>
+                        {% if disable_update %}
+                            {% render_field form.favorite_food|attr:"disabled" %}
+                        {% else %}
+                            {{ form.favorite_food }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% if not disable_update %}
+                    <button type="submit" class="option btn btn-success">Submit</button>
+                {% else %}
+                    <button type="submit" class="btn btn-secondary disable">Submit</button>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+{% endblock %}

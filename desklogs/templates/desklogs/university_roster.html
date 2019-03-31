@@ -21,7 +21,8 @@
                             <td><input class="form-control" type="text"
                                        value="{% if student.is_student %}{{ student.student.residence_hall.name }}{% elif student.is_resident_assistant %}{{ student.residentassistant.residence_hall.name }}{% endif %}" disabled></td>
                             <td><input class="form-control" type="text" value="{% if student.is_student %}{{ student.student.room }}{% elif student.is_resident_assistant %}{{ student.residentassistant.room }}{% endif %}" disabled></td>
-                            <td><a href="#" class="btn btn-primary security_questions">Student Security Questions</a>
+                            <td><a href="{% url 'securityquestions:question-responses' pk=student.securityquestions.pk %}"
+                                   class="btn btn-primary security_questions">Student Security Questions</a>
                             </td>
                         </tr>
                     {% endfor %}
