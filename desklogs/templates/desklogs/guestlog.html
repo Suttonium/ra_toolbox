@@ -2,9 +2,6 @@
 {% load static %}
 {% block title %}<title>Guest Log</title> {% endblock %}
 {% block content %}
-    {% if not user.is_desk_account %}
-        <h3><strong>403 You do not have proper viewing permissions. </strong></h3>
-    {% endif %}
     <link rel="stylesheet" href="{% static 'desklogs/css/guestlog.css' %}">
     <div id="everything">
         <div id="entry_div" data-guestlog-pk="{{ guestlog.pk }}"
@@ -55,7 +52,7 @@
                     {% endfor %}
                 </table>
             {% else %}
-                <h3 id="no_entries">There are currently no guestlog entries in the system.</h3>
+                <h3 id="no_entries">There are currently no Guest Log entries in the system.</h3>
             {% endif %}
         </div>
         <div class="form-row" id="filter">
