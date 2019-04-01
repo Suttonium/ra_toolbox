@@ -323,3 +323,16 @@ class FilterEquipmentLogEntries(View):
             'disable_creation': True if disable else False
         }
         return render(request, self.template_name, context)
+
+
+class LockoutLogEntryListView(ListView):
+    model = LockoutLogEntry
+    template_name = 'desklogs/lockoutlog.html'
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        user = self.request.user
+        context['lockoutlog'] = user.lockoutlog
+        context['lockoutlog_entries'] = user.lockoutlog.lockoutlogentry_set.all()
+
+        return context

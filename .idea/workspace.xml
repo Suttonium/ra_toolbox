@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfe68f1-8e1c-45b4-b357-aaab4134d0c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/desklogs/templates/desklogs/lockoutlog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/management/commands/genesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/management/commands/genesis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desklogs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/residencehalls/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/residencehalls/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/residencehalls/management/commands/create_residence_halls.py" beforeDir="false" afterPath="$PROJECT_DIR$/residencehalls/management/commands/create_residence_halls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityquestions/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desklogs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/desklogs/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,13 +34,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/models.py">
+        <entry file="file://$PROJECT_DIR$/desklogs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="98" column="18" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="18" />
+            <state relative-caret-position="790">
+              <caret line="337" column="22" selection-start-line="337" selection-start-column="22" selection-end-line="337" selection-end-column="22" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/lockoutlog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="73" column="95" selection-start-line="73" selection-start-column="95" selection-end-line="73" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -55,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/desklogs/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="422">
               <caret line="86" column="72" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="72" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -65,36 +76,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/desklogs/admin.py">
+        <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="323">
+              <caret line="19" column="47" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="47" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/management/commands/genesis.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/accounts/signals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="60" column="108" selection-start-line="60" selection-start-column="108" selection-end-line="60" selection-end-column="108" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,8 +94,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -125,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/trackers/static/trackers/js/disable_enter_button_submission.js" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/disable_enter_button_submission.js" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/create_entry.js" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
@@ -142,12 +128,10 @@
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/check_out.js" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/filter_university_roster.js" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/css/university_roster.css" />
-        <option value="$PROJECT_DIR$/desklogs/urls.py" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/filter.js" />
         <option value="$PROJECT_DIR$/desklogs/templates/desklogs/equipmentlog.html" />
         <option value="$PROJECT_DIR$/desklogs/templates/desklogs/create_equipmentlog_entry_response.html" />
         <option value="$PROJECT_DIR$/desklogs/static/desklogs/js/filter_equipmentlog.js" />
-        <option value="$PROJECT_DIR$/desklogs/views.py" />
         <option value="$PROJECT_DIR$/capstone/urls.py" />
         <option value="$PROJECT_DIR$/securityquestions/forms.py" />
         <option value="$PROJECT_DIR$/securityquestions/templates/securityquestions/securityquestions_form.html" />
@@ -164,7 +148,6 @@
         <option value="$PROJECT_DIR$/securityquestions/templates/securityquestions/detail_or_update_responses.html" />
         <option value="$PROJECT_DIR$/securityquestions/views.py" />
         <option value="$PROJECT_DIR$/static/css/footer.css" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/residencehalls/constants.py" />
         <option value="$PROJECT_DIR$/residencehalls/management/commands/create_residence_halls.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
@@ -176,6 +159,10 @@
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/accounts/signals.py" />
+        <option value="$PROJECT_DIR$/desklogs/urls.py" />
+        <option value="$PROJECT_DIR$/desklogs/views.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/desklogs/templates/desklogs/lockoutlog.html" />
       </list>
     </option>
   </component>
@@ -204,7 +191,7 @@
             <path>
               <item name="capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="residencehalls" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -331,7 +318,7 @@
       <workItem from="1553799001987" duration="1244000" />
       <workItem from="1553813475996" duration="599000" />
       <workItem from="1553891596101" duration="2567000" />
-      <workItem from="1553979369116" duration="25308000" />
+      <workItem from="1553979369116" duration="25991000" />
     </task>
     <task id="LOCAL-00001" summary="hello, world">
       <created>1547923801510</created>
@@ -641,11 +628,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554003172994</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="saving all of this new code before i scream">
+      <created>1554090924752</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1554090924752</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179008000" />
+    <option name="totallyTimeSpent" value="179691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
@@ -664,7 +658,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5028612" side_tool="true" weight="0.27831325" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49713877" weight="0.283857" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49713877" visible="true" weight="0.283857" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Statistic" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -705,7 +699,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../RCF_CAPSTONE/master" />
     </ignored-roots>
-    <MESSAGE value="tracker application is complete!" />
     <MESSAGE value="Added a footer section to send the user to pages on the cnu.edu page for more information on the school. Added an acknowledgements section to showcase that I developed the site, gave the person who took the picture photo-creds, and referenced the CNU residence life program." />
     <MESSAGE value="began configuring the current project for heroku deployment. Some files are within the git ignore to protect some sensitive variables and configurations." />
     <MESSAGE value="updated runtime" />
@@ -730,21 +723,10 @@
     <MESSAGE value="code for security questions template is created" />
     <MESSAGE value="security questions application complete" />
     <MESSAGE value="finished desklog portion of the security questions application" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished desklog portion of the security questions application" />
+    <MESSAGE value="saving all of this new code before i scream" />
+    <option name="LAST_COMMIT_MESSAGE" value="saving all of this new code before i scream" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/securityquestions/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/403.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-825" />
@@ -882,11 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/securityquestions/static/securityquestions/css/securityquestions_responses.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -928,13 +905,6 @@
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="101" selection-start-line="70" selection-start-column="101" selection-end-line="70" selection-end-column="101" />
         </state>
       </provider>
     </entry>
@@ -983,25 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1029,13 +980,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+    <entry file="file://$PROJECT_DIR$/residencehalls/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="98" column="18" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="64" lean-forward="true" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1049,20 +997,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
+    <entry file="file://$PROJECT_DIR$/desklogs/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="86" column="72" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="72" />
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/residencehalls/constants.py">
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="64" lean-forward="true" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+        <state relative-caret-position="637">
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,6 +1024,57 @@
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/guestlog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="337" column="22" selection-start-line="337" selection-start-column="22" selection-end-line="337" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="86" column="72" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="73" column="95" selection-start-line="73" selection-start-column="95" selection-end-line="73" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desklogs/templates/desklogs/lockoutlog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>

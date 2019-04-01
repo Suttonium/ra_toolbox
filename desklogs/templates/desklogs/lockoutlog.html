@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Lockout Log</title> {% endblock %}
+{% block content %}
+    {% for entry in lockoutlog_entries %}
+        {{ entry.user }}
+        <br>
+    {% endfor %}
+{% endblock %}

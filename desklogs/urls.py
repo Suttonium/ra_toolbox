@@ -16,5 +16,6 @@ urlpatterns = [
     path('ajax/checkin_equipmentlog_entry/', CheckinEquipmentlogEntry.as_view(),
          name='ajax-checkin-equipmentlog-entry'),
     path('ajax/filter_equipmentlog_entries', FilterEquipmentLogEntries.as_view(),
-         name='ajax-filter-equipmentlog-entries')
+         name='ajax-filter-equipmentlog-entries'),
+    path('lockout_log', LockoutLogEntryListView.as_view(), name='lockout-log'),
 ]
