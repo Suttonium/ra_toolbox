@@ -95,6 +95,8 @@ class HallDirector(models.Model):
 
 class DeskAccount(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    residence_hall = models.ForeignKey('residencehalls.ResidenceHall', on_delete=models.CASCADE, null=True)
+    is_east_campus = models.BooleanField(default=False)
 
     def __str__(self):
         return '{0}'.format(self.user.email)

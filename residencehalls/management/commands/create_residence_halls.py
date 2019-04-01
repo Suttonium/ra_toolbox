@@ -1,5 +1,7 @@
 from django.core.management import BaseCommand
 
+from accounts.constants import desk_account_email_list
+from accounts.models import User, DeskAccount
 from residencehalls.constants import *
 from residencehalls.models import ResidenceHall
 
@@ -15,15 +17,15 @@ class Command(BaseCommand):
         james_river = ResidenceHall.objects.get(name='James River')
         warwick = ResidenceHall.objects.get(name='Warwick')
         santoro = ResidenceHall.objects.get(name='Santoro')
-        rappahannock = None
-        tyler = None
-        washington = None
-        monroe = None
-        wilson = None
-        madison = None
-        harrison = None
-        jefferson = None
-        taylor = None
+        rappahannock = ResidenceHall.objects.get(name='Rappahannock')
+        tyler = ResidenceHall.objects.get(name='Tyler')
+        washington = ResidenceHall.objects.get(name='Washington')
+        monroe = ResidenceHall.objects.get(name='Monroe')
+        wilson = ResidenceHall.objects.get(name='Wilson')
+        madison = ResidenceHall.objects.get(name='Madison')
+        harrison = ResidenceHall.objects.get(name='Harrison')
+        jefferson = ResidenceHall.objects.get(name='Jefferson')
+        taylor = ResidenceHall.objects.get(name='Taylor')
 
         [york_east.hallway_set.get_or_create(floor=floor) for floor in ye_floor_list]
         [york_west.hallway_set.get_or_create(floor=floor) for floor in yw_floor_list]

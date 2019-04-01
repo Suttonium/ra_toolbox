@@ -1,9 +1,10 @@
 from django.db import models
 
 # Create your models here.
-from accounts.models import User
+from accounts.models import User, Student
 from django.utils.translation import ugettext_lazy as _
 from .constants import *
+from residencehalls.models import *
 
 
 class GuestLog(models.Model):
@@ -67,3 +68,41 @@ class EquipmentLogEntry(models.Model):
     class Meta:
         verbose_name = _('Equipment Log Entry')
         verbose_name_plural = _('Equipment Log Entries')
+
+
+class LockoutLog(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    residence_hall = models.OneToOneField(ResidenceHall, on_delete=models.CASCADE, null=True)
+    east_campus_lockout_log = models.BooleanField(default=False)
+
+    def __str__(self):
+        return 'Lockout Log for {0}'.format(self.user.email)
+
+    class Meta:
+        verbose_name = _('Lockout Log')
+        verbose_name_plural = _('Lockout Logs')
+
+
+class LockoutLogEntry(models.Model):
+    lockout_log = models.ForeignKey(LockoutLog, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return 'Lockout Log Entry for {0}'.format(self.user.email)
+
+    class Meta:
+        verbose_name = _('Lockout Log Entry')
+        verbose_name_plural = _('Lockout Log Entries')
+
+
+class LockoutCode(models.Model):
+    lockout_log_entry = models.ForeignKey(LockoutLogEntry, on_delete=models.CASCADE)
+    date_code_given = models.CharField(max_length=100, null=True, blank=True)
+    time_code_given = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return 'Lockout Code for {0}'.format(self.lockout_log_entry.user.email)
+
+    class Meta:
+        verbose_name = _('Lockout Code')
+        verbose_name_plural = _('Lockout Codes')

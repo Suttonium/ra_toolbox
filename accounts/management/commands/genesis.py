@@ -62,7 +62,24 @@ class Command(BaseCommand):
         # ######Create Desk Accounts####
         for email in desk_account_email_list:
             user = User.objects.create_user(email=email, password='TEST', is_active=True, is_desk_account=True)
-            DeskAccount.objects.create(user=user)
+            if email == 'eastcampus@cnu.edu':
+                DeskAccount.objects.create(user=user, is_east_campus=True)
+            if email == 'jamesriverhall@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='James River'))
+            if email == 'yorkrivereast@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='York East'))
+            if email == 'yorkriverwest@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='York West'))
+            if email == 'potomacrivernorth@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='Potomac North'))
+            if email == 'potomacriversouth@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='Potomac South'))
+            if email == 'warwickriverhall@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='Warwick'))
+            if email == 'santorohall@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='Santoro'))
+            if email == 'rappahannockriverhall@cnu.edu':
+                DeskAccount.objects.create(user=user, residence_hall=ResidenceHall.objects.get(name='Rappahannock'))
         ################################
 
         # ######TEST RA AND STUDENTS####
@@ -77,7 +94,9 @@ class Command(BaseCommand):
         fourth_theme_unit.resident_assistant = ra
         fourth_theme_unit.save()
 
-        for i in range(1, 20):
+        # ###### ASSIGN RESIDENCE HALLS TO LOCKOUT LOGS####
+
+        for i in range(1, 5):
             temp_user = User.objects.create_user(email=get_random_string(), student_id='0000000' + str(i),
                                                  is_active=True,
                                                  is_student=True, is_staff=True, password='TEST')

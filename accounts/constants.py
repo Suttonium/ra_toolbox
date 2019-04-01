@@ -11,6 +11,7 @@ hall_director_list = [
 ]
 
 desk_account_email_list = [
-    'jamesriverhall@cnu.edu', 'eastcampus@cnu.edu', 'yorkriverhall@cnu.edu', 'potomacriverhall@cnu.edu',
+    'jamesriverhall@cnu.edu', 'eastcampus@cnu.edu', 'yorkrivereast@cnu.edu', 'yorkriverwest@cnu.edu',
+    'potomacrivernorth@cnu.edu', 'potomacriversouth@cnu.edu',
     'rappahannockriverhall@cnu.edu', 'santorohall@cnu.edu', 'warwickriverhall@cnu.edu'
 ]

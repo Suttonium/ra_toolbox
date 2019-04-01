@@ -1,5 +1,9 @@
 residence_hall_list = ['York East', 'York West', 'Potomac North', 'Potomac South', 'Warwick',
-                       'James River', 'Santoro']
+                       'James River', 'Santoro', 'Rappahannock', 'Tyler', 'Washington', 'Monroe', 'Wilson', 'Madison',
+                       'Harrison', 'Jefferson', 'Taylor']
+
+east_campus_list = ['Tyler', 'Washington', 'Monroe', 'Wilson', 'Madison',
+                    'Harrison', 'Jefferson', 'Taylor']
 
 ye_floor_list = ['1A', '2A', '3A', '4A', '1B', '2B', '3B', '4B']
 yw_floor_list = ['1A', '2A', '3A', '4A', '1B', '2B', '3B', '4B']
