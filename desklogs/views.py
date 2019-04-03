@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from desklogs.models import *
 from django.db.models import Q
@@ -336,3 +336,44 @@ class LockoutLogEntryListView(ListView):
         context['lockoutlog_entries'] = user.lockoutlog.lockoutlogentry_set.all()
 
         return context
+
+
+class FilterLockoutLogEntries(View):
+    template_name = 'desklogs/lockoutlog_response.html'
+
+    def get(self, request):
+        lockoutlog_pk = request.GET.get('lockoutlog_pk')
+        lockoutlog = LockoutLog.objects.get(pk=lockoutlog_pk)
+        query = request.GET.get('query')
+
+        entries = lockoutlog.lockoutlogentry_set.filter(user__email__contains=query)
+
+        context = {
+            'lockoutlog': lockoutlog,
+            'lockoutlog_entries': entries,
+        }
+        return render(request, self.template_name, context)
+
+
+class LockoutLogEntryHistory(DetailView):
+    model = LockoutLogEntry
+    template_name = 'desklogs/lockoutlog_entry_history.html'
+
+
+class CreateLockoutCodeTimeAndDate(View):
+    template_name = 'desklogs/lockoutlog_entry_history_response.html'
+
+    def get(self, request):
+        entry = request.GET.get('lockoutlog_entry_pk')
+        lockoutlog_entry = LockoutLogEntry.objects.get(pk=entry)
+        now = datetime.datetime.now()
+        time = '{0}:{1}:{2}'.format(str(now.hour),
+                                    '0' + str(now.minute) if len(str(now.minute)) == 1 else str(now.minute),
+                                    '0' + str(now.second) if len(str(now.second)) == 1 else str(now.second))
+        date = '{0}-{1}-{2}'.format(str(now.month), str(now.day), str(now.year))
+        LockoutCode.objects.create(lockout_log_entry=lockoutlog_entry, date_code_given=date, time_code_given=time)
+
+        context = {
+            'lockoutlogentry': lockoutlog_entry
+        }
+        return render(request, self.template_name, context)

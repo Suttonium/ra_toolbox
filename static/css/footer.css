@@ -10,7 +10,7 @@
     padding-bottom: 3px;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 100%;
 }
 
 #info {
@@ -20,6 +20,7 @@
 }
 
 #myFooter #footer-copyright p {
+    text-align: center;
     margin: 10px 10px 10px 10px;
     color: #ccc;
     font-size: 18px;
@@ -75,7 +76,6 @@
 
 #myFooter .social-networks a:hover {
     text-decoration: none;
-
 }
 
 @media screen and (max-width: 767px) {

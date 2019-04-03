@@ -1,0 +1,44 @@
+{% load static %}
+<div id="everything">
+    <div id="entry_div" data-lockout-pk="{{ lockoutlog.pk }}">
+        {% if lockoutlog_entries %}
+            <table id="entries">
+                <tr>
+                    <th class="status">Status</th>
+                    <th>Student</th>
+                    <th class="codes_received">Codes Received</th>
+                    <th>Most Recent Code Date</th>
+                    <th>Code History</th>
+                </tr>
+                {% for entry in lockoutlog_entries %}
+                    <tr>
+                        <td bgcolor="{% if entry.lockoutcode_set.count >= 4 %}red
+                                         {% elif entry.lockoutcode_set.count == 3 %}yellow
+                                         {% else %}green{% endif %}">
+                        </td>
+                        <td><input class="form-control" type="text" value="{{ entry.user.email }}" disabled></td>
+                        <td><input class="form-control" type="text" value="{{ entry.lockoutcode_set.count }}"
+                                   disabled></td>
+                        <td><input class="form-control" type="text"
+                                   value="{{ entry.lockoutcode_set.last.date_code_given }} - {{ entry.lockoutcode_set.last.time_code_given }}"
+                                   disabled></td>
+                        <td><a href="{% url 'desklogs:lockout_log_entry_history' pk=entry.pk %}"
+                               class="btn btn-primary history">History</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h3 id="no_entries">There are currently no Lockout Log entries in the system.</h3>
+        {% endif %}
+    </div>
+    <div class="form-row" id="filter">
+        <div class="form-group col-md-10">
+            <input id="filter_search" type="text" class="form-control" placeholder="Search">
+        </div>
+        <div class="form-group col-md-2" id="search_button_div">
+            <a href="#" id="search_button" class="btn btn-warning"
+               data-filter-entries="{% url 'desklogs:ajax-filter-entries' %}">Filter</a>
+        </div>
+    </div>
+</div>
+<script src="{% static 'desklogs/js/filter_lockout_log.js' %}"></script>

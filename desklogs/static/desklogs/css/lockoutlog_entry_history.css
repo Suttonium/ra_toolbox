@@ -1,8 +1,9 @@
 #entries {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 1300px;
+    width: 700px;
     margin: 0 auto;
+    table-layout: fixed;
 }
 
 #entry_div {
@@ -46,63 +47,15 @@
     color: white;
 }
 
-#filter {
-    width: 90%;
-    position: absolute;
-    bottom: 50px;
-    margin: auto;
+#create_entry_button_div {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    margin-left: auto;
 }
 
-#filter_search {
-    margin-left: 70px;
-}
-
-#search_button {
-    padding-top: 2px;
-    padding-bottom: 1px;
-    border-color: black;
-    color: white;
-    margin-left: 75px;
-    width: 100%;
-}
-
-#search_button_div {
-    margin-left: 0;
-}
-
-.history {
-    width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
+#create_entry_button {
+    width: 700px;
     color: white;
     border: solid black;
 }
-
-.status {
-    width: 50px;
-}
-
-#filter {
-    width: 90%;
-    position: absolute;
-    bottom: 50px;
-    margin: auto;
-}
-
-#filter_search {
-    margin-left: 70px;
-}
-
-#search_button {
-    padding-top: 2px;
-    padding-bottom: 1px;
-    border-color: black;
-    color: white;
-    margin-left: 75px;
-    width: 100%;
-}
-
-#search_button_div {
-    margin-left: 0;
-}
-
