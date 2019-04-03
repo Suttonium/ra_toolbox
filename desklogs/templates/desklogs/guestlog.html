@@ -52,7 +52,13 @@
                     {% endfor %}
                 </table>
             {% else %}
-                <h3 id="no_entries">There are currently no Guest Log entries in the system.</h3>
+                <script>
+                    Swal.fire(
+                        'No Guest Log Entries Found',
+                        '',
+                        'question'
+                    )
+                </script>
             {% endif %}
         </div>
         <div class="form-row" id="filter">
@@ -66,9 +72,9 @@
         </div>
         <div id="create_entry_button_div">
             {% if disable_creation %}
-                <a href="#" class="btn btn-secondary" id="disabled_creation">Create New GuestLog Entry</a>
+                <a href="#" class="btn btn-secondary" id="disabled_creation">Create New Guest Log Entry</a>
             {% else %}
-                <a href="#" class="btn btn-success" id="create_entry_button">Create New Guestlog Entry</a>
+                <a href="#" class="btn btn-success" id="create_entry_button">Create New Guest Log Entry</a>
             {% endif %}
         </div>
     </div>

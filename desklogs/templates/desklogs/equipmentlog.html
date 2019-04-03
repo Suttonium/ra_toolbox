@@ -82,7 +82,13 @@
                     {% endfor %}
                 </table>
             {% else %}
-                <h3 id="no_entries">There are currently no Equipment Log entries in the system.</h3>
+                <script>
+                    Swal.fire(
+                        'No Equipment Log Entries Found',
+                        '',
+                        'question'
+                    )
+                </script>
             {% endif %}
         </div>
         <div class="form-row" id="filter">
@@ -96,9 +102,9 @@
         </div>
         <div id="create_entry_button_div">
             {% if disable_creation %}
-                <a href="#" class="btn btn-secondary" id="disabled_creation">Create New Equipmentlog Entry</a>
+                <a href="#" class="btn btn-secondary" id="disabled_creation">Create New Equipment Log Entry</a>
             {% else %}
-                <a href="#" class="btn btn-success" id="create_entry_button">Create New Equipmentlog Entry</a>
+                <a href="#" class="btn btn-success" id="create_entry_button">Create New Equipment Log Entry</a>
             {% endif %}
         </div>
     </div>

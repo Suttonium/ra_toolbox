@@ -378,3 +378,15 @@ class CreateLockoutCodeTimeAndDate(LoginRequiredMixin, View):
             'lockoutlogentry': lockoutlog_entry
         }
         return render(request, self.template_name, context)
+
+
+class PassDownLogEntryListView(LoginRequiredMixin, ListView):
+    template_name = 'desklogs/passdownlog.html'
+    model = PassDownLogEntry
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        user = self.request.user
+        context['passdown_log'] = user.passdownlog
+        context['passdown_log_entries'] = user.passdownlog.passdownlogentry_set.all()
+        return context

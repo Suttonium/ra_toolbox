@@ -17,8 +17,9 @@ urlpatterns = [
          name='ajax-checkin-equipmentlog-entry'),
     path('ajax/filter_equipmentlog_entries', FilterEquipmentLogEntries.as_view(),
          name='ajax-filter-equipmentlog-entries'),
-    path('lockout_log', LockoutLogEntryListView.as_view(), name='lockout-log'),
+    path('lockout_log/', LockoutLogEntryListView.as_view(), name='lockout-log'),
     path('ajax/filter_lockoutlog_entries/', FilterLockoutLogEntries.as_view(), name='ajax-filter-lockoutlog-entries'),
     path('lockoutlog_entry_history/<int:pk>', LockoutLogEntryHistory.as_view(), name='lockout_log_entry_history'),
     path('ajax/create_lockout_code_time_and_date/', CreateLockoutCodeTimeAndDate.as_view(), name='create-lockout-code'),
+    path('passdown_log/', PassDownLogEntryListView.as_view(), name='passdown-log'),
 ]

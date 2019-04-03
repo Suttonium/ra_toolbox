@@ -31,7 +31,13 @@
                 {% endfor %}
             </table>
         {% else %}
-            <h3 id="no_entries">There are currently no Lockout Log entries in the system.</h3>
+            <script>
+                Swal.fire(
+                    'No Lockout Log Entries Found',
+                    '',
+                    'question'
+                )
+            </script>
         {% endif %}
     </div>
     <div class="form-row" id="filter">

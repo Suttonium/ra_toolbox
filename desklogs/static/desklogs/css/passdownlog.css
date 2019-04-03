@@ -67,21 +67,12 @@
     pointer-events: none;
 }
 
-.checkin, .checkout {
+.passdown {
     width: 100%;
     padding-top: 0;
     padding-bottom: 0;
     color: white;
     border: solid black;
-}
-
-.completed {
-    width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    color: white;
-    border: solid black;
-    pointer-events: none;
 }
 
 #filter {

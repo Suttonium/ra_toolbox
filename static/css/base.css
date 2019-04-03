@@ -92,3 +92,8 @@ p {
     min-height: 100%;
 }
 
+.nav-link:hover, .navbar-brand:hover {
+    background-color: #84888B;
+    text-decoration: none;
+}
+

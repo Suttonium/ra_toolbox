@@ -24,7 +24,13 @@
                     {% endfor %}
                 </table>
             {% else %}
-                <h3 id="no_entries">This user has no lockout codes to date.</h3>
+                <script>
+                    Swal.fire(
+                        'This User has no Lockout Codes.',
+                        '',
+                        'question'
+                    )
+                </script>
             {% endif %}
         </div>
         <div id="create_entry_button_div">

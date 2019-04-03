@@ -7,9 +7,10 @@
     <script src="{% static 'js/cloudflare_ajax_popper_min.js' %}"></script>
     <script src="{% static 'js/bootstrap_4_1_3_min.js' %}"></script>
     <meta charset="UTF-8">
+    <script src="{% static 'js/sweetalert.js' %}"></script>
     {% block title %} <title>Home</title> {% endblock %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="icon" href="{% static 'img/CNUCaptainLogoSmall.png' %}">
+    <link rel="shortcut icon" href="{% static 'img/CNUCaptainLogoSmall.png' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 {% block embedded_styles_block %}
@@ -72,6 +73,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'desklogs:lockout-log' %}">Lockout Log</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'desklogs:passdown-log' %}">Pass Down Log</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'desklogs:university-roster' %}">Student Roster</a>

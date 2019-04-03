@@ -28,6 +28,7 @@ def add_user_to_proper_group(sender, instance, created, **kwargs):
             Group.objects.get(name='Desk Account Group').user_set.add(instance)
             GuestLog.objects.create(user=instance)
             EquipmentLog.objects.create(user=instance)
+            PassDownLog.objects.create(user=instance)
 
 
 @receiver(post_save, sender=DeskAccount)
