@@ -26,10 +26,10 @@
                                    value="{% if entry.date_in %}{{ entry.date_in }}{% endif %}" disabled></td>
                         <td><input type="text" class="form-control host_name"
                                    value="{% if entry.host_name %}{{ entry.host_name }}{% endif %}"
-                                   {% if not entry.guest_checked_in %}disabled{% endif %}></td>
+                                   {% if not entry.guest_checked_in or entry.completed %}disabled{% endif %}></td>
                         <td><input type="text" class="form-control guest_name"
                                    value="{% if entry.guest_name %}{{ entry.guest_name }}{% endif %}"
-                                   {% if not entry.guest_checked_in %}disabled{% endif %}></td>
+                                   {% if not entry.guest_checked_in or entry.completed %}disabled{% endif %}></td>
                         <td><input type="text" class="form-control time_out"
                                    value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}" disabled></td>
                         <td><input type="text" class="form-control date_out"

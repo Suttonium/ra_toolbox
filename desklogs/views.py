@@ -98,6 +98,7 @@ class UpdateGuestlogEntry(LoginRequiredMixin, View):
         entry = GuestLogEntry.objects.get(pk=entry_pk)
         entry.host_name = host_name
         entry.guest_name = guest_name
+        entry.completed = True
         entry.save()
 
         user = self.request.user
