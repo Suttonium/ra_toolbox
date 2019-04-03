@@ -16,7 +16,7 @@ class StudentTrackerMainView(LoginRequiredMixin, DetailView):
     form_class = TrackerForm
 
 
-class AJAXKnockAndTalks(View):
+class AJAXKnockAndTalks(LoginRequiredMixin, View):
     template_name = 'trackers/knock_and_talk_response.html'
 
     def get(self, request):
@@ -25,7 +25,7 @@ class AJAXKnockAndTalks(View):
         return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
 
 
-class AJAXCatchUps(View):
+class AJAXCatchUps(LoginRequiredMixin, View):
     template_name = 'trackers/catch_up_response.html'
 
     def get(self, request):
@@ -34,7 +34,7 @@ class AJAXCatchUps(View):
         return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
 
 
-class AJAXGeneralInformation(View):
+class AJAXGeneralInformation(LoginRequiredMixin, View):
     template_name = 'trackers/general_information_response.html'
 
     def get(self, request):
@@ -47,7 +47,7 @@ class AJAXGeneralInformation(View):
         return render(request, self.template_name, context)
 
 
-class AJAXSubmitKnockAndTalk(View):
+class AJAXSubmitKnockAndTalk(LoginRequiredMixin, View):
     template_name = 'trackers/knock_and_talk_response.html'
 
     def get(self, request):
@@ -68,7 +68,7 @@ class AJAXSubmitKnockAndTalk(View):
         return render(request, self.template_name, {'current_tracker': current_tracker})
 
 
-class AJAXSubmitCatchUp(View):
+class AJAXSubmitCatchUp(LoginRequiredMixin, View):
     content_type = 'application/json'
 
     def get(self, request):
@@ -82,7 +82,7 @@ class AJAXSubmitCatchUp(View):
         return HttpResponse(data, content_type=self.content_type)
 
 
-class AJAXSubmitGeneralInformation(View):
+class AJAXSubmitGeneralInformation(LoginRequiredMixin, View):
     content_type = 'application/json'
 
     def get(self, request):
@@ -96,7 +96,7 @@ class AJAXSubmitGeneralInformation(View):
         return HttpResponse(data, content_type=self.content_type)
 
 
-class AJAXSubmitRoomAssignment(View):
+class AJAXSubmitRoomAssignment(LoginRequiredMixin, View):
     context_type = 'application/json'
 
     def get(self, request):
@@ -133,7 +133,7 @@ class AJAXSubmitRoomAssignment(View):
         return HttpResponse(data, content_type=self.context_type)
 
 
-class AJAXStudentOfConcernDecision(View):
+class AJAXStudentOfConcernDecision(LoginRequiredMixin, View):
     template_name = 'trackers/student_of_concern_ajax_response.html'
 
     def get(self, request):

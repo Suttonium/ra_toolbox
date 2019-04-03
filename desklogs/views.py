@@ -11,7 +11,7 @@ from desklogs.models import *
 from django.db.models import Q
 
 
-class UniversityRoster(ListView):
+class UniversityRoster(LoginRequiredMixin, ListView):
     model = User
     template_name = 'desklogs/university_roster.html'
 
@@ -22,7 +22,7 @@ class UniversityRoster(ListView):
         return context
 
 
-class FilterUniversityRoster(View):
+class FilterUniversityRoster(LoginRequiredMixin, View):
     template_name = 'desklogs/university_roster_response.html'
 
     def get(self, request):
@@ -55,7 +55,7 @@ class GuestLogEntryListView(LoginRequiredMixin, ListView):
         return context
 
 
-class CreateBlankGuestLogEntry(View):
+class CreateBlankGuestLogEntry(LoginRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
 
     def get(self, request):
@@ -85,7 +85,7 @@ class CreateBlankGuestLogEntry(View):
         return render(request, self.template_name, context)
 
 
-class UpdateGuestlogEntry(View):
+class UpdateGuestlogEntry(LoginRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
 
     def get(self, request):
@@ -118,7 +118,7 @@ class UpdateGuestlogEntry(View):
         return render(request, self.template_name, context)
 
 
-class CheckoutGuestlogEntry(View):
+class CheckoutGuestlogEntry(LoginRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
 
     def get(self, request):
@@ -154,7 +154,7 @@ class CheckoutGuestlogEntry(View):
         return render(request, self.template_name, context)
 
 
-class FilterGuestlogEntries(View):
+class FilterGuestlogEntries(LoginRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
 
     def get(self, request):
@@ -198,7 +198,7 @@ class EquipmentLogEntryListView(LoginRequiredMixin, ListView):
         return context
 
 
-class CreateBlankEquipmentLogEntry(View):
+class CreateBlankEquipmentLogEntry(LoginRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
 
     def get(self, request):
@@ -228,7 +228,7 @@ class CreateBlankEquipmentLogEntry(View):
         return render(request, self.template_name, context)
 
 
-class UpdateEquipmentlogEntry(View):
+class UpdateEquipmentlogEntry(LoginRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
 
     def get(self, request):
@@ -263,7 +263,7 @@ class UpdateEquipmentlogEntry(View):
         return render(request, self.template_name, context)
 
 
-class CheckinEquipmentlogEntry(View):
+class CheckinEquipmentlogEntry(LoginRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
 
     def get(self, request):
@@ -299,7 +299,7 @@ class CheckinEquipmentlogEntry(View):
         return render(request, self.template_name, context)
 
 
-class FilterEquipmentLogEntries(View):
+class FilterEquipmentLogEntries(LoginRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
 
     def get(self, request):
@@ -325,7 +325,7 @@ class FilterEquipmentLogEntries(View):
         return render(request, self.template_name, context)
 
 
-class LockoutLogEntryListView(ListView):
+class LockoutLogEntryListView(LoginRequiredMixin, ListView):
     model = LockoutLogEntry
     template_name = 'desklogs/lockoutlog.html'
 
@@ -333,12 +333,12 @@ class LockoutLogEntryListView(ListView):
         context = super().get_context_data(*args, **kwargs)
         user = self.request.user
         context['lockoutlog'] = user.lockoutlog
-        context['lockoutlog_entries'] = user.lockoutlog.lockoutlogentry_set.all()
+        context['lockoutlog_entries'] = user.lockoutlog.lockoutlogentry_set.all().order_by('user__student_id')
 
         return context
 
 
-class FilterLockoutLogEntries(View):
+class FilterLockoutLogEntries(LoginRequiredMixin, View):
     template_name = 'desklogs/lockoutlog_response.html'
 
     def get(self, request):
@@ -346,7 +346,7 @@ class FilterLockoutLogEntries(View):
         lockoutlog = LockoutLog.objects.get(pk=lockoutlog_pk)
         query = request.GET.get('query')
 
-        entries = lockoutlog.lockoutlogentry_set.filter(user__email__contains=query)
+        entries = lockoutlog.lockoutlogentry_set.filter(user__email__contains=query).order_by('user__student_id')
 
         context = {
             'lockoutlog': lockoutlog,
@@ -355,12 +355,12 @@ class FilterLockoutLogEntries(View):
         return render(request, self.template_name, context)
 
 
-class LockoutLogEntryHistory(DetailView):
+class LockoutLogEntryHistory(LoginRequiredMixin, DetailView):
     model = LockoutLogEntry
     template_name = 'desklogs/lockoutlog_entry_history.html'
 
 
-class CreateLockoutCodeTimeAndDate(View):
+class CreateLockoutCodeTimeAndDate(LoginRequiredMixin, View):
     template_name = 'desklogs/lockoutlog_entry_history_response.html'
 
     def get(self, request):

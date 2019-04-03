@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -48,7 +49,7 @@ class CreateSecurityQuestions(View):
         return render(request, self.template_name, context)
 
 
-class SecurityQuestionResponses(UpdateView):
+class SecurityQuestionResponses(LoginRequiredMixin, UpdateView):
     template_name = 'securityquestions/detail_or_update_responses.html'
     form_class = SecurityQuestionsForm
     model = SecurityQuestions

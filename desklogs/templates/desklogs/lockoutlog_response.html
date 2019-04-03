@@ -6,6 +6,7 @@
                 <tr>
                     <th class="status">Status</th>
                     <th>Student</th>
+                    <th>Student ID</th>
                     <th class="codes_received">Codes Received</th>
                     <th>Most Recent Code Date</th>
                     <th>Code History</th>
@@ -17,6 +18,8 @@
                                          {% else %}green{% endif %}">
                         </td>
                         <td><input class="form-control" type="text" value="{{ entry.user.email }}" disabled></td>
+                        <td><input class="form-control" type="text" value="{{ entry.user.student_id }}" disabled>
+                        </td>
                         <td><input class="form-control" type="text" value="{{ entry.lockoutcode_set.count }}"
                                    disabled></td>
                         <td><input class="form-control" type="text"

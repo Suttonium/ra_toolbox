@@ -1,5 +1,3 @@
-from django.db import models
-
 # Create your models here.
 from accounts.models import User, Student
 from django.utils.translation import ugettext_lazy as _
@@ -106,3 +104,29 @@ class LockoutCode(models.Model):
     class Meta:
         verbose_name = _('Lockout Code')
         verbose_name_plural = _('Lockout Codes')
+
+
+class PassDownLog(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return 'Pass Down for {0}'.format(self.user.email)
+
+    class Meta:
+        verbose_name = _('Pass Down Log')
+        verbose_name_plural = _('Pass Down Logs')
+
+
+class PassDownLogEntry(models.Model):
+    passdown_log = models.ForeignKey(PassDownLog, on_delete=models.CASCADE)
+    time = models.CharField(max_length=100, null=True, blank=True)
+    date = models.CharField(max_length=100, null=True, blank=True)
+    message = models.TextField()
+    initials = models.CharField(max_length=10, null=True, blank=True)
+
+    def __str__(self):
+        return 'Pass Down Log Entry for Pass Down Log at {0}'.format(self.passdown_log.user.email)
+
+    class Meta:
+        verbose_name = _('Pass Down Log Entry')
+        verbose_name_plural = _('Pass Down Log Entries')
