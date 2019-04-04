@@ -17,13 +17,7 @@ class StudentTrackerMainView(LoginRequiredMixin, UserPassesTestMixin, DetailView
     form_class = TrackerForm
 
     def test_func(self):
-        print(self.get_object())
-        print(self.get_object().user)
-        print(self.get_object().user.student)
-        print(self.get_object().user.student.resident_assistant)
-        print(self.request.user)
-        print(self.request.user.residentassistant.student_set.all())
-        return self.get_object().user.student.resident_assistant in self.request.user.residentassistant.student_set.all()
+        return self.get_object().user.student.resident_assistant.user == self.request.user
 
 
 class AJAXKnockAndTalks(LoginRequiredMixin, View):
