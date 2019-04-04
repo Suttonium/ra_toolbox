@@ -1,4 +1,6 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+import json
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -7,13 +9,21 @@ from django.views.generic import DetailView
 from residencehalls.models import Suite, Room
 from trackers.forms import TrackerForm
 from trackers.models import Tracker
-import json
 
 
-class StudentTrackerMainView(LoginRequiredMixin, DetailView):
+class StudentTrackerMainView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Tracker
     template_name = 'trackers/student_tracker.html'
     form_class = TrackerForm
+
+    def test_func(self):
+        print(self.get_object())
+        print(self.get_object().user)
+        print(self.get_object().user.student)
+        print(self.get_object().user.student.resident_assistant)
+        print(self.request.user)
+        print(self.request.user.residentassistant.student_set.all())
+        return self.get_object().user.student.resident_assistant in self.request.user.residentassistant.student_set.all()
 
 
 class AJAXKnockAndTalks(LoginRequiredMixin, View):

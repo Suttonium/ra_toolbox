@@ -1,3 +1,5 @@
+from django.contrib.auth import login
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -38,7 +40,7 @@ class ActivateAccount(View):
             user = User.objects.get(pk=uid)
         except(TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
-
+        login(request, user, backend='accounts.backends.EmailBackend')
         if user:
             form = StudentInformationCardPartOneForm(request.POST, instance=user.studentinformationcard)
             if form.is_valid():
@@ -48,7 +50,7 @@ class ActivateAccount(View):
         return render(request, self.template_name, context)
 
 
-class UpdateStudentInformationCardPartTwoView(UpdateView):
+class UpdateStudentInformationCardPartTwoView(UserPassesTestMixin, UpdateView):
     template_name = 'informationcards/studentinformationcardparttwo_form.html'
     form_class = StudentInformationCardPartTwoForm
     model = StudentInformationCard
@@ -75,8 +77,13 @@ class UpdateStudentInformationCardPartTwoView(UpdateView):
         context = {'form': form}
         return render(request, self.template_name, context)
 
+    def test_func(self):
+        obj = self.get_object()
+        user = self.request.user
+        return obj.user == user
 
-class UpdateStudentInformationCardPartOneView(UpdateView):
+
+class UpdateStudentInformationCardPartOneView(UserPassesTestMixin, UpdateView):
     template_name = 'informationcards/studentinformationcardpartone_form.html'
     form_class = StudentInformationCardPartOneForm
     model = StudentInformationCard
@@ -84,8 +91,13 @@ class UpdateStudentInformationCardPartOneView(UpdateView):
     def get_success_url(self):
         return reverse('informationcards:part-two', args=[self.object.id])
 
+    def test_func(self):
+        obj = self.get_object()
+        user = self.request.user
+        return obj.user == user
 
-class UpdateStudentInformationCardPartThreeView(UpdateView):
+
+class UpdateStudentInformationCardPartThreeView(UserPassesTestMixin, UpdateView):
     template_name = 'informationcards/studentinformationcardpartthree_form.html'
     form_class = StudentInformationCardPartThreeForm
     model = StudentInformationCard
@@ -112,3 +124,8 @@ class UpdateStudentInformationCardPartThreeView(UpdateView):
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)
+
+    def test_func(self):
+        obj = self.get_object()
+        user = self.request.user
+        return obj.user == user

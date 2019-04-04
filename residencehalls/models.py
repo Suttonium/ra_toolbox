@@ -1,6 +1,7 @@
 from django.db import models
-from accounts.models import ResidentAssistant, HallDirector
 from django.utils.translation import ugettext_lazy as _
+
+from accounts.models import ResidentAssistant, HallDirector
 
 
 # Create your models here.

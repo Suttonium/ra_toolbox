@@ -1,12 +1,12 @@
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+from django.core.mail import send_mail
 from django.core.validators import MinLengthValidator
 from django.db import models
-from django.core.mail import send_mail
-from django.contrib.auth.models import PermissionsMixin
-from django.contrib.auth.base_user import AbstractBaseUser
 from django.utils.translation import ugettext_lazy as _
 
-from .managers import UserManager
 from .constants import *
+from .managers import UserManager
 
 
 class User(AbstractBaseUser, PermissionsMixin):

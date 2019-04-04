@@ -1,8 +1,9 @@
 # Create your models here.
-from accounts.models import User, Student
 from django.utils.translation import ugettext_lazy as _
-from .constants import *
+
+from accounts.models import User, Student
 from residencehalls.models import *
+from .constants import *
 
 
 class GuestLog(models.Model):

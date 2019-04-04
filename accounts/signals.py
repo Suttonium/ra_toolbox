@@ -1,13 +1,13 @@
 from django.contrib.auth.models import Group
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 from desklogs.models import *
 from informationcards.models import StudentInformationCard
+from residencehalls.constants import *
+from securityquestions.models import *
 from trackers.models import Tracker
 from .models import User, Student, DeskAccount
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from securityquestions.models import *
-from residencehalls.constants import *
 
 
 @receiver(post_save, sender=User)

@@ -1,22 +1,20 @@
 from django import forms
+from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
+from django.core.mail import EmailMultiAlternatives
 from django.db import IntegrityError
-
 from django.forms import ModelForm
 from django.template.loader import get_template
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
-
 from django.utils.translation import ugettext_lazy as _
 
 from accounts.tokens import account_activation_token
-from .models import User, Student
-from .constants import ACTIVATION_CODE_LIMIT
-from residencehalls.models import ResidenceHall, Hallway
-from django.contrib.sites.models import Site
-from django.core.mail import EmailMultiAlternatives
 from capstone import settings
+from residencehalls.models import ResidenceHall, Hallway
+from .constants import ACTIVATION_CODE_LIMIT
 from .functions import *
+from .models import User, Student
 
 
 class StudentRegistrationForm(ModelForm):
@@ -148,8 +146,8 @@ class ResidentAssistantRegistrationForm(ModelForm):
             user.save()
             mail_subject = 'Attempted Resident Assistant Registration'
             current_email = self.cleaned_data.get('email')
-            plain_text = get_template('emails/txt/activationcode_email.txt')
-            htmly = get_template('emails/html/activationcode_email.html')
+            plain_text = get_template('emails/txt/ra_signup_email.txt')
+            htmly = get_template('emails/html/ra_signup_email.html')
             context = {
                 'domain': Site.objects.get_current(),
                 'email': current_email,

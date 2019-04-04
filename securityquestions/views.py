@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -9,7 +9,6 @@ from django.views.generic.base import View
 
 # Create your views here.
 from accounts.models import User
-from accounts.tokens import account_activation_token
 from .forms import *
 
 
@@ -22,7 +21,8 @@ class CreateSecurityQuestions(View):
             user = User.objects.get(pk=uid)
         except(TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
-        if user is not None and account_activation_token.check_token(user, token):
+            print(user)
+        if user:
             user.is_active = True
             user.save()
             form = SecurityQuestionsForm(instance=user.securityquestions)
@@ -39,7 +39,6 @@ class CreateSecurityQuestions(View):
             user = User.objects.get(pk=uid)
         except(TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
-
         if user:
             form = SecurityQuestionsForm(request.POST, instance=user.securityquestions)
             if form.is_valid():
@@ -49,7 +48,7 @@ class CreateSecurityQuestions(View):
         return render(request, self.template_name, context)
 
 
-class SecurityQuestionResponses(LoginRequiredMixin, UpdateView):
+class SecurityQuestionResponses(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'securityquestions/detail_or_update_responses.html'
     form_class = SecurityQuestionsForm
     model = SecurityQuestions
@@ -72,3 +71,8 @@ class SecurityQuestionResponses(LoginRequiredMixin, UpdateView):
             return redirect(reverse('securityquestions:question-responses', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
+
+    def test_func(self):
+        obj = self.get_object()
+        user = self.request.user
+        return obj.user == self.request.user if not user.is_desk_account else True

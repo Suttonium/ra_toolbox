@@ -24,7 +24,8 @@
                                           rows="2">{{ entry.message }}</textarea></td>
                             <td><input class="form-control" type="text"
                                        value="{% if entry.initials %}{{ entry.initials }}{% endif %}"></td>
-                            <td><a href="#" class="btn btn-primary passdown">Submit Information</a></td>
+                            <td><a href="#" class="btn btn-primary passdown" data-obj-pk="{{ entry.pk }}">Submit
+                                Information</a></td>
                         </tr>
                     {% endfor %}
                 </table>

@@ -1,14 +1,13 @@
 import datetime
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 from django.shortcuts import render
-
 # Create your views here.
 from django.views import View
 from django.views.generic import ListView, DetailView
 
 from desklogs.models import *
-from django.db.models import Q
 
 
 class UniversityRoster(LoginRequiredMixin, ListView):

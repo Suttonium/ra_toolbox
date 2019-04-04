@@ -10,5 +10,5 @@
 
     http://{{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
 
-    http://{{ domain }}{% url 'securityquestions:questions' uidb64=uidb64 token=token %}
+    http://{{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
 {% endautoescape %}

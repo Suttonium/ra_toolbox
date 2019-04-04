@@ -1,7 +1,5 @@
 from django.core.management import BaseCommand
 
-from accounts.constants import desk_account_email_list
-from accounts.models import User, DeskAccount
 from residencehalls.constants import *
 from residencehalls.models import ResidenceHall
 
