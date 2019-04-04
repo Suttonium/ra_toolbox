@@ -1,6 +1,6 @@
+from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.encoding import force_text
@@ -30,8 +30,8 @@ class ActivateAccount(View):
             context = {'form': form}
             return render(request, self.template_name, context)
         else:
-            # rewrite this using messages that displays on the login screen
-            return HttpResponse('Activation link is invalid!')
+            messages.error(request, 'The Activation Link is Invalid.')
+            return redirect(reverse('accounts:login'))
 
     def post(self, request, uidb64, token):
         form = StudentInformationCardPartOneForm()
@@ -45,6 +45,7 @@ class ActivateAccount(View):
             form = StudentInformationCardPartOneForm(request.POST, instance=user.studentinformationcard)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Information Card Part 1 Successfully Saved for {0}'.format(user))
                 return redirect(reverse('informationcards:part-two', args=[user.studentinformationcard.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -73,6 +74,7 @@ class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, UserPassesTest
             form = StudentInformationCardPartTwoForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Information Card Part 2 Successfully Saved for {0}'.format(obj.user))
                 return redirect(reverse('informationcards:part-three', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -121,7 +123,7 @@ class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, UserPassesTe
             form = StudentInformationCardPartThreeForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
-                # add message here with successmessage mixin to display on login page
+                messages.success(request, 'Student Information Card Part 3 Successfully Saved for {0}'.format(obj.user))
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)

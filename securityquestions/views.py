@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -6,10 +8,9 @@ from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.views.generic import UpdateView
 from django.views.generic.base import View
-
-# Create your views here.
 from accounts.models import User
 from .forms import *
+from accounts.middleware import *
 
 
 class CreateSecurityQuestions(View):
@@ -21,7 +22,6 @@ class CreateSecurityQuestions(View):
             user = User.objects.get(pk=uid)
         except(TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
-            print(user)
         if user:
             user.is_active = True
             user.save()
@@ -29,8 +29,8 @@ class CreateSecurityQuestions(View):
             context = {'form': form}
             return render(request, self.template_name, context)
         else:
-            # rewrite this using messages that displays on the login screen
-            return HttpResponse('Activation link is invalid!')
+            messages.error(request, 'The Activation Link is Invalid.')
+            return redirect(reverse('accounts:login'))
 
     def post(self, request, uidb64, token):
         form = SecurityQuestionsForm()
@@ -43,6 +43,7 @@ class CreateSecurityQuestions(View):
             form = SecurityQuestionsForm(request.POST, instance=user.securityquestions)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Security Questions Saved Successfully for {0}'.format(user))
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -68,6 +69,7 @@ class SecurityQuestionResponses(LoginRequiredMixin, UserPassesTestMixin, UpdateV
         form = SecurityQuestionsForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Security Questions Saved Successfully for {0}'.format(self.get_object().user))
             return redirect(reverse('securityquestions:question-responses', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)

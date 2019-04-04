@@ -123,6 +123,22 @@
 <body>
 <div class="intro">
     <div class="inner">
+        {% if messages %}
+            <div class="container" style="text-align: center">
+                {% for message in messages %}
+                    {% if message.level == 25 %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% elif message.level == 40 %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="content">
             {% block content %}{% endblock %}
         </div>
