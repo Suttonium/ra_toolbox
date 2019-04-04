@@ -448,3 +448,27 @@ class UpdatePassDownLogEntry(View):
             'disable_creation': True if disable else False
         }
         return render(request, self.template_name, context)
+
+
+class FilterPassDownLogEntries(View):
+    template_name = 'desklogs/passdownlog_response.html'
+
+    def get(self, request):
+        query = request.GET.get('query')
+        passdownlog_pk = request.GET.get('passdown_log')
+        passdownlog = PassDownLog.objects.get(pk=passdownlog_pk)
+        entries = passdownlog.passdownlogentry_set.filter(Q(message__contains=query) | Q(initials__contains=query))
+
+        user = self.request.user
+        disable = False
+        for entry in user.passdownlog.passdownlogentry_set.all():
+            if not entry.message:
+                disable = True
+
+        context = {
+            'passdown_log': passdownlog,
+            'passdown_log_entries': passdownlog.passdownlogentry_set.all().order_by('-time'),
+            'disable_creation': True if disable else False
+        }
+        return render(request, self.template_name, context)
+

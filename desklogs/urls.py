@@ -26,4 +26,5 @@ urlpatterns = [
     path('ajax/create_blank_passdownlog_entry/', CreateBlankPassDownLogEntry.as_view(),
          name='ajax-create-passdown-log-entry'),
     path('ajax/update_passdownlog_entry/', UpdatePassDownLogEntry.as_view(), name='ajax-update-passdown-log-entry'),
+    path('ajax/filter_passdownlog_entries/', FilterPassDownLogEntries.as_view(), name='ajax-filter-passdownlog-entries')
 ]
