@@ -97,3 +97,8 @@ p {
     text-decoration: none;
 }
 
+.dropdown-item:hover {
+    text-decoration: none;
+    background-color: #84888B;
+}
+

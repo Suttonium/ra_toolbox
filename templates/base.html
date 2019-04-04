@@ -83,6 +83,22 @@
                     {% endif %}
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    {% if user.is_student or user.is_resident_assistant %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ user.email }}
+                            </a>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"
+                                   href="{% url 'securityquestions:question-responses' pk=user.securityquestions.pk %}">Security
+                                    Questions</a>
+                                <a class="dropdown-item" href="#">Information Card</a>
+                                <a class="dropdown-item" href="#">Personal Profile</a>
+                            </div>
+                        </li>
+                    {% else %}
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
                     </li>
