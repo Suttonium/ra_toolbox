@@ -30,10 +30,12 @@
                                        value="{% if entry.date_in %}{{ entry.date_in }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control host_name"
                                        value="{% if entry.host_name %}{{ entry.host_name }}{% endif %}"
-                                       {% if not entry.guest_checked_in or entry.completed %}disabled{% endif %}></td>
+                                       {% if not entry.guest_checked_in or entry.completed %}disabled{% endif %}>
+                            </td>
                             <td><input type="text" class="form-control guest_name"
                                        value="{% if entry.guest_name %}{{ entry.guest_name }}{% endif %}"
-                                       {% if not entry.guest_checked_in or entry.completed %}disabled{% endif %}></td>
+                                       {% if not entry.guest_checked_in or entry.completed %}disabled{% endif %}>
+                            </td>
                             <td><input type="text" class="form-control time_out"
                                        value="{% if entry.time_out %}{{ entry.time_out }}{% endif %}" disabled></td>
                             <td><input type="text" class="form-control date_out"
@@ -43,7 +45,8 @@
                                     <a href="#" class="btn btn-danger checkout"
                                        data-obj-pk="{{ entry.pk }}">Checkout</a>
                                 {% elif entry.guest_checked_in and not entry.host_name and not entry.guest_name %}
-                                    <a href="#" class="btn btn-success checkin" data-obj-pk="{{ entry.pk }}">Checkin</a>
+                                    <a href="#" class="btn btn-success checkin"
+                                       data-obj-pk="{{ entry.pk }}">Checkin</a>
                                 {% else %}
                                     <a href="#" class="btn btn-secondary completed">Completed</a>
                                 {% endif %}

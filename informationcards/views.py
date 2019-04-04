@@ -1,5 +1,5 @@
 from django.contrib.auth import login, logout
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -50,7 +50,7 @@ class ActivateAccount(View):
         return render(request, self.template_name, context)
 
 
-class UpdateStudentInformationCardPartTwoView(UserPassesTestMixin, UpdateView):
+class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'informationcards/studentinformationcardparttwo_form.html'
     form_class = StudentInformationCardPartTwoForm
     model = StudentInformationCard
@@ -83,7 +83,7 @@ class UpdateStudentInformationCardPartTwoView(UserPassesTestMixin, UpdateView):
         return obj.user == user
 
 
-class UpdateStudentInformationCardPartOneView(UserPassesTestMixin, UpdateView):
+class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'informationcards/studentinformationcardpartone_form.html'
     form_class = StudentInformationCardPartOneForm
     model = StudentInformationCard
@@ -97,7 +97,7 @@ class UpdateStudentInformationCardPartOneView(UserPassesTestMixin, UpdateView):
         return obj.user == user
 
 
-class UpdateStudentInformationCardPartThreeView(UserPassesTestMixin, UpdateView):
+class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'informationcards/studentinformationcardpartthree_form.html'
     form_class = StudentInformationCardPartThreeForm
     model = StudentInformationCard
