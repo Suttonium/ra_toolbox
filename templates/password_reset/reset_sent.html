@@ -6,8 +6,10 @@
     <script>
         Swal.fire(
             'Good job!',
-            'An email was sent to {{ email }}. Use the link within the email to set a new password.',
+            '<strong>An email was sent to {{ email }}. Use the link within the email to set a new password.</strong>',
             'success'
-        )
+        ).then(function () {
+            window.location = '{% url 'accounts:login' %}'
+        })
     </script>
 {% endblock %}
