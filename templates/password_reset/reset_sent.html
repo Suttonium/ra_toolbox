@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}<title>Recovery Email Sent</title>{% endblock %}
+{% block content %}
+    <script>
+        Swal.fire(
+            'Good job!',
+            'An email was sent to {{ email }}. Use the link within the email to set a new password.',
+            'success'
+        )
+    </script>
+{% endblock %}

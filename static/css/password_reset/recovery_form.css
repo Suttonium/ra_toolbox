@@ -1,0 +1,23 @@
+#reset_div {
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#email_input_div {
+    border: 5px solid blue;
+    width: 50%;
+    left: 50%
+}
+
+#id_form_submit {
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    border: solid black;
+}
+
+#id_form_submit:hover {
+    border: solid white;
+}

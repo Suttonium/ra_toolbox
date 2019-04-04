@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}<title>Password Recovery Form</title>{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/password_reset/recovery_form.css' %}">
+    <div id="reset_div">
+        <form method="post" action="{{ url }}">
+            {% csrf_token %}
+            <label for="email">Email</label>
+            {% render_field form.username_or_email class="form-control" id="email" %}
+            <button id="id_form_submit" class="btn btn-success" type="submit">Recover Password</button>
+        </form>
+    </div>
+{% endblock %}

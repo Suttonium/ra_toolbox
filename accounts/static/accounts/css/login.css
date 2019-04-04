@@ -28,3 +28,11 @@ label {
     width: 485px;
     margin-left: 5px;
 }
+
+#forgot_password a {
+    color: white
+}
+
+#forgot_password a:hover {
+    text-decoration: none;
+}
