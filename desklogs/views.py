@@ -388,4 +388,34 @@ class PassDownLogEntryListView(LoginRequiredMixin, ListView):
         user = self.request.user
         context['passdown_log'] = user.passdownlog
         context['passdown_log_entries'] = user.passdownlog.passdownlogentry_set.all()
+        for entry in user.passdownlog.passdownlogentry_set.all():
+            if not entry.initials:
+                context['disable_creation'] = True
         return context
+
+
+class CreateBlankPassDownLogEntry(View):
+    template_name = 'desklogs/passdownlog_response.html'
+
+    def get(self, request):
+        passdownlog_pk = request.GET.get('passdownlog_pk')
+        passdownlog = PassDownLog.objects.get(pk=passdownlog_pk)
+        now = datetime.datetime.now()
+        time = '{0}:{1}:{2}'.format(str(now.hour),
+                                    '0' + str(now.minute) if len(str(now.minute)) == 1 else str(now.minute),
+                                    '0' + str(now.second) if len(str(now.second)) == 1 else str(now.second))
+        date = '{0}-{1}-{2}'.format(str(now.month), str(now.day), str(now.year))
+        PassDownLogEntry.objects.create(passdown_log=passdownlog, time=time, date=date)
+
+        user = self.request.user
+        disable = False
+        for entry in user.passdownlog.passdownlogentry_set.all():
+            if not entry.message:
+                disable = True
+
+        context = {
+            'passdown_log': passdownlog,
+            'passdown_log_entries': passdownlog.passdownlogentry_set.all(),
+            'disable_creation': True if disable else False
+        }
+        return render(request, self.template_name, context)

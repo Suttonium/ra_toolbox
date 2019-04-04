@@ -23,4 +23,6 @@ urlpatterns = [
     path('lockoutlog_entry_history/<int:pk>', LockoutLogEntryHistory.as_view(), name='lockout_log_entry_history'),
     path('ajax/create_lockout_code_time_and_date/', CreateLockoutCodeTimeAndDate.as_view(), name='create-lockout-code'),
     path('passdown_log/', PassDownLogEntryListView.as_view(), name='passdown-log'),
+    path('ajax/create_blank_passdownlog_entry/', CreateBlankPassDownLogEntry.as_view(),
+         name='ajax-create-passdown-log-entry')
 ]
