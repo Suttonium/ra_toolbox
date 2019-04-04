@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -117,6 +117,7 @@ class UpdateStudentInformationCardPartThreeView(UserPassesTestMixin, UpdateView)
                 form.save()
                 return redirect(reverse('informationcards:part-two', args=[form.instance.pk]))
         elif request.POST.get('submit'):
+            logout(request)
             form = StudentInformationCardPartThreeForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()

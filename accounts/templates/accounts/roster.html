@@ -2,30 +2,39 @@
 {% load static %}
 {% block title %} <title>Roster</title> {% endblock %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/403.css' %}">
+    {% load queryset_to_list %}
     {% if not user.is_resident_assistant and not user.is_hall_director %}
-        <h3><strong>403 You do not have proper viewing permissions. </strong></h3>
-    {% endif %}
-    <link rel="stylesheet" href="{% static 'accounts/css/roster.css' %}">
-    <div id="roster_div">
-        {% if current_student_list %}
-            <table id="students">
-                <tr>
-                    <th>Student Email</th>
-                    <th>Student ID</th>
-                    <th>Hallway Information</th>
-                </tr>
-                {% for student in current_student_list %}
-                    <tr>
-                        <td>{{ student.user.email }}</td>
-                        <td>{{ student.user.student_id }}</td>
-                        <td><a href="{% url 'trackers:student-update-tracker' pk=student.user.tracker.pk %}"
-                               class="hallway_button btn btn-primary">View
-                            Individual Tracker</a></td>
-                    </tr>
-                {% endfor %}
-            </table>
+        <h1><strong>403 Forbidden</strong></h1>
+        <a href="{% url 'accounts:login' %}" class="option btn btn-success">Login</a>
+    {% else %}
+        {% if current_student_list != user.resident_assistant.student_set.all|_list %}
+            <h1><strong>403 Forbidden</strong></h1>
+            <a href="{% url 'accounts:login' %}" class="option btn btn-success">Login</a>
         {% else %}
-            <h3 id="no_residents">You Currently Have No Residents Connected</h3>
+            <link rel="stylesheet" href="{% static 'accounts/css/roster.css' %}">
+            <div id="roster_div">
+                {% if current_student_list %}
+                    <table id="students">
+                        <tr>
+                            <th>Student Email</th>
+                            <th>Student ID</th>
+                            <th>Hallway Information</th>
+                        </tr>
+                        {% for student in current_student_list %}
+                            <tr>
+                                <td>{{ student.user.email }}</td>
+                                <td>{{ student.user.student_id }}</td>
+                                <td><a href="{% url 'trackers:student-update-tracker' pk=student.user.tracker.pk %}"
+                                       class="hallway_button btn btn-primary">View
+                                    Individual Tracker</a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <h3 id="no_residents">You Currently Have No Residents Connected</h3>
+                {% endif %}
+            </div>
         {% endif %}
-    </div>
+    {% endif %}
 {% endblock %}

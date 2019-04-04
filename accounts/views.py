@@ -38,9 +38,10 @@ class Roster(LoginRequiredMixin, ListView):
         context = super().get_context_data(*args, **kwargs)
         user = self.request.user
         if user.is_hall_director:
-            context['current_student_list'] = User.objects.get(pk=self.kwargs['pk']).residentassistant.student_set.all()
+            context['current_student_list'] = list(
+                User.objects.get(pk=self.kwargs['pk']).residentassistant.student_set.all())
         if user.is_resident_assistant:
-            context['current_student_list'] = user.residentassistant.student_set.all()
+            context['current_student_list'] = list(user.residentassistant.student_set.all())
         return context
 
 
