@@ -387,7 +387,7 @@ class PassDownLogEntryListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(*args, **kwargs)
         user = self.request.user
         context['passdown_log'] = user.passdownlog
-        context['passdown_log_entries'] = user.passdownlog.passdownlogentry_set.all()
+        context['passdown_log_entries'] = user.passdownlog.passdownlogentry_set.all().order_by('-time')
         for entry in user.passdownlog.passdownlogentry_set.all():
             if not entry.initials:
                 context['disable_creation'] = True
@@ -415,7 +415,36 @@ class CreateBlankPassDownLogEntry(View):
 
         context = {
             'passdown_log': passdownlog,
-            'passdown_log_entries': passdownlog.passdownlogentry_set.all(),
+            'passdown_log_entries': passdownlog.passdownlogentry_set.all().order_by('-time'),
+            'disable_creation': True if disable else False
+        }
+        return render(request, self.template_name, context)
+
+
+class UpdatePassDownLogEntry(View):
+    template_name = 'desklogs/passdownlog_response.html'
+
+    def get(self, request):
+        passdownlog_pk = request.GET.get('passdownlog_pk')
+        passdownlog = PassDownLog.objects.get(pk=passdownlog_pk)
+        passdownlog_entry_pk = request.GET.get('current_entry_being_updated_pk')
+        message = request.GET.get('message')
+        initials = request.GET.get('initials')
+        entry = PassDownLogEntry.objects.get(pk=passdownlog_entry_pk)
+        entry.message = message
+        entry.initials = initials
+        entry.completed = True
+        entry.save()
+
+        user = self.request.user
+        disable = False
+        for entry in user.passdownlog.passdownlogentry_set.all():
+            if not entry.message:
+                disable = True
+
+        context = {
+            'passdown_log': passdownlog,
+            'passdown_log_entries': passdownlog.passdownlogentry_set.all().order_by('-time'),
             'disable_creation': True if disable else False
         }
         return render(request, self.template_name, context)

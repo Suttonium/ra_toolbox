@@ -1,7 +1,8 @@
 {% load static %}
 <div id="everything">
     <div id="entry_div" data-passdown-log-pk="{{ passdown_log.pk }}"
-         data-create-entry-url="{% url 'desklogs:ajax-create-passdown-log-entry' %}">
+         data-create-entry-url="{% url 'desklogs:ajax-create-passdown-log-entry' %}"
+         data-update-entry-url="{% url 'desklogs:ajax-update-passdown-log-entry' %}">
         {% if passdown_log_entries %}
             <table id="entries">
                 <tr>
@@ -17,10 +18,11 @@
                                    value="{% if entry.time %}{{ entry.time }}{% endif %}" disabled></td>
                         <td><input class="form-control" type="text"
                                    value="{% if entry.date %}{{ entry.date }}{% endif %}" disabled></td>
-                        <td><textarea class="form-control" name="message" cols="40"
+                        <td><textarea class="form-control message" name="message" cols="40"
                                       rows="2">{{ entry.message }}</textarea></td>
-                        <td><input class="form-control" type="text"
-                                   value="{% if entry.initials %}{{ entry.initials }}{% endif %}"></td>
+                        <td><input class="form-control initials" type="text"
+                                   value="{% if entry.initials %}{{ entry.initials }}{% endif %}"
+                                   {% if entry.completed %}disabled{% endif %}></td>
                         <td><a href="#" class="btn btn-primary passdown" data-obj-pk="{{ entry.pk }}">Submit
                             Information</a></td>
                     </tr>
@@ -54,3 +56,5 @@
     </div>
 </div>
 <script src="{% static 'desklogs/js/create_passdown_log_entry.js' %}"></script>
+<script src="{% static 'desklogs/js/disable_enter_button_submission.js' %}"></script>
+<script src="{% static 'desklogs/js/check_in_pass_down_log_message.js' %}"></script>
