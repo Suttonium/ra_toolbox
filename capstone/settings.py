@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'session_security',
     'easyaudit',
     'django_extensions',
+    'password_reset',
 ]
 
 MIDDLEWARE = [
