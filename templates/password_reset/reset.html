@@ -1,15 +1,33 @@
-{% extends "password_reset/base.html" %}{% load i18n %}
-
+{% extends "password_reset/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}<title>Password Reset Form</title>{% endblock %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/password_reset/reset.css' %}">
     {% if invalid %}{% url "password_reset_recover" as recovery_url %}
         <p>{% blocktrans %}Sorry, this password reset link is invalid. You can still
             <a href="{{ recovery_url }}">request a new one</a>.{% endblocktrans %}</p>
     {% else %}
-        <p>{% blocktrans %}Hi, <strong>{{ username }}</strong>. Please choose your new password.{% endblocktrans %}</p>
-        <form method="post" action="{% url "password_reset_reset" token %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <p><input type="submit" value="{% trans "Set new password" %}"></p>
-        </form>
+        <div id="reset_div">
+            <p>{% blocktrans %}Hi, <strong>{{ username }}</strong>. Please choose your new password.{% endblocktrans %}
+            </p>
+            <form method="post" action="{% url "password_reset_reset" token %}">
+                {% csrf_token %}
+                <div id="input_div">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="password1">New Password</label>
+                            {% render_field form.password1 class="form-control" id="password1" placeholder="New Password" %}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="password2">Confirm Password</label>
+                            {% render_field form.password2 class="form-control" id="password2" placeholder="Confirm Password" %}
+                        </div>
+                    </div>
+                </div>
+                <button id="id_form_submit" class="btn btn-success" type="submit">Set New Password</button>
+            </form>
+        </div>
     {% endif %}
 {% endblock %}

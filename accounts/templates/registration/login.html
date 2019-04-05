@@ -7,14 +7,16 @@
     <div id="login_div">
         <form action="" method="POST">
             {% csrf_token %}
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="login_username">Email</label>
-                    {% render_field form.username class='form-control' placeholder='Email Address' id="login_username" %}
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="login_password">Password</label>
-                    {% render_field form.password class='form-control' placeholder='Password' id="login_password" %}
+            <div id="input_div">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="login_username">Email</label>
+                        {% render_field form.username class='form-control' placeholder='Email Address' id="login_username" %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="login_password">Password</label>
+                        {% render_field form.password class='form-control' placeholder='Password' id="login_password" %}
+                    </div>
                 </div>
             </div>
             <button id="id_form_submit" class="btn btn-success" type="submit">Login</button>

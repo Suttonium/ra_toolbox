@@ -1,14 +1,8 @@
 #reset_div {
-    margin-top: 25%;
+    margin-top: 22%;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
-}
-
-#email_input_div {
-    border: 5px solid blue;
-    width: 50%;
-    left: 50%
+    width: 80%;
 }
 
 #id_form_submit {
@@ -24,4 +18,10 @@
 
 label {
     color: white;
+}
+
+p {
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
 }

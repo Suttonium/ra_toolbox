@@ -1,8 +1,15 @@
-{% extends "password_reset/base.html" %}
+{% extends "base.html" %}
 {% load i18n %}
-
-{% block title %}{% trans "New password set" %}{% endblock %}
-
+{% load static %}
+{% block title %}<title>Reset Complete</title>{% endblock %}
 {% block content %}
-    <p style="color: red">{% trans "Your password has successfully been reset. You can use it right now on the login page." %}</p>
+    <script>
+        Swal.fire(
+            'Good job!',
+            'Your password has been successfully reset. You will be redirected to the login screen.',
+            'success'
+        ).then(function () {
+            window.location = '{% url 'accounts:login' %}'
+        })
+    </script>
 {% endblock %}

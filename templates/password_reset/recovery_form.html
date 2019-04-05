@@ -9,7 +9,7 @@
         <form method="post" action="{{ url }}">
             {% csrf_token %}
             <label for="email">Email</label>
-            {% render_field form.username_or_email class="form-control" id="email" %}
+            {% render_field form.username_or_email class="form-control" id="email" placeholder="Email" %}
             <button id="id_form_submit" class="btn btn-success" type="submit">Recover Password</button>
         </form>
     </div>
