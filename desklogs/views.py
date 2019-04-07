@@ -467,8 +467,7 @@ class FilterPassDownLogEntries(View):
 
         context = {
             'passdown_log': passdownlog,
-            'passdown_log_entries': passdownlog.passdownlogentry_set.all().order_by('-time'),
+            'passdown_log_entries': entries.order_by('-time'),
             'disable_creation': True if disable else False
         }
         return render(request, self.template_name, context)
-

@@ -34,7 +34,9 @@
                     'No Pass Down Log Entries Found',
                     '',
                     'question'
-                )
+                ).then(function () {
+                    window.location = '{% url 'desklogs:passdown-log' %}'
+                })
             </script>
         {% endif %}
     </div>

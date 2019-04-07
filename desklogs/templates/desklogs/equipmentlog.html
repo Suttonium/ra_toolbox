@@ -70,10 +70,10 @@
                             <td>
                                 {% if entry.item_host and not entry.completed %}
                                     <a href="#" class="btn btn-danger checkin"
-                                       data-obj-pk="{{ entry.pk }}">Checkin</a>
+                                       data-obj-pk="{{ entry.pk }}">Check in</a>
                                 {% elif not entry.item_checked_out and not entry.item_host %}
                                     <a href="#" class="btn btn-success checkout"
-                                       data-obj-pk="{{ entry.pk }}">Checkout</a>
+                                       data-obj-pk="{{ entry.pk }}">Check out</a>
                                 {% elif entry.completed and not entry.item_checked_out %}
                                     <a href="#" class="btn btn-secondary completed">Completed</a>
                                 {% endif %}

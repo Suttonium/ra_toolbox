@@ -36,7 +36,9 @@
                     'No Lockout Log Entries Found',
                     '',
                     'question'
-                )
+                ).then(function () {
+                    window.location = '{% url 'desklogs:lockout-log' %}'
+                })
             </script>
         {% endif %}
     </div>
@@ -46,7 +48,7 @@
         </div>
         <div class="form-group col-md-2" id="search_button_div">
             <a href="#" id="search_button" class="btn btn-warning"
-               data-filter-entries="{% url 'desklogs:ajax-filter-entries' %}">Filter</a>
+               data-filter-lockoutlog-entries="{% url 'desklogs:ajax-filter-lockoutlog-entries' %}">Filter</a>
         </div>
     </div>
 </div>

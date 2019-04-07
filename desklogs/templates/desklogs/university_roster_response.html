@@ -29,10 +29,12 @@
         {% else %}
             <script>
                 Swal.fire(
-                    'No Guest Log Entries Found',
+                    'Student Not Found',
                     '',
                     'question'
-                )
+                ).then(function () {
+                    window.location = '{% url 'desklogs:university-roster' %}'
+                })
             </script>
         {% endif %}
     </div>

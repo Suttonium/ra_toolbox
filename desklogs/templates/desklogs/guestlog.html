@@ -43,10 +43,10 @@
                             <td>
                                 {% if entry.host_name and entry.guest_name and entry.guest_checked_in %}
                                     <a href="#" class="btn btn-danger checkout"
-                                       data-obj-pk="{{ entry.pk }}">Checkout</a>
+                                       data-obj-pk="{{ entry.pk }}">Check out</a>
                                 {% elif entry.guest_checked_in and not entry.host_name and not entry.guest_name %}
                                     <a href="#" class="btn btn-success checkin"
-                                       data-obj-pk="{{ entry.pk }}">Checkin</a>
+                                       data-obj-pk="{{ entry.pk }}">Check in</a>
                                 {% else %}
                                     <a href="#" class="btn btn-secondary completed">Completed</a>
                                 {% endif %}
