@@ -1,4 +1,4 @@
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission
 from django.contrib.sites.models import Site
 from django.core.management import BaseCommand
 from django.utils.crypto import get_random_string
@@ -20,6 +20,15 @@ class Command(BaseCommand):
         resident_assistant_group, created = Group.objects.get_or_create(name='Resident Assistant Group')
         hall_director_group, created = Group.objects.get_or_create(name='Hall Director Group')
         desk_account_group, created = Group.objects.get_or_create(name='Desk Account Group')
+        ################################
+
+        # #######PERMISSIONS############
+        [student_group.permissions.add(Permission.objects.get(codename=name)) for name in student_account_permissions]
+        [resident_assistant_group.permissions.add(Permission.objects.get(codename=name)) for name in
+         resident_assistant_account_permissions]
+        [hall_director_group.permissions.add(Permission.objects.get(codename=name)) for name in
+         hall_director_account_permissions]
+        [desk_account_group.permissions.add(Permission.objects.get(codename=name)) for name in desk_account_permissions]
         ################################
 
         # #####CREATE HALL DIRECTORS####

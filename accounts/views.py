@@ -6,13 +6,14 @@ from django.views.generic import TemplateView, CreateView, ListView
 
 # Create your views here.
 from accounts.forms import *
+from .mixins import *
 
 
-class SignupTypeDecisionView(TemplateView):
+class SignupTypeDecisionView(LogoutRequiredMixin, TemplateView):
     template_name = 'accounts/ra_or_student.html'
 
 
-class StudentSignUpView(CreateView):
+class StudentSignUpView(LogoutRequiredMixin, CreateView):
     form_class = StudentRegistrationForm
     model = User
     template_name = 'accounts/studentsignup_form.html'
@@ -21,7 +22,7 @@ class StudentSignUpView(CreateView):
         return reverse('accounts:login')
 
 
-class ResidentAssistantSignUpView(CreateView):
+class ResidentAssistantSignUpView(LogoutRequiredMixin, CreateView):
     form_class = ResidentAssistantRegistrationForm
     model = User
     template_name = 'accounts/residentassistantsignup_form.html'

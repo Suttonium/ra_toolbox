@@ -1,18 +1,20 @@
 import datetime
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from django.shortcuts import render
-# Create your views here.
 from django.views import View
 from django.views.generic import ListView, DetailView
 
 from desklogs.models import *
 
 
-class UniversityRoster(LoginRequiredMixin, ListView):
+class UniversityRoster(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, ListView):
     model = User
     template_name = 'desklogs/university_roster.html'
+    permission_required = (
+        'securityquestions.change_securityquestions', 'securityquestions.view_securityquestions'
+    )
 
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -20,9 +22,15 @@ class UniversityRoster(LoginRequiredMixin, ListView):
             is_desk_account=True).order_by('student_id')
         return context
 
+    def test_func(self):
+        return self.request.user.is_hall_director or self.request.user.is_desk_account
 
-class FilterUniversityRoster(LoginRequiredMixin, View):
+
+class FilterUniversityRoster(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, View):
     template_name = 'desklogs/university_roster_response.html'
+    permission_required = (
+        'securityquestions.change_securityquestions', 'securityquestions.view_securityquestions'
+    )
 
     def get(self, request):
         query = request.GET.get('query')
@@ -35,10 +43,16 @@ class FilterUniversityRoster(LoginRequiredMixin, View):
         }
         return render(request, self.template_name, context)
 
+    def test_func(self):
+        return self.request.user.is_hall_director or self.request.user.is_desk_account
 
-class GuestLogEntryListView(LoginRequiredMixin, ListView):
+
+class GuestLogEntryListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = GuestLogEntry
     template_name = 'desklogs/guestlog.html'
+    permission_required = (
+        'desklogs.view_guestlog', 'desklogs.view_guestlogentry'
+    )
 
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -54,8 +68,11 @@ class GuestLogEntryListView(LoginRequiredMixin, ListView):
         return context
 
 
-class CreateBlankGuestLogEntry(LoginRequiredMixin, View):
+class CreateBlankGuestLogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
+    permission_required = (
+        'desklogs.add_guestlogentry'
+    )
 
     def get(self, request):
         guestlog_pk = request.GET.get('guestlog_pk')
@@ -84,8 +101,11 @@ class CreateBlankGuestLogEntry(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class UpdateGuestlogEntry(LoginRequiredMixin, View):
+class UpdateGuestlogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
+    permission_required = (
+        'desklogs.change_guestlogentry'
+    )
 
     def get(self, request):
         guestlog_pk = request.GET.get('guestlog_pk')
@@ -118,8 +138,11 @@ class UpdateGuestlogEntry(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class CheckoutGuestlogEntry(LoginRequiredMixin, View):
+class CheckoutGuestlogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
+    permission_required = (
+        'desklogs.change_guestlogentry'
+    )
 
     def get(self, request):
         guestlog_pk = request.GET.get('guestlog_pk')
@@ -154,8 +177,11 @@ class CheckoutGuestlogEntry(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class FilterGuestlogEntries(LoginRequiredMixin, View):
+class FilterGuestlogEntries(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_guestlog_entry_response.html'
+    permission_required = (
+        'desklogs.view_guestlogentry'
+    )
 
     def get(self, request):
         query = request.GET.get('query')
@@ -180,9 +206,12 @@ class FilterGuestlogEntries(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class EquipmentLogEntryListView(LoginRequiredMixin, ListView):
+class EquipmentLogEntryListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = EquipmentLogEntry
     template_name = 'desklogs/equipmentlog.html'
+    permission_required = (
+        'desklogs.view_equipmentlog', 'desklogs.add_equipmentlogentry'
+    )
 
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -198,8 +227,11 @@ class EquipmentLogEntryListView(LoginRequiredMixin, ListView):
         return context
 
 
-class CreateBlankEquipmentLogEntry(LoginRequiredMixin, View):
+class CreateBlankEquipmentLogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
+    permission_required = (
+        'desklogs.add_equipmentlogentry'
+    )
 
     def get(self, request):
         equipmentlog_pk = request.GET.get('equipmentlog_pk')
@@ -228,8 +260,11 @@ class CreateBlankEquipmentLogEntry(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class UpdateEquipmentlogEntry(LoginRequiredMixin, View):
+class UpdateEquipmentlogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
+    permission_required = (
+        'desklogs.change_equipmentlogentry'
+    )
 
     def get(self, request):
         equipmentlog_pk = request.GET.get('equipmentlog_pk')
@@ -263,8 +298,11 @@ class UpdateEquipmentlogEntry(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class CheckinEquipmentlogEntry(LoginRequiredMixin, View):
+class CheckinEquipmentlogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
+    permission_required = (
+        'desklogs.change_equipmentlogentry'
+    )
 
     def get(self, request):
         equipmentlog_pk = request.GET.get('equipmentlog_pk')
@@ -299,8 +337,11 @@ class CheckinEquipmentlogEntry(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class FilterEquipmentLogEntries(LoginRequiredMixin, View):
+class FilterEquipmentLogEntries(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/create_equipmentlog_entry_response.html'
+    permission_required = (
+        'desklogs.view_equipmentlogentry'
+    )
 
     def get(self, request):
         equipmentlog_pk = request.GET.get('equipmentlog_pk')
@@ -325,9 +366,12 @@ class FilterEquipmentLogEntries(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class LockoutLogEntryListView(LoginRequiredMixin, ListView):
+class LockoutLogEntryListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = LockoutLogEntry
     template_name = 'desklogs/lockoutlog.html'
+    permission_required = (
+        'desklogs.view_lockoutlog', 'desklogs.view_lockoutlogentry'
+    )
 
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -338,8 +382,11 @@ class LockoutLogEntryListView(LoginRequiredMixin, ListView):
         return context
 
 
-class FilterLockoutLogEntries(LoginRequiredMixin, View):
+class FilterLockoutLogEntries(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/lockoutlog_response.html'
+    permission_required = (
+        'desklogs.view_lockoutlogentry'
+    )
 
     def get(self, request):
         lockoutlog_pk = request.GET.get('lockoutlog_pk')
@@ -355,13 +402,19 @@ class FilterLockoutLogEntries(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class LockoutLogEntryHistory(LoginRequiredMixin, DetailView):
+class LockoutLogEntryHistory(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = LockoutLogEntry
     template_name = 'desklogs/lockoutlog_entry_history.html'
+    permission_required = (
+        'desklogs.view_lockoutcode'
+    )
 
 
-class CreateLockoutCodeTimeAndDate(LoginRequiredMixin, View):
+class CreateLockoutCodeTimeAndDate(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/lockoutlog_entry_history_response.html'
+    permission_required = (
+        'desklogs.add_lockoutcode'
+    )
 
     def get(self, request):
         entry = request.GET.get('lockoutlog_entry_pk')
@@ -379,9 +432,12 @@ class CreateLockoutCodeTimeAndDate(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class PassDownLogEntryListView(LoginRequiredMixin, ListView):
+class PassDownLogEntryListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     template_name = 'desklogs/passdownlog.html'
     model = PassDownLogEntry
+    permission_required = (
+        'desklogs.view_passdownlog', 'desklogs.view_passdownlogentry'
+    )
 
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -394,8 +450,11 @@ class PassDownLogEntryListView(LoginRequiredMixin, ListView):
         return context
 
 
-class CreateBlankPassDownLogEntry(View):
+class CreateBlankPassDownLogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/passdownlog_response.html'
+    permission_required = (
+        'desklogs.add_passdownlogentry'
+    )
 
     def get(self, request):
         passdownlog_pk = request.GET.get('passdownlog_pk')
@@ -421,8 +480,11 @@ class CreateBlankPassDownLogEntry(View):
         return render(request, self.template_name, context)
 
 
-class UpdatePassDownLogEntry(View):
+class UpdatePassDownLogEntry(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/passdownlog_response.html'
+    permission_required = (
+        'desklogs.change_passdownlogentry'
+    )
 
     def get(self, request):
         passdownlog_pk = request.GET.get('passdownlog_pk')
@@ -450,8 +512,11 @@ class UpdatePassDownLogEntry(View):
         return render(request, self.template_name, context)
 
 
-class FilterPassDownLogEntries(View):
+class FilterPassDownLogEntries(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'desklogs/passdownlog_response.html'
+    permission_required = (
+        'desklogs.view_passdownlogentry'
+    )
 
     def get(self, request):
         query = request.GET.get('query')
