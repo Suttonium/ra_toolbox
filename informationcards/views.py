@@ -84,9 +84,7 @@ class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, PermissionRequ
         return render(request, self.template_name, context)
 
     def test_func(self):
-        obj = self.get_object()
-        user = self.request.user
-        return obj.user == user
+        return self.get_object().user == self.request.user
 
 
 class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin,
@@ -98,13 +96,24 @@ class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, PermissionRequ
         'informationcards.change_studentinformationcard', 'informationcards.view_studentinformationcard'
     )
 
-    def get_success_url(self):
-        return reverse('informationcards:part-two', args=[self.object.id])
+    def get(self, request, **kwargs):
+        obj = self.get_object()
+        form = StudentInformationCardPartOneForm(instance=obj)
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+    def post(self, request, **kwargs):
+        obj = self.get_object()
+        form = StudentInformationCardPartOneForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Information Card Part 1 Successfully Saved for {0}'.format(obj.user))
+            return redirect(reverse('informationcards:part-two', args=[form.instance.pk]))
+        context = {'form': form}
+        return render(request, self.template_name, context)
 
     def test_func(self):
-        obj = self.get_object()
-        user = self.request.user
-        return obj.user == user
+        return self.get_object().user == self.request.user
 
 
 class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin,
@@ -141,6 +150,4 @@ class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, PermissionRe
         return render(request, self.template_name, context)
 
     def test_func(self):
-        obj = self.get_object()
-        user = self.request.user
-        return obj.user == user
+        return self.get_object().user == self.request.user
