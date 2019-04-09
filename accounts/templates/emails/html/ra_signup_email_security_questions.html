@@ -1,0 +1,16 @@
+{% load static %}
+{% load i18n %}
+{% autoescape off %}
+    {% blocktrans %} Congratulations, {{ email }}!{% endblocktrans %}
+
+    {% trans "You have attempted to register as a Resident Assistant in " %} {{ floor }}.
+    <br>
+    {% trans "Here is the activation code you may distribute to your residents: " %}
+    <strong>{{ activation_code }}</strong>
+    <br>
+    {% trans "Please head to the following link to complete your security questions." %}
+    <br>
+    {% trans "Security Questions: " %} http://
+    {{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
+    <br>
+{% endautoescape %}

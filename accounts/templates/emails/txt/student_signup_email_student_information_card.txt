@@ -1,0 +1,12 @@
+{% load static %}
+{% load i18n %}
+{% autoescape off %}
+    Congratulations, {{ email }}!
+
+    You have attempted to register as a Student!
+
+    {% trans "Please head to the following links to activate your account and complete your student information card." %}
+
+    {% trans "Student Information Card: " %} http://
+    {{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+{% endautoescape %}

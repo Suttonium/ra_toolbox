@@ -30,15 +30,35 @@ class StudentRegistrationForm(ModelForm):
         # user.first_name, user.last_name = get_names(self.cleaned_data.get('email'))
         if commit:
             user.save()
-            mail_subject = 'Attempted Student Registration'
+            mail_subject = 'Attempted Resident Assistant Registration: Student Information Card'
             current_email = self.cleaned_data.get('email')
-            plain_text = get_template('emails/txt/student_signup_email.txt')
-            htmly = get_template('emails/html/student_signup_email.html')
+            plain_text = get_template('emails/txt/student_signup_email_student_information_card.txt')
+            htmly = get_template('emails/html/student_signup_email_student_information_card.html')
             context = {
                 'domain': Site.objects.get_current(),
                 'email': current_email,
-                'uidb64': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-                'token': account_activation_token.make_token(user),
+                'activation_code': self.cleaned_data.get('activation_code'),
+                'floor': self.cleaned_data.get('hallway_selection'),
+                'uidb64': urlsafe_base64_encode(force_bytes(user.studentinformationcard.pk)).decode(),
+                'token': account_activation_token.make_token(user.studentinformationcard),
+            }
+            text_content = plain_text.render(context)
+            html_content = htmly.render(context)
+            message = EmailMultiAlternatives(mail_subject, text_content, settings.EMAIL_HOST_USER, [current_email])
+            message.attach_alternative(html_content, 'text/html')
+            message.send()
+
+            mail_subject = 'Attempted Resident Assistant Registration: Security Questions'
+            current_email = self.cleaned_data.get('email')
+            plain_text = get_template('emails/txt/student_email_security_questions.txt')
+            htmly = get_template('emails/html/student_signup_email_security_questions.html')
+            context = {
+                'domain': Site.objects.get_current(),
+                'email': current_email,
+                'activation_code': self.cleaned_data.get('activation_code'),
+                'floor': self.cleaned_data.get('hallway_selection'),
+                'uidb64': urlsafe_base64_encode(force_bytes(user.securityquestions.pk)).decode(),
+                'token': account_activation_token.make_token(user.securityquestions),
             }
             text_content = plain_text.render(context)
             html_content = htmly.render(context)
@@ -144,17 +164,35 @@ class ResidentAssistantRegistrationForm(ModelForm):
         # user.first_name, user.last_name = get_names(self.cleaned_data.get('email'))
         if commit:
             user.save()
-            mail_subject = 'Attempted Resident Assistant Registration'
+            mail_subject = 'Attempted Resident Assistant Registration: Student Information Card'
             current_email = self.cleaned_data.get('email')
-            plain_text = get_template('emails/txt/ra_signup_email.txt')
-            htmly = get_template('emails/html/ra_signup_email.html')
+            plain_text = get_template('emails/txt/ra_signup_email_student_information_card.txt')
+            htmly = get_template('emails/html/ra_signup_email_student_information_card.html')
             context = {
                 'domain': Site.objects.get_current(),
                 'email': current_email,
                 'activation_code': self.cleaned_data.get('activation_code'),
                 'floor': self.cleaned_data.get('hallway_selection'),
-                'uidb64': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-                'token': account_activation_token.make_token(user),
+                'uidb64': urlsafe_base64_encode(force_bytes(user.studentinformationcard.pk)).decode(),
+                'token': account_activation_token.make_token(user.studentinformationcard),
+            }
+            text_content = plain_text.render(context)
+            html_content = htmly.render(context)
+            message = EmailMultiAlternatives(mail_subject, text_content, settings.EMAIL_HOST_USER, [current_email])
+            message.attach_alternative(html_content, 'text/html')
+            message.send()
+
+            mail_subject = 'Attempted Resident Assistant Registration: Security Questions'
+            current_email = self.cleaned_data.get('email')
+            plain_text = get_template('emails/txt/ra_signup_email_security_questions.txt')
+            htmly = get_template('emails/html/ra_signup_email_security_questions.html')
+            context = {
+                'domain': Site.objects.get_current(),
+                'email': current_email,
+                'activation_code': self.cleaned_data.get('activation_code'),
+                'floor': self.cleaned_data.get('hallway_selection'),
+                'uidb64': urlsafe_base64_encode(force_bytes(user.securityquestions.pk)).decode(),
+                'token': account_activation_token.make_token(user.securityquestions),
             }
             text_content = plain_text.render(context)
             html_content = htmly.render(context)

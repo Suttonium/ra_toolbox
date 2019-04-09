@@ -79,7 +79,7 @@ class StudentInformationCardPartThreeForm(ModelForm):
 class StudentInformationCardStudentSelectionForm(ModelForm):
     class Meta:
         model = StudentInformationCard
-        fields = '__all__'
+        exclude = ('user',)
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': FIRST_NAME}),
             'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': LAST_NAME}),

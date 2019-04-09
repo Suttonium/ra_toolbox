@@ -9,6 +9,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.views.generic import UpdateView
 from django.views.generic.base import View
 from accounts.models import User
+from accounts.tokens import account_activation_token
 from .forms import *
 from accounts.middleware import *
 
@@ -19,13 +20,14 @@ class CreateSecurityQuestions(View):
     def get(self, request, uidb64, token):
         try:
             uid = force_text(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(pk=uid)
-        except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-            user = None
-        if user:
+            security_questions = SecurityQuestions.objects.get(pk=uid)
+        except(TypeError, ValueError, OverflowError, SecurityQuestions.DoesNotExist):
+            security_questions = None
+        if security_questions is not None and account_activation_token.check_token(security_questions, token):
+            user = security_questions.user
             user.is_active = True
             user.save()
-            form = SecurityQuestionsForm(instance=user.securityquestions)
+            form = SecurityQuestionsForm(instance=security_questions)
             context = {'form': form}
             return render(request, self.template_name, context)
         else:
@@ -36,14 +38,15 @@ class CreateSecurityQuestions(View):
         form = SecurityQuestionsForm()
         try:
             uid = force_text(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(pk=uid)
-        except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-            user = None
-        if user:
-            form = SecurityQuestionsForm(request.POST, instance=user.securityquestions)
+            security_questions = SecurityQuestions.objects.get(pk=uid)
+        except(TypeError, ValueError, OverflowError, SecurityQuestions.DoesNotExist):
+            security_questions = None
+        if security_questions:
+            form = SecurityQuestionsForm(request.POST, instance=security_questions)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Security Questions Saved Successfully for {0}'.format(user))
+                messages.success(request,
+                                 'Security Questions Saved Successfully for {0}'.format(security_questions.user))
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)

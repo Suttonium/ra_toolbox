@@ -1,0 +1,12 @@
+{% load static %}
+{% load i18n %}
+{% autoescape off %}
+    <strong><span style="color: red;">Congratulations, {{ email }}!</span></strong>
+    <br>
+    You have attempted to register as a Student!
+    <br>
+    {% trans "Please head to the following link to activate your account and complete your student information card." %}
+    <br>
+    {% trans "Student Information Card: " %} http://
+    {{ domain }}{% url 'informationcards:activate' uidb64=uidb64 token=token %}
+{% endautoescape %}

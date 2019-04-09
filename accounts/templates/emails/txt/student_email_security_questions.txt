@@ -1,0 +1,12 @@
+{% load static %}
+{% load i18n %}
+{% autoescape off %}
+    Congratulations, {{ email }}!
+
+    You have attempted to register as a Student!
+
+    {% trans "Please head to the following link to complete your security questions." %}
+
+    {% trans "Security Questions: " %} http://
+    {{ domain }}{% url 'securityquestions:answers' uidb64=uidb64 token=token %}
+{% endautoescape %}
