@@ -62,21 +62,23 @@
             </script>
         {% endif %}
     </div>
-    <div class="form-row" id="filter">
-        <div class="form-group col-md-10">
-            <input id="filter_search" type="text" class="form-control" placeholder="Search">
+    <div id="filter_and_create_div">
+        <div class="form-row" id="filter">
+            <div class="form-group col-md-8">
+                <input id="filter_search" type="text" class="form-control" placeholder="Search">
+            </div>
+            <div class="form-group col-md-4">
+                <a href="#" id="search_button" class="btn btn-warning"
+                   data-filter-entries="{% url 'desklogs:ajax-filter-guestlog-entries' %}">Filter</a>
+            </div>
         </div>
-        <div class="form-group col-md-2" id="search_button_div">
-            <a href="#" id="search_button" class="btn btn-warning"
-               data-filter-entries="{% url 'desklogs:ajax-filter-guestlog-entries' %}">Filter</a>
+        <div id="create_entry_button_div">
+            {% if disable_creation %}
+                <a href="#" class="btn btn-secondary" id="disabled_creation">Create New Guest Log Entry</a>
+            {% else %}
+                <a href="#" class="btn btn-success" id="create_entry_button">Create New Guest Log Entry</a>
+            {% endif %}
         </div>
-    </div>
-    <div id="create_entry_button_div">
-        {% if disable_creation %}
-            <a href="#" class="btn btn-secondary" id="disabled_creation">Create New Guest Log Entry</a>
-        {% else %}
-            <a href="#" class="btn btn-success" id="create_entry_button">Create New Guest Log Entry</a>
-        {% endif %}
     </div>
 </div>
 <script src="{% static 'desklogs/js/create_guestlog_entry.js' %}"></script>

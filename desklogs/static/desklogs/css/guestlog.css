@@ -9,7 +9,7 @@
     width: 100%;
     margin: 0 auto 150px;
     top: 0;
-    height: 650px;
+    height: 640px;
     overflow-y: auto;
 }
 
@@ -47,21 +47,20 @@
 }
 
 #create_entry_button_div {
-    /*position: absolute;*/
     position: sticky;
     position: -webkit-sticky;
-    bottom: 0;
+    bottom: 30px;
     margin-left: auto;
 }
 
 #create_entry_button {
-    width: 1300px;
+    width: 100%;
     color: white;
     border: solid black;
 }
 
 #disabled_creation {
-    width: 1300px;
+    width: 100%;
     color: white;
     border: solid black;
     pointer-events: none;
@@ -84,15 +83,15 @@
     pointer-events: none;
 }
 
-#filter {
-    width: 90%;
-    position: absolute;
-    bottom: 50px;
-    margin: auto;
-}
+/*#filter {*/
+/*    width: 90%;*/
+/*    position: absolute;*/
+/*    bottom: 50px;*/
+/*    margin: auto;*/
+/*}*/
 
 #filter_search {
-    margin-left: 70px;
+    margin-left: 0;
 }
 
 #search_button {
@@ -100,10 +99,16 @@
     padding-bottom: 1px;
     border-color: black;
     color: white;
-    margin-left: 75px;
+    margin-left: 0;
     width: 100%;
 }
 
 #search_button_div {
     margin-left: 0;
+}
+
+#filter_and_create_div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
