@@ -1,6 +1,6 @@
 import json
 
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -11,17 +11,23 @@ from trackers.forms import TrackerForm
 from trackers.models import Tracker
 
 
-class StudentTrackerMainView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+class StudentTrackerMainView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, DetailView):
     model = Tracker
     template_name = 'trackers/student_tracker.html'
     form_class = TrackerForm
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def test_func(self):
         return self.get_object().user.student.resident_assistant.user == self.request.user
 
 
-class AJAXKnockAndTalks(LoginRequiredMixin, View):
+class AJAXKnockAndTalks(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'trackers/knock_and_talk_response.html'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('pk_being_sent')
@@ -29,8 +35,11 @@ class AJAXKnockAndTalks(LoginRequiredMixin, View):
         return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
 
 
-class AJAXCatchUps(LoginRequiredMixin, View):
+class AJAXCatchUps(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'trackers/catch_up_response.html'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('pk_being_sent')
@@ -38,8 +47,11 @@ class AJAXCatchUps(LoginRequiredMixin, View):
         return render(request, self.template_name, {'current_tracker': current_tracker_being_viewed})
 
 
-class AJAXGeneralInformation(LoginRequiredMixin, View):
+class AJAXGeneralInformation(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'trackers/general_information_response.html'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('pk_being_sent')
@@ -51,8 +63,11 @@ class AJAXGeneralInformation(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
 
-class AJAXSubmitKnockAndTalk(LoginRequiredMixin, View):
+class AJAXSubmitKnockAndTalk(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'trackers/knock_and_talk_response.html'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -72,8 +87,11 @@ class AJAXSubmitKnockAndTalk(LoginRequiredMixin, View):
         return render(request, self.template_name, {'current_tracker': current_tracker})
 
 
-class AJAXSubmitCatchUp(LoginRequiredMixin, View):
+class AJAXSubmitCatchUp(LoginRequiredMixin, PermissionRequiredMixin, View):
     content_type = 'application/json'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -86,8 +104,11 @@ class AJAXSubmitCatchUp(LoginRequiredMixin, View):
         return HttpResponse(data, content_type=self.content_type)
 
 
-class AJAXSubmitGeneralInformation(LoginRequiredMixin, View):
+class AJAXSubmitGeneralInformation(LoginRequiredMixin, PermissionRequiredMixin, View):
     content_type = 'application/json'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker'
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -100,8 +121,13 @@ class AJAXSubmitGeneralInformation(LoginRequiredMixin, View):
         return HttpResponse(data, content_type=self.content_type)
 
 
-class AJAXSubmitRoomAssignment(LoginRequiredMixin, View):
+class AJAXSubmitRoomAssignment(LoginRequiredMixin, PermissionRequiredMixin, View):
     context_type = 'application/json'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker', 'residencehalls.add_room', 'residencehalls.change_room',
+        'residencehalls.view_room', 'residencehalls.add_suite', 'residencehalls.change_suite',
+        'residencehalls.view_suite',
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]
@@ -137,8 +163,11 @@ class AJAXSubmitRoomAssignment(LoginRequiredMixin, View):
         return HttpResponse(data, content_type=self.context_type)
 
 
-class AJAXStudentOfConcernDecision(LoginRequiredMixin, View):
+class AJAXStudentOfConcernDecision(LoginRequiredMixin, PermissionRequiredMixin, View):
     template_name = 'trackers/student_of_concern_ajax_response.html'
+    permission_required = (
+        'trackers.change_tracker', 'trackers.view_tracker',
+    )
 
     def get(self, request):
         pk_being_received = request.GET.get('current_site_url_with_pk')[-3:][:-1]

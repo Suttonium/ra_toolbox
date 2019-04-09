@@ -92,8 +92,8 @@ class Command(BaseCommand):
         ################################
 
         # ######TEST RA AND STUDENTS####
-        ra_user = User.objects.create_superuser(email='raymond.sutton.15@cnu.edu', student_id='00123456',
-                                                password='TEST', is_active=True, is_resident_assistant=True)
+        ra_user = User.objects.create_user(email='raymond.sutton.15@cnu.edu', student_id='00123456',
+                                           password='TEST', is_active=True, is_resident_assistant=True)
 
         fourth_theme_unit = Hallway.objects.get(floor='4th Floor Theme Unit')
 

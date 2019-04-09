@@ -57,7 +57,7 @@ class HallDirectorRARoster(LoginRequiredMixin, ListView):
         return context
 
 
-class ValidateEmailView(View):
+class ValidateEmailView(LogoutRequiredMixin, View):
     email_input = 'email_input'
 
     def get(self, request):
@@ -69,7 +69,7 @@ class ValidateEmailView(View):
         return HttpResponse(True) if user is not None else HttpResponse(False)
 
 
-class ValidateStudentID(View):
+class ValidateStudentID(LogoutRequiredMixin, View):
     student_id_input = 'student_id_val'
 
     def get(self, request):

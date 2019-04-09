@@ -7,5 +7,5 @@ class LogoutRequiredMixin(View):
 
     def dispatch(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect(reverse('403-logout'))
+            return redirect(reverse('403'))
         return super(LogoutRequiredMixin, self).dispatch(*args, **kwargs)

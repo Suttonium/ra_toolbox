@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -49,10 +49,13 @@ class CreateSecurityQuestions(View):
         return render(request, self.template_name, context)
 
 
-class SecurityQuestionResponses(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class SecurityQuestionResponses(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'securityquestions/detail_or_update_responses.html'
     form_class = SecurityQuestionsForm
     model = SecurityQuestions
+    permission_required = (
+        'securityquestions.change_securityquestions', 'securityquestions.view_securityquestions'
+    )
 
     def get(self, request, **kwargs):
         obj = self.get_object()

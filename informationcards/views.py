@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout
-from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.encoding import force_text
@@ -51,10 +51,14 @@ class ActivateAccount(View):
         return render(request, self.template_name, context)
 
 
-class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin,
+                                              UpdateView):
     template_name = 'informationcards/studentinformationcardparttwo_form.html'
     form_class = StudentInformationCardPartTwoForm
     model = StudentInformationCard
+    permission_required = (
+        'informationcards.change_studentinformationcard', 'informationcards.view_studentinformationcard'
+    )
 
     def get(self, request, **kwargs):
         obj = self.get_object()
@@ -85,10 +89,14 @@ class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, UserPassesTest
         return obj.user == user
 
 
-class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin,
+                                              UpdateView):
     template_name = 'informationcards/studentinformationcardpartone_form.html'
     form_class = StudentInformationCardPartOneForm
     model = StudentInformationCard
+    permission_required = (
+        'informationcards.change_studentinformationcard', 'informationcards.view_studentinformationcard'
+    )
 
     def get_success_url(self):
         return reverse('informationcards:part-two', args=[self.object.id])
@@ -99,10 +107,14 @@ class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, UserPassesTest
         return obj.user == user
 
 
-class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin,
+                                                UpdateView):
     template_name = 'informationcards/studentinformationcardpartthree_form.html'
     form_class = StudentInformationCardPartThreeForm
     model = StudentInformationCard
+    permission_required = (
+        'informationcards.change_studentinformationcard', 'informationcards.view_studentinformationcard'
+    )
 
     def get(self, request, **kwargs):
         obj = self.get_object()
