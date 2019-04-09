@@ -9,7 +9,7 @@
     width: 100%;
     margin: 0 auto 150px;
     top: 0;
-    height: 650px;
+    height: 640px;
     overflow-y: auto;
 }
 
@@ -50,21 +50,8 @@
     /*position: absolute;*/
     position: sticky;
     position: -webkit-sticky;
-    bottom: 0;
+    bottom: 30px;
     margin-left: auto;
-}
-
-#create_entry_button {
-    width: 1300px;
-    color: white;
-    border: solid black;
-}
-
-#disabled_creation {
-    width: 1300px;
-    color: white;
-    border: solid black;
-    pointer-events: none;
 }
 
 .checkin, .checkout {
@@ -91,19 +78,6 @@
     margin: auto;
 }
 
-#filter_search {
-    margin-left: 70px;
-}
-
-#search_button {
-    padding-top: 2px;
-    padding-bottom: 1px;
-    border-color: black;
-    color: white;
-    margin-left: 75px;
-    width: 100%;
-}
-
 #search_button_div {
     margin-left: 0;
 }
@@ -122,5 +96,37 @@
 
 .item {
     width: 150px;
+}
+
+#filter_and_create_div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+#create_entry_button {
+    width: 100%;
+    color: white;
+    border: solid black;
+}
+
+#disabled_creation {
+    width: 100%;
+    color: white;
+    border: solid black;
+    pointer-events: none;
+}
+
+#filter_search {
+    margin-left: 0;
+}
+
+#search_button {
+    padding-top: 2px;
+    padding-bottom: 1px;
+    border-color: black;
+    color: white;
+    margin-left: 0;
+    width: 100%;
 }
 
