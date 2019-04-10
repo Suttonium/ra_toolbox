@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% load aufwiedersehen %}
+{% block title %}<title>Information Card Overview</title>{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'informationcards/css/entirestudentinformationcard.css' %}">
+    <div class="container">
+        <form action="" method="POST" id="card_form">
+            <div id="id_student_info_card_jumbotron" class="jumbotron vertical-center">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="first_name">Date of Birth</label>
+                        {{ form.date_of_birth }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cell_phone_number">Cell Phone Number</label>
+                        {{ form.cell_phone_number }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="home_street_address">Home Street Address</label>
+                        {{ form.home_street_address }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="home_city">Home City</label>
+                        {{ form.home_city }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="home_state">Home State</label>
+                        {{ form.home_state }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="zip_code">Zip Code</label>
+                        {{ form.zip_code }}
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="allergies">Allergies</label>
+                        {{ form.allergies }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="medications_or_special_needs">Medications or Special Needs</label>
+                        {{ form.medications_or_special_needs }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="physical_assistance">Physical Assistance</label>
+                        {{ form.physical_assistance }}
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_one_name">Name of Contact #1</label>
+                        {{ form.emergency_contact_one_name }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_one_relationship_to_student">Relationship of Contact #1</label>
+                        {{ form.emergency_contact_one_relationship_to_student }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_one_primary_phone_number">Primary Phone of Contact #1</label>
+                        {{ form.emergency_contact_one_primary_phone_number }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_two_name">Name of Contact #2</label>
+                        {{ form.emergency_contact_two_name }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_two_relationship_to_student">Relationship of Contact #2</label>
+                        {{ form.emergency_contact_two_relationship_to_student }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_two_primary_phone_number">Primary Phone of Contact #2</label>
+                        {{ form.emergency_contact_two_primary_phone_number }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_three_name">Name of Contact #3</label>
+                        {{ form.emergency_contact_three_name }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_three_relationship_to_student">Relationship of Contact #3</label>
+                        {{ form.emergency_contact_three_relationship_to_student }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="emergency_contact_three_primary_phone_number">Primary Phone of Contact #3</label>
+                        {{ form.emergency_contact_three_primary_phone_number }}
+                    </div>
+                </div>
+            </div>
+            <button id="submit" type="submit" class="option btn btn-success">Update Student Information Card</button>
+        </form>
+    </div>
+{% endblock %}

@@ -7,9 +7,9 @@
 
 #entry_div {
     width: 100%;
-    margin: 0 auto 150px;
+    margin: 0 auto 75px;
     top: 0;
-    height: 640px;
+    height: 70%;
     overflow-y: auto;
 }
 

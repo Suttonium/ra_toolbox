@@ -11,8 +11,6 @@ class StudentInformationCardPartOneForm(ModelForm):
         fields = ['date_of_birth', 'cell_phone_number', 'home_street_address', 'home_city',
                   'home_state', 'zip_code']
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': FIRST_NAME}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': LAST_NAME}),
             'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'cell_phone_number': forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': CELL_PHONE_NUMBER,
@@ -76,13 +74,11 @@ class StudentInformationCardPartThreeForm(ModelForm):
         }
 
 
-class StudentInformationCardStudentSelectionForm(ModelForm):
+class EntireStudentInformationCardForm(ModelForm):
     class Meta:
         model = StudentInformationCard
         exclude = ('user',)
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': FIRST_NAME}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': LAST_NAME}),
             'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'cell_phone_number': forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': CELL_PHONE_NUMBER,

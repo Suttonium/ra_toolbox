@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.encoding import force_text
@@ -151,6 +152,23 @@ class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, PermissionRe
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)
+
+    def test_func(self):
+        return self.get_object().user == self.request.user
+
+
+class UpdateEntireStudentInformationCardView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin,
+                                             SuccessMessageMixin, UpdateView):
+    template_name = 'informationcards/entirestudentinformationcard.html'
+    form_class = EntireStudentInformationCardForm
+    model = StudentInformationCard
+    permission_required = (
+        'informationcards.change_studentinformationcard', 'informationcards.view_studentinformationcard'
+    )
+    success_message = 'Information Card Successfully Updated'
+
+    def get_success_url(self):
+        return reverse('informationcards:overview', args=[self.get_object().pk])
 
     def test_func(self):
         return self.get_object().user == self.request.user

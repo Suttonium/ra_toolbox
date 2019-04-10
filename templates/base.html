@@ -94,7 +94,8 @@
                                    href="{% url 'securityquestions:question-responses' pk=user.securityquestions.pk %}">Security
                                     Questions</a>
                                 <a class="dropdown-item"
-                                   href="#">Information Card</a>
+                                   href="{% url 'informationcards:overview' pk=user.studentinformationcard.pk %}">Information
+                                    Card</a>
                                 <a class="dropdown-item" href="#">Personal Profile</a>
                             </div>
                         </li>
