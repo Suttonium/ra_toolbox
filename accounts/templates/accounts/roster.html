@@ -6,11 +6,11 @@
     {% load queryset_to_list %}
     {% if not user.is_resident_assistant and not user.is_hall_director %}
         <h1><strong>403 Forbidden</strong></h1>
-        <a href="{% url 'accounts:login' %}" class="option btn btn-success">Login</a>
+        <a href="{% url 'accounts:logout' %}" class="option btn btn-success">Logout</a>
     {% else %}
         {% if current_student_list != user.resident_assistant.student_set.all|_list %}
             <h1><strong>403 Forbidden</strong></h1>
-            <a href="{% url 'accounts:login' %}" class="option btn btn-success">Login</a>
+            <a href="{% url 'accounts:logout' %}" class="option btn btn-success">Logout</a>
         {% else %}
             <link rel="stylesheet" href="{% static 'accounts/css/roster.css' %}">
             <div id="roster_div">
@@ -32,7 +32,15 @@
                         {% endfor %}
                     </table>
                 {% else %}
-                    <h3 id="no_residents">You Currently Have No Residents Connected</h3>
+                    <script>
+                        Swal.fire(
+                            'You Currently Have No Students Registered',
+                            '',
+                            'question'
+                        ).then(function () {
+                            window.location = '{% url 'home' %}'
+                        })
+                    </script>
                 {% endif %}
             </div>
         {% endif %}
