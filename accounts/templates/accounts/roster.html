@@ -19,12 +19,14 @@
                         <tr>
                             <th>Student Email</th>
                             <th>Student ID</th>
+                            <th>Room Assignment</th>
                             <th>Hallway Information</th>
                         </tr>
                         {% for student in current_student_list %}
                             <tr>
                                 <td>{{ student.user.email }}</td>
                                 <td>{{ student.user.student_id }}</td>
+                                <td>{{ student.room }}</td>
                                 <td><a href="{% url 'trackers:student-update-tracker' pk=student.user.tracker.pk %}"
                                        class="hallway_button btn btn-primary">View
                                     Individual Tracker</a></td>

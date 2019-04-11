@@ -26,6 +26,7 @@ class StudentRegistrationForm(ModelForm):
     def save(self, commit=True, **kwargs):
         user = super().save(commit=False)
         user.is_student = True
+        user.is_active = True
         user.set_password(user.password)
         # user.first_name, user.last_name = get_names(self.cleaned_data.get('email'))
         if commit:
@@ -160,6 +161,7 @@ class ResidentAssistantRegistrationForm(ModelForm):
     def save(self, commit=True, **kwargs):
         user = super().save(commit=False)
         user.is_resident_assistant = True
+        user.is_active = True
         user.set_password(user.password)
         # user.first_name, user.last_name = get_names(self.cleaned_data.get('email'))
         if commit:

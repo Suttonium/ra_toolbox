@@ -19,7 +19,7 @@ class UniversityRoster(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTe
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['university_roster'] = User.objects.all().exclude(is_hall_director=True).exclude(
-            is_desk_account=True).order_by('student_id')
+            is_desk_account=True).exclude(is_superuser=True).order_by('student_id')
         return context
 
     def test_func(self):
