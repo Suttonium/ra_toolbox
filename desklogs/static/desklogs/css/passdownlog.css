@@ -7,9 +7,9 @@
 
 #entry_div {
     width: 100%;
-    margin: 0 auto 150px;
+    margin: 0 auto 75px;
     top: 0;
-    height: 650px;
+    height: 70%;
     overflow-y: auto;
 }
 
@@ -54,18 +54,6 @@
     margin-left: auto;
 }
 
-#create_entry_button {
-    width: 1300px;
-    color: white;
-    border: solid black;
-}
-
-#disabled_creation {
-    width: 1300px;
-    color: white;
-    border: solid black;
-    pointer-events: none;
-}
 
 .passdown {
     width: 100%;
@@ -75,15 +63,31 @@
     border: solid black;
 }
 
-#filter {
+#search_button_div {
+    margin-left: 0;
+}
+
+#filter_and_create_div {
+    margin-left: auto;
+    margin-right: auto;
     width: 90%;
-    position: absolute;
-    bottom: 50px;
-    margin: auto;
+}
+
+#create_entry_button {
+    width: 100%;
+    color: white;
+    border: solid black;
+}
+
+#disabled_creation {
+    width: 100%;
+    color: white;
+    border: solid black;
+    pointer-events: none;
 }
 
 #filter_search {
-    margin-left: 70px;
+    margin-left: 0;
 }
 
 #search_button {
@@ -91,10 +95,6 @@
     padding-bottom: 1px;
     border-color: black;
     color: white;
-    margin-left: 75px;
-    width: 100%;
-}
-
-#search_button_div {
     margin-left: 0;
+    width: 100%;
 }

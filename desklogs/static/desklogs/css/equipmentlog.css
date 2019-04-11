@@ -7,9 +7,9 @@
 
 #entry_div {
     width: 100%;
-    margin: 0 auto 150px;
+    margin: 0 auto 75px;
     top: 0;
-    height: 640px;
+    height: 70%;
     overflow-y: auto;
 }
 
@@ -71,12 +71,12 @@
     pointer-events: none;
 }
 
-#filter {
-    width: 90%;
-    position: absolute;
-    bottom: 50px;
-    margin: auto;
-}
+/*#filter {*/
+/*    width: 90%;*/
+/*    position: absolute;*/
+/*    bottom: 50px;*/
+/*    margin: auto;*/
+/*}*/
 
 #search_button_div {
     margin-left: 0;
@@ -129,4 +129,6 @@
     margin-left: 0;
     width: 100%;
 }
+
+
 
