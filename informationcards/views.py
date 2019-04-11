@@ -167,6 +167,11 @@ class UpdateEntireStudentInformationCardView(LoginRequiredMixin, PermissionRequi
     )
     success_message = 'Information Card Successfully Updated'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_'] = self.request.user
+        return context
+
     def get_success_url(self):
         return reverse('informationcards:overview', args=[self.get_object().pk])
 

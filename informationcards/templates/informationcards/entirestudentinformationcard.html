@@ -8,6 +8,20 @@
     <div class="container">
         <form action="" method="POST" id="card_form">
             <div id="id_student_info_card_jumbotron" class="jumbotron vertical-center">
+                <h3>Student Information Card for: {{ user_ }}</h3>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="user_email">Email</label>
+                        <input type="text" class="form-control" value="{{ user_.email }}" disabled id="user_email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="user_student_id">Student ID</label>
+                        <input type="text" class="form-control" value="{{ user_.student_id }}" disabled
+                               id="user_student_id">
+                    </div>
+                </div>
+                <hr>
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-md-6">
