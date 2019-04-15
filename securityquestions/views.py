@@ -45,8 +45,7 @@ class CreateSecurityQuestions(View):
             form = SecurityQuestionsForm(request.POST, instance=security_questions)
             if form.is_valid():
                 form.save()
-                messages.success(request,
-                                 'Security Questions Saved Successfully for {0}'.format(security_questions.user))
+                messages.success(request, 'Your work has been saved.')
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -75,7 +74,7 @@ class SecurityQuestionResponses(LoginRequiredMixin, PermissionRequiredMixin, Use
         form = SecurityQuestionsForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Security Questions Saved Successfully for {0}'.format(self.get_object().user))
+            messages.success(request, 'Your work has been saved.')
             return redirect(reverse('securityquestions:question-responses', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)

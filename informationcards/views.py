@@ -48,8 +48,7 @@ class ActivateAccount(View):
             form = StudentInformationCardPartOneForm(request.POST, instance=student_information_card)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Information Card Part 1 Successfully Saved for {0}'.format(
-                    student_information_card.user))
+                messages.success(request, 'Your work has been saved')
                 return redirect(reverse('informationcards:part-two', args=[student_information_card.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -77,12 +76,13 @@ class UpdateStudentInformationCardPartTwoView(LoginRequiredMixin, PermissionRequ
             form = StudentInformationCardPartTwoForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Your work has been saved')
                 return redirect(reverse('informationcards:part-one', args=[form.instance.pk]))
         elif request.POST.get('next_page'):
             form = StudentInformationCardPartTwoForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Information Card Part 2 Successfully Saved for {0}'.format(obj.user))
+                messages.success(request, 'Your work has been saved')
                 return redirect(reverse('informationcards:part-three', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -111,7 +111,7 @@ class UpdateStudentInformationCardPartOneView(LoginRequiredMixin, PermissionRequ
         form = StudentInformationCardPartOneForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Information Card Part 1 Successfully Saved for {0}'.format(obj.user))
+            messages.success(request, 'Your work has been saved')
             return redirect(reverse('informationcards:part-two', args=[form.instance.pk]))
         context = {'form': form}
         return render(request, self.template_name, context)
@@ -142,13 +142,14 @@ class UpdateStudentInformationCardPartThreeView(LoginRequiredMixin, PermissionRe
             form = StudentInformationCardPartThreeForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Your work has been saved')
                 return redirect(reverse('informationcards:part-two', args=[form.instance.pk]))
         elif request.POST.get('submit'):
             logout(request)
             form = StudentInformationCardPartThreeForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Student Information Card Part 3 Successfully Saved for {0}'.format(obj.user))
+                messages.success(request, 'Your work has been saved')
                 return redirect(reverse('accounts:login'))
         context = {'form': form}
         return render(request, self.template_name, context)

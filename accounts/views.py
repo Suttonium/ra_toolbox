@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.http import HttpResponse
 from django.urls import reverse
 from django.views import View
@@ -19,6 +20,7 @@ class StudentSignUpView(LogoutRequiredMixin, CreateView):
     template_name = 'accounts/studentsignup_form.html'
 
     def get_success_url(self):
+        messages.success(self.request, 'Please check your email for verification.')
         return reverse('accounts:login')
 
 
@@ -28,6 +30,7 @@ class ResidentAssistantSignUpView(LogoutRequiredMixin, CreateView):
     template_name = 'accounts/residentassistantsignup_form.html'
 
     def get_success_url(self):
+        messages.success(self.request, 'Please check your email for verification.')
         return reverse('accounts:login')
 
 

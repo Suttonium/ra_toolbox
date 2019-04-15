@@ -21,7 +21,8 @@ desk_account_permissions = [
     'view_equipmentlogentry', 'change_guestlog', 'view_guestlog', 'add_guestlogentry', 'change_guestlogentry',
     'view_guestlogentry', 'add_lockoutcode', 'change_lockoutcode', 'view_lockoutcode', 'change_lockoutlog',
     'view_lockoutlog', 'view_lockoutlogentry', 'change_passdownlog', 'view_passdownlog', 'add_passdownlogentry',
-    'change_passdownlogentry', 'view_passdownlogentry', 'change_securityquestions', 'view_securityquestions'
+    'change_passdownlogentry', 'view_passdownlogentry', 'change_securityquestions', 'view_securityquestions',
+    'view_studentinformationcard', 'change_studentinformationcard'
 ]
 
 student_account_permissions = [

@@ -129,13 +129,25 @@
             <div class="container" style="text-align: center">
                 {% for message in messages %}
                     {% if message.level == 25 %}
-                        <div class="alert alert-success">
-                            {{ message }}
-                        </div>
+                        <script>
+                            Swal.fire({
+                                position: 'top-end',
+                                type: 'success',
+                                title: '{{ message }}',
+                                showConfirmButton: true,
+                                timer: 2500
+                            })
+                        </script>
                     {% elif message.level == 40 %}
-                        <div class="alert alert-danger">
-                            {{ message }}
-                        </div>
+                        <script>
+                            Swal.fire({
+                                position: 'top-end',
+                                type: 'error',
+                                title: '{{ message }}',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        </script>
                     {% endif %}
                     <br>
                 {% endfor %}

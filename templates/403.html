@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/403.css' %}">
-    <h1><strong>403 Forbidden</strong></h1>
-    <a href="{% url 'accounts:logout' %}" class="option btn btn-success">Logout</a>
+    <script>
+        let timerInterval;
+        Swal.fire({
+            title: 'You do not have permission to view this page.',
+            html: 'I will close in <strong></strong> seconds.',
+            timer: 2000,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+                timerInterval = setInterval(() => {
+                    Swal.getContent().querySelector('strong')
+                        .textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            if (
+                result.dismiss === Swal.DismissReason.timer
+            ) {
+                window.location = '{% url 'accounts:login' %}';
+            }
+        })
+    </script>
 {% endblock %}
