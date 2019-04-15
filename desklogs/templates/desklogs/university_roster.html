@@ -12,7 +12,11 @@
                         <th>Student ID</th>
                         <th>Residence Hall</th>
                         <th>Room Assignment</th>
-                        <th>Security Questions</th>
+                        {% if user.is_hall_director %}
+                            <th>Student Information Card</th>
+                        {% else %}
+                            <th>Security Questions</th>
+                        {% endif %}
                     </tr>
                     {% for student in university_roster %}
                         <tr>
@@ -22,8 +26,8 @@
                                        value="{% if student.is_student %}{{ student.student.residence_hall.name }}{% elif student.is_resident_assistant %}{{ student.residentassistant.residence_hall.name }}{% endif %}" disabled></td>
                             <td><input class="form-control" type="text" value="{% if student.is_student %}{{ student.student.room }}{% elif student.is_resident_assistant %}{{ student.residentassistant.room }}{% endif %}" disabled></td>
                             <td>{% if user.is_hall_director %}
-                                <a href="#"
-                                   class="btn btn-primary security_questions">Student Information Card</a>
+                                <a href="{% url 'informationcards:overview' pk=student.studentinformationcard.pk %}"
+                                   class="btn btn-primary information_card">Student Information Card</a>
                                 {% else %}
                                     <a class="btn btn-primary security_questions" href="{% url 'securityquestions:question-responses' pk=student.securityquestions.pk %}">Student Security Questions</a>
                                 {% endif %}

@@ -176,4 +176,4 @@ class UpdateEntireStudentInformationCardView(LoginRequiredMixin, PermissionRequi
         return reverse('informationcards:overview', args=[self.get_object().pk])
 
     def test_func(self):
-        return self.get_object().user == self.request.user
+        return self.get_object().user == self.request.user or self.request.user.is_hall_director

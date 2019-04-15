@@ -34,6 +34,7 @@ resident_assistant_account_permissions = [
 ]
 
 hall_director_account_permissions = [
-    'view_securityquestions', 'add_room', 'change_room', 'view_room', 'add_suite', 'change_suite', 'view_suite',
+    'view_securityquestions', 'change_securityquestions', 'add_room', 'change_room', 'view_room', 'add_suite',
+    'change_suite', 'view_suite',
     'change_tracker', 'view_tracker', 'view_studentinformationcard', 'change_studentinformationcard'
 ]

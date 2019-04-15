@@ -13,7 +13,8 @@ class UniversityRoster(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTe
     model = User
     template_name = 'desklogs/university_roster.html'
     permission_required = (
-        'securityquestions.change_securityquestions', 'securityquestions.view_securityquestions'
+        'securityquestions.change_securityquestions', 'securityquestions.view_securityquestions',
+        'informationcards.view_studentinformationcard', 'informationcards.change_studentinformationcard'
     )
 
     def get_context_data(self, *args, object_list=None, **kwargs):

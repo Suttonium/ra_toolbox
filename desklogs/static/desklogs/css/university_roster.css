@@ -93,3 +93,12 @@
     padding-bottom: 3px;
 }
 
+.information_card {
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    border-color: black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
