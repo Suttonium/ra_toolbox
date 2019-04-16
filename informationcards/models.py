@@ -8,7 +8,7 @@ from .constants import *
 # Create your models here.
 class StudentInformationCard(models.Model):
     user = models.OneToOneField('accounts.User', on_delete=models.CASCADE)
-    date_of_birth = models.CharField(_('date of birth'), default='', max_length=MAX_DATE_LENGTH, null=True)
+    date_of_birth = models.DateField(_('date of birth'), null=True)
     cell_phone_number = models.CharField(_('cell phone number'), unique=True, max_length=PHONE_NUMBER_MAX_LIMIT,
                                          validators=[MinLengthValidator(PHONE_NUMBER_MIN_LIMIT)], null=True)
     home_street_address = models.CharField(_('home street address'), max_length=ADDRESS_MAX_LIMIT, default='',

@@ -2,6 +2,7 @@
 {% load bootstrap4 %}
 {% load static %}
 {% load aufwiedersehen %}
+{% load widget_tweaks %}
 {% block title %}<title>Information Card Overview</title>{% endblock %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'informationcards/css/entirestudentinformationcard.css' %}">
@@ -26,7 +27,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="first_name">Date of Birth</label>
-                        {{ form.date_of_birth }}
+                        {% if user_.studentinformationcard.date_of_birth %}
+                            {% render_field form.date_of_birth|attr:"disabled" %}
+                        {% else %}
+                            {{ form.date_of_birth }}
+                        {% endif %}
                     </div>
                     <div class="form-group col-md-6">
                         <label for="cell_phone_number">Cell Phone Number</label>

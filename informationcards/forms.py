@@ -1,11 +1,21 @@
 from django import forms
+from django.core.exceptions import ValidationError
 from django.forms import ModelForm
 
 from informationcards.models import StudentInformationCard
 from .constants import *
+from .functions import *
+from django.utils.translation import ugettext_lazy as _
 
 
 class StudentInformationCardPartOneForm(ModelForm):
+    def clean_date_of_birth(self):
+        dob = self.cleaned_data['date_of_birth']
+        if in_the_future(dob):
+            raise ValidationError(
+                _('This date is a future date. Please enter a previous date or the current date.'))
+        return dob
+
     class Meta:
         model = StudentInformationCard
         fields = ['date_of_birth', 'cell_phone_number', 'home_street_address', 'home_city',
@@ -75,6 +85,13 @@ class StudentInformationCardPartThreeForm(ModelForm):
 
 
 class EntireStudentInformationCardForm(ModelForm):
+    def clean_date_of_birth(self):
+        dob = self.cleaned_data['date_of_birth']
+        if in_the_future(dob):
+            raise ValidationError(
+                _('This date is a future date. Please enter a previous date or the current date.'))
+        return dob
+
     class Meta:
         model = StudentInformationCard
         exclude = ('user',)

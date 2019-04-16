@@ -12,7 +12,8 @@
                 <h3>Student Information Card Page 1 of 3</h3>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="id_date_of_birth">Date of Birth</label>
+                        <label for="id_date_of_birth">Date of Birth <span class="mandatory"
+                                                                          id="dob_span"></span></label>
                         {{ form.date_of_birth }}
                     </div>
                     <div class="form-group col-md-6">
@@ -59,4 +60,5 @@
             </div>
         </div>
     </form>
+    <script src="{% static 'informationcards/js/static_validation.js' %}"></script>
 {% endblock %}
