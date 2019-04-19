@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %} <title>Feedback Submission</title> {% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'feedbacksubmissions/css/feedbacksubmission_form.css' %}">
+    <form action="" id="feedback_form" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div id="id_form_jumbotron" class="jumbotron text-white">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <p>Email</p>
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <p>Feedback</p>
+                        {{ form.text }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button id="id_form_submit" class="btn btn-success" type="submit">Submit</button>
+                </div>
+                {% if form.errors %}
+                    <div class="alert alert-error">
+                        <p class="mandatory" id="error_message">The operation could not be performed because the
+                            following
+                            error(s) occurred. Please resubmit the form after making the following changes:</p>
+                        <ul>
+                            {% for field,error in form.errors.items %}
+                                {% if field != '__all__' %}
+                                    {{ field|title|cut:"_" }} - {{ error|striptags }}
+                                {% else %}
+                                    {{ error|striptags }}
+                                {% endif %}
+                                <br>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+{% endblock %}

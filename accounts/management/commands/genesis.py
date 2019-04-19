@@ -1,10 +1,9 @@
 from django.contrib.auth.models import Group, Permission
 from django.contrib.sites.models import Site
 from django.core.management import BaseCommand
-from django.utils.crypto import get_random_string
 
 from accounts.constants import *
-from accounts.models import User, ResidentAssistant, Student, HallDirector, DeskAccount
+from accounts.models import User, ResidentAssistant, HallDirector, DeskAccount
 from residencehalls.models import ResidenceHall, Hallway
 
 

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
 from capstone.views import *
 
 urlpatterns = [
@@ -29,6 +30,7 @@ urlpatterns = [
     path('desklogs/', include(('desklogs.urls', 'desklogs'), namespace='desklogs')),
     path('security_questions/',
          include(('securityquestions.urls', 'securityquestions'), namespace='securityquestions')),
+    path('feedbacksubmissions/',
+         include(('feedbacksubmissions.urls', 'feedbacksubmissions'), namespace='feedbacksubmissions')),
     path('passwords/', include('password_reset.urls'))
-
 ]

@@ -9,7 +9,6 @@ from django.utils.http import urlsafe_base64_decode
 from django.views.generic import UpdateView
 from django.views.generic.base import View
 
-from accounts.models import User
 from accounts.tokens import account_activation_token
 from informationcards.forms import *
 

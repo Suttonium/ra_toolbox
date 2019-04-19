@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'trackers.apps.TrackersConfig',
     'desklogs.apps.DesklogsConfig',
     'securityquestions.apps.SecurityquestionsConfig',
+    'feedbacksubmissions.apps.FeedbackConfig',
     'bootstrap4',
     'widget_tweaks',
     'session_security',

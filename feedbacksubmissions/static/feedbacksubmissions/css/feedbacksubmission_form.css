@@ -1,0 +1,26 @@
+#id_form_submit {
+    width: 100%;
+    color: white;
+    border: solid black;
+}
+
+#id_form_jumbotron {
+    margin-top: 225px;
+    margin-left: -45px;
+    padding-top: 15px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+a.button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.mandatory {
+    color: red;
+}
+
+p {
+    font-size: 17px;
+    margin: 0;
+}

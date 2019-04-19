@@ -1,17 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
-from django.contrib.messages.views import SuccessMessageMixin
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.views.generic import UpdateView
 from django.views.generic.base import View
-from accounts.models import User
+
 from accounts.tokens import account_activation_token
 from .forms import *
-from accounts.middleware import *
 
 
 class CreateSecurityQuestions(View):
